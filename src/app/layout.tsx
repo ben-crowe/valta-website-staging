@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
+import "../styles/valta-theme.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { basehub } from "basehub";
 

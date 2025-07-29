@@ -1,0 +1,104 @@
+/* Valta Property Valuations Brand Theme */
+/* Colors: Valta Navy (#1C2431), Skyline Blue (#6DB3F2), Slate Gray (#B6BCC5), Pure White (#FFFFFF) */
+
+:root {
+  /* Valta Brand Colors - RGB values for Tailwind CSS variables */
+  
+  /* Primary Accent: Skyline Blue (#6DB3F2) */
+  --accent-rgb-50: 237, 248, 254;   /* lightest tint */
+  --accent-rgb-100: 219, 241, 253;
+  --accent-rgb-200: 185, 229, 251;
+  --accent-rgb-300: 134, 211, 247;
+  --accent-rgb-400: 79, 189, 242;
+  --accent-rgb-500: 109, 179, 242;  /* Skyline Blue base */
+  --accent-rgb-600: 88, 143, 194;
+  --accent-rgb-700: 73, 119, 161;
+  --accent-rgb-800: 64, 104, 141;
+  --accent-rgb-900: 55, 91, 123;
+  --accent-rgb-950: 36, 60, 82;     /* darkest shade */
+
+  /* Grayscale: Based on Valta Navy and Slate Gray */
+  --grayscale-rgb-50: 249, 250, 251;   /* Pure White area */
+  --grayscale-rgb-100: 243, 244, 246;
+  --grayscale-rgb-200: 229, 231, 235;
+  --grayscale-rgb-300: 182, 188, 197;  /* Slate Gray base (#B6BCC5) */
+  --grayscale-rgb-400: 156, 163, 175;
+  --grayscale-rgb-500: 107, 114, 128;
+  --grayscale-rgb-600: 75, 85, 99;
+  --grayscale-rgb-700: 55, 65, 81;
+  --grayscale-rgb-800: 31, 41, 55;
+  --grayscale-rgb-900: 28, 36, 49;     /* Valta Navy base (#1C2431) */
+  --grayscale-rgb-950: 17, 24, 39;     /* darkest */
+
+  /* Text on accent color - ensure good contrast */
+  --text-on-accent: var(--grayscale-50);
+}
+
+/* Dark mode theme adjustments */
+html.dark {
+  --accent-rgb-50: 36, 60, 82;
+  --accent-rgb-100: 55, 91, 123;
+  --accent-rgb-200: 64, 104, 141;
+  --accent-rgb-300: 73, 119, 161;
+  --accent-rgb-400: 88, 143, 194; 
+  --accent-rgb-500: 109, 179, 242;  /* Skyline Blue - same in dark */
+  --accent-rgb-600: 134, 211, 247;
+  --accent-rgb-700: 185, 229, 251;
+  --accent-rgb-800: 219, 241, 253;
+  --accent-rgb-900: 237, 248, 254;
+  --accent-rgb-950: 247, 250, 252;
+}
+
+/* Valta-specific utility classes for brand consistency */
+.valta-navy {
+  color: #1C2431;
+}
+
+.bg-valta-navy {
+  background-color: #1C2431;
+}
+
+.valta-blue {
+  color: #6DB3F2;
+}
+
+.bg-valta-blue {
+  background-color: #6DB3F2;
+}
+
+.valta-slate {
+  color: #B6BCC5;
+}
+
+.bg-valta-slate {
+  background-color: #B6BCC5;
+}
+
+/* Brand-specific component styles */
+.valta-hero {
+  background: linear-gradient(135deg, #1C2431 0%, #2a3441 50%, #1C2431 100%);
+}
+
+.valta-cta {
+  background: linear-gradient(135deg, #6DB3F2 0%, #5ca3e8 100%);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.valta-cta:hover {
+  background: linear-gradient(135deg, #5ca3e8 0%, #4a94de 100%);
+  transform: translateY(-1px);
+}
+
+/* Professional styling for commercial real estate industry */
+.valta-card {
+  background: white;
+  border: 1px solid #B6BCC5;
+  box-shadow: 0 4px 6px -1px rgba(28, 36, 49, 0.1);
+  transition: all 0.3s ease;
+}
+
+.valta-card:hover {
+  box-shadow: 0 10px 25px -3px rgba(28, 36, 49, 0.15);
+  border-color: #6DB3F2;
+}
