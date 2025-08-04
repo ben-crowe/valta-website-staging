@@ -161,8 +161,8 @@ export default function AboutPage() {
               Not Just an Appraiser - An Active Developer
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl">
-              Chris isn't just providing appraisal services to developers - he IS a developer. This gives Valta Property
-              Valuations unique insights into what really drives property value.
+              Chris isn't just providing appraisal services to developers - he IS a developer. This gives Valta unique
+              insights into what really drives property value.
             </p>
           </div>
 

@@ -221,8 +221,7 @@ export default function NewsPage() {
                   <div className="space-y-4">
                     <h3 className="text-lg font-bold">Stay Informed</h3>
                     <p className="text-sm text-muted-foreground">
-                      Get the latest commercial real estate insights from Valta Property Valuations delivered to your
-                      inbox.
+                      Get the latest commercial real estate insights delivered to your inbox.
                     </p>
                     <form onSubmit={handleNewsletterSubmit} className="space-y-3">
                       <div className="space-y-2">
