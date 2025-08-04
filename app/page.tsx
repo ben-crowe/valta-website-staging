@@ -5,12 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import { ArrowRight, CheckCircle, Clock, Shield, Users } from "lucide-react"
 
-export const metadata = {
-  title: "Valta Property Valuations | Commercial Real Estate Appraisal Services",
-  description:
-    "Professional commercial real estate appraisals across Western Canada. Specializing in multifamily, self-storage, and commercial properties. AACI certified with 2-3 week delivery.",
-}
-
 export default function HomePage() {
   return (
     <div>
