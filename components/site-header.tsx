@@ -14,14 +14,13 @@ export default function SiteHeader() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image
-              src="/images/valta-icon.png"
+              src="/images/valta-logo.png"
               alt="Valta Property Valuations"
-              width={32}
-              height={32}
-              className="h-8 w-8"
+              width={200}
+              height={40}
+              className="h-8 w-auto"
               priority
             />
-            <span className="text-xl font-bold text-foreground">Valta Property Valuations</span>
           </Link>
           <nav className="hidden md:flex gap-6">
             <Link
