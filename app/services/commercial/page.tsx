@@ -529,16 +529,16 @@ export default function CommercialPage() {
               <p className="text-center text-slate-500 text-sm mb-6">Trusted by leading organizations</p>
               <div className="flex justify-center items-center space-x-8 opacity-60">
                 <div className="h-12 w-24 bg-slate-300 rounded flex items-center justify-center text-xs text-slate-600">
-                  CLIENT LOGO
+                  Valta Client
                 </div>
                 <div className="h-12 w-24 bg-slate-300 rounded flex items-center justify-center text-xs text-slate-600">
-                  CLIENT LOGO
+                  Valta Client
                 </div>
                 <div className="h-12 w-24 bg-slate-300 rounded flex items-center justify-center text-xs text-slate-600">
-                  CLIENT LOGO
+                  Valta Client
                 </div>
                 <div className="h-12 w-24 bg-slate-300 rounded flex items-center justify-center text-xs text-slate-600">
-                  CLIENT LOGO
+                  Valta Client
                 </div>
               </div>
             </div>

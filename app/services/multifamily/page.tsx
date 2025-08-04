@@ -69,7 +69,7 @@ export default function MultifamilyPage() {
           <div className="flex flex-col items-center justify-center space-y-6 text-center text-white h-full">
             <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Multifamily Property Appraisals
+                Valta Property Valuations: Multifamily Property Appraisals
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Expert valuations for apartment buildings, condos, and residential investment properties. Lender-ready
@@ -101,7 +101,7 @@ export default function MultifamilyPage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Deep Multifamily Market Knowledge
+                Valta's Deep Multifamily Market Knowledge
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl">
                 Our specialized expertise in multifamily properties ensures accurate valuations that reflect current
@@ -156,7 +156,7 @@ export default function MultifamilyPage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Multifamily Appraisal Process
+                Valta's Multifamily Appraisal Process
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl">
                 A systematic approach that ensures thorough analysis and timely delivery of your appraisal report.
@@ -244,7 +244,7 @@ export default function MultifamilyPage() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Multifamily Property Types We Appraise
+                Valta's Multifamily Property Types We Appraise
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl">
                 From small apartment buildings to large residential complexes, we have expertise across all multifamily
@@ -389,7 +389,7 @@ export default function MultifamilyPage() {
           <div className="flex flex-col items-center justify-center space-y-6 text-center">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Ready to get your multifamily property appraised?
+                Ready to get your multifamily property appraised by Valta?
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-xl">
                 Get your lender-ready report in 2-3 weeks
