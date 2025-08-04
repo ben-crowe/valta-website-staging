@@ -1,6 +1,8 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "valta-property-valuations",
+  "version": "1.0.0",
+  "description": "Professional commercial real estate appraisal services across Western Canada. Built by developers, for developers.",
+  "author": "Valta Property Valuations",
   "private": true,
   "scripts": {
     "build": "next build",
