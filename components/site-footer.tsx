@@ -7,8 +7,11 @@ export default function SiteFooter() {
       <div className="container flex flex-col gap-8 py-8 md:py-12">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="text-lg font-medium">Your Business Name</h3>
-            <p className="text-sm text-muted-foreground">Your business description and mission statement.</p>
+            <h3 className="text-lg font-medium">Valta Property Valuations</h3>
+            <p className="text-sm text-muted-foreground">
+              Professional commercial real estate appraisal services across Western Canada. Built by developers, for
+              developers.
+            </p>
           </div>
           <div className="space-y-3">
             <h3 className="text-lg font-medium">Quick Links</h3>
@@ -58,16 +61,19 @@ export default function SiteFooter() {
           <div className="space-y-3">
             <h3 className="text-lg font-medium">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">Your City, State</li>
-              <li className="text-sm text-muted-foreground">your-email@domain.com</li>
-              <li className="text-sm text-muted-foreground">Your phone number</li>
+              <li className="text-sm text-muted-foreground">Calgary, Alberta</li>
+              <li className="text-sm text-muted-foreground">info@valtavaluations.com</li>
+              <li className="text-sm text-muted-foreground">(403) 555-VALTA</li>
             </ul>
             <div className="flex space-x-3">
-              <Link href="https://facebook.com/yourbusiness" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://facebook.com/valtavaluations" className="text-muted-foreground hover:text-foreground">
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="https://instagram.com/yourbusiness" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="https://instagram.com/valtavaluations"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
@@ -75,7 +81,10 @@ export default function SiteFooter() {
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="https://linkedin.com/company/valta-property-valuations"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
@@ -83,7 +92,7 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="border-t pt-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} DesignStudio. All rights reserved.
+          © {new Date().getFullYear()} Valta Property Valuations. All rights reserved.
         </div>
       </div>
     </footer>

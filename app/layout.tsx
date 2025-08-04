@@ -8,8 +8,9 @@ import SiteFooter from "@/components/site-footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Your Business Name | Interior Design Services",
-  description: "Your custom description about your interior design services and expertise.",
+  title: "Valta Property Valuations | Commercial Real Estate Appraisal Services",
+  description:
+    "Professional commercial real estate appraisals across Western Canada. Specializing in multifamily, self-storage, and commercial properties. AACI certified. 2-3 week delivery.",
     generator: 'v0.dev'
 }
 
