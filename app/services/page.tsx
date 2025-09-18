@@ -115,11 +115,13 @@ export default function ServicesPage() {
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
                 Professional property appraisal services with specialized expertise across multiple property types.
               </p>
-              <div className="text-lg text-white/80 font-semibold">
-                Image {currentImageIndex + 1} of {heroImages.length} - {heroImages[currentImageIndex].alt}
-              </div>
             </div>
           </div>
+        </div>
+        
+        {/* Image Counter in Bottom Corner */}
+        <div className="absolute bottom-4 right-4 z-20 text-white/60 text-xs font-medium">
+          Image {currentImageIndex + 1}/{heroImages.length}
         </div>
       </section>
 
