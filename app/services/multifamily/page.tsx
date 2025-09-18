@@ -16,57 +16,28 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 
 export default function MultifamilyPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Breadcrumb Navigation */}
-      <section className="w-full py-4 bg-muted/20">
-        <div className="container px-4 md:px-6">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/">Home</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/services">Services</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Multifamily Appraisals</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </section>
-
       {/* Hero Section */}
-      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200&text=Modern+Multifamily+Apartment+Building"
+            src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=800&fit=crop&crop=entropy"
             fill
-            alt="Multifamily Apartment Building"
+            alt="Modern multifamily apartment building"
             className="object-cover"
             priority
           />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container px-4 md:px-6 h-full">
-          <div className="flex flex-col items-center justify-center space-y-6 text-center text-white h-full">
+        <div className="relative z-10 container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
             <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Valta Property Valuations: Multifamily Property Appraisals
@@ -405,7 +376,7 @@ export default function MultifamilyPage() {
             </div>
             <div className="text-center text-sm text-muted-foreground mt-4">
               <p>
-                Or call us at <strong>(403) 555-VALTA</strong> for immediate consultation
+                Or call us at <strong>(587) 801-5151</strong> for immediate consultation
               </p>
             </div>
           </div>

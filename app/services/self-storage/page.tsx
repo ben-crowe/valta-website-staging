@@ -20,57 +20,28 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 
 export default function SelfStoragePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Breadcrumb Navigation */}
-      <section className="w-full py-4 bg-muted/20">
-        <div className="container px-4 md:px-6">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/">Home</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/services">Services</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Self-Storage Valuations</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </section>
-
       {/* Hero Section */}
-      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200&text=Modern+Self+Storage+Facility"
+            src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=1920&h=800&fit=crop&crop=entropy"
             fill
-            alt="Modern Self Storage Facility"
+            alt="Modern self storage facility"
             className="object-cover"
             priority
           />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container px-4 md:px-6 h-full">
-          <div className="flex flex-col justify-center space-y-6 text-white max-w-3xl h-full">
+        <div className="relative z-10 container px-4 md:px-6">
+          <div className="flex flex-col justify-center space-y-6 text-white max-w-3xl">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Self-Storage Facility Valuations
@@ -535,7 +506,7 @@ export default function SelfStoragePage() {
             </div>
             <div className="text-center text-sm text-muted-foreground mt-4">
               <p>
-                Questions? Call our storage specialists at <strong>(403) 555-STOR</strong>
+                Questions? Call our storage specialists at <strong>(587) 801-5151</strong>
               </p>
             </div>
           </div>

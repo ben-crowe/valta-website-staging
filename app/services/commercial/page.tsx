@@ -18,57 +18,28 @@ import {
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 
 export default function CommercialPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Breadcrumb Navigation */}
-      <section className="w-full py-4 bg-muted/20">
-        <div className="container px-4 md:px-6">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/">Home</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/services">Services</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Commercial Property Appraisals</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </section>
-
       {/* Hero Section */}
-      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=800&width=1200&text=Modern+Commercial+Office+Building"
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=800&fit=crop&crop=entropy"
             fill
-            alt="Modern Commercial Office Building"
+            alt="Modern commercial office building"
             className="object-cover"
             priority
           />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 container px-4 md:px-6 h-full">
-          <div className="flex justify-end h-full items-center">
+        <div className="relative z-10 container px-4 md:px-6">
+          <div className="flex justify-end items-center">
             <div className="bg-slate-900/90 backdrop-blur-sm p-8 md:p-12 rounded-lg max-w-2xl">
               <div className="space-y-6 text-white">
                 <div className="space-y-4">

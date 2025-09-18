@@ -8,12 +8,14 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+      <section className="w-full py-12 md:py-16 lg:py-20 bg-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Valuation Services</h1>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl">
+            <div className="space-y-4 max-w-4xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-slate-900">
+                Our Valuation Services
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
                 Professional property appraisal services with specialized expertise across multiple property types.
               </p>
             </div>
