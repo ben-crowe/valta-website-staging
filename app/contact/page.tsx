@@ -5,7 +5,7 @@ import type React from "react"
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Check, Loader2, Phone, Mail, Clock, MapPin, Shield, FileText, Users, Award } from "lucide-react"
+import { ArrowRight, Check, Loader2, Phone, Mail, Clock, MapPin, Shield, FileText, Users, Award, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -44,15 +44,29 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container px-4 md:px-6">
+      {/* Hero Section with Single Image */}
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1920&h=800&fit=crop&crop=entropy"
+            fill
+            alt="Professional woman in dark jacket"
+            className="object-cover"
+            priority
+          />
+          {/* Custom overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-slate-900">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white">
                 Contact Valta Property Valuations
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Ready to discuss your commercial property appraisal needs? Get in touch with our team of certified
                 professionals.
               </p>
@@ -146,7 +160,7 @@ export default function ContactPage() {
                           type="tel"
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
-                          placeholder="(403) 555-0123"
+                          placeholder="(587) 801-5151"
                           className="shadow-sm rounded-lg border-slate-200 focus:border-blue-500 focus:ring-blue-500"
                         />
                       </div>
@@ -275,7 +289,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <p className="font-medium text-slate-900">Phone</p>
-                          <p className="text-slate-600">(403) 555-VALTA</p>
+                          <p className="text-slate-600">(587) 801-5151</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
@@ -284,7 +298,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <p className="font-medium text-slate-900">Email</p>
-                          <p className="text-slate-600">info@valtavaluations.com</p>
+                          <p className="text-slate-600">clientcare@valta.ca</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
@@ -374,7 +388,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-lg font-bold text-slate-900">Primary Markets</h3>
                   <ul className="space-y-1 text-slate-600">
-                    <li>Calgary</li>
+                    <li>#300-4838 Richard Road SW, Calgary, AB T3E 6L1</li>
                     <li>Edmonton</li>
                     <li>Vancouver</li>
                   </ul>

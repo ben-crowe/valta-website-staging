@@ -48,9 +48,9 @@ This site is automatically deployed to Vercel from the main branch.
 ## Contact
 
 - **Website**: [valtavaluations.com](https://valtavaluations.com)
-- **Email**: info@valtavaluations.com
-- **Phone**: (403) 555-VALTA
-- **Location**: Calgary, Alberta, Canada
+- **Email**: clientcare@valta.ca
+- **Phone**: (587) 801-5151
+- **Location**: #300-4838 Richard Road SW, Calgary, AB T3E 6L1
 
 ---
 

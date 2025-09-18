@@ -1,29 +1,13 @@
-"use client"
-
 import Link from "next/link"
 import { Menu, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { ModeToggle } from "@/components/mode-toggle"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
 
 export default function SiteHeader() {
-  const router = useRouter()
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-
-  const handleServiceClick = (href: string) => {
-    setOpenDropdown(null)
-    router.push(href)
-  }
-
-  const handleAppraisalClick = (href: string) => {
-    setOpenDropdown(null)
-    router.push(href)
-  }
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -45,37 +29,37 @@ export default function SiteHeader() {
             >
               About
             </Link>
-            <DropdownMenu open={openDropdown === 'services'} onOpenChange={(open) => setOpenDropdown(open ? 'services' : null)}>
+            <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
                 Services
                 <ChevronDown className="ml-1 h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => handleServiceClick("/services")}>
-                  All Services
+                <DropdownMenuItem asChild>
+                  <Link href="/services">All Services</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleServiceClick("/services/multifamily")}>
-                  Multifamily Appraisals
+                <DropdownMenuItem asChild>
+                  <Link href="/services/multifamily">Multifamily Appraisals</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleServiceClick("/services/self-storage")}>
-                  Self-Storage Valuations
+                <DropdownMenuItem asChild>
+                  <Link href="/services/self-storage">Self-Storage Valuations</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleServiceClick("/services/commercial")}>
-                  Commercial Property
+                <DropdownMenuItem asChild>
+                  <Link href="/services/commercial">Commercial Property</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <DropdownMenu open={openDropdown === 'appraisal'} onOpenChange={(open) => setOpenDropdown(open ? 'appraisal' : null)}>
+            <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
                 Request Appraisal
                 <ChevronDown className="ml-1 h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal")}>
-                  Main Page
+                <DropdownMenuItem asChild>
+                  <Link href="/request-appraisal">Main Page</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal/intake")}>
-                  Intake Form
+                <DropdownMenuItem asChild>
+                  <Link href="/request-appraisal/intake">Intake Form</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

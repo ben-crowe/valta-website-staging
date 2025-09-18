@@ -9,7 +9,7 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-3">
             <Image
-              src="/images/valta-logo.png"
+              src="/images/Valta-logo-lt.blue.png"
               alt="Valta Property Valuations"
               width={200}
               height={40}
@@ -68,9 +68,9 @@ export default function SiteFooter() {
           <div className="space-y-3">
             <h3 className="text-lg font-medium">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">Calgary, Alberta</li>
-              <li className="text-sm text-muted-foreground">info@valtavaluations.com</li>
-              <li className="text-sm text-muted-foreground">(403) 555-VALTA</li>
+              <li className="text-sm text-muted-foreground">Calgary, AB, Canada</li>
+              <li className="text-sm text-muted-foreground">clientcare@valta.ca</li>
+              <li className="text-sm text-muted-foreground">(587) 801-5151</li>
             </ul>
             <div className="flex space-x-3">
               <Link href="https://facebook.com/valtavaluations" className="text-muted-foreground hover:text-foreground">

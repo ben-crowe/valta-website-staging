@@ -20,7 +20,7 @@ const blogPosts = [
     title: "Western Canada Commercial Real Estate Market Outlook 2025",
     excerpt:
       "As we enter 2025, the Western Canadian commercial real estate market shows signs of stabilization after a volatile period. Interest rate adjustments and shifting investment patterns are creating new opportunities for savvy investors. Our analysis reveals key trends in cap rates, vacancy levels, and emerging asset classes that will define the market landscape.",
-    image: "/placeholder.svg?height=400&width=600&text=Calgary+Skyline+2025",
+    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop",
     date: "January 15, 2025",
     category: "Market Analysis",
     author: "Michael Chen, AACI",
@@ -31,7 +31,7 @@ const blogPosts = [
     title: "Understanding Cap Rate Trends in Calgary's Multifamily Sector",
     excerpt:
       "Calgary's multifamily market has experienced significant cap rate compression over the past 18 months, with institutional investors driving demand for quality assets. We examine the factors behind this trend, including population growth, rental demand, and the impact of new supply on investment returns. Current cap rates range from 4.5% to 6.2% depending on asset quality and location.",
-    image: "/placeholder.svg?height=400&width=600&text=Modern+Apartment+Building",
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
     date: "January 8, 2025",
     category: "Investment Analysis",
     author: "Sarah Thompson, AACI",
@@ -42,7 +42,7 @@ const blogPosts = [
     title: "Self-Storage Investment Opportunities Across Alberta",
     excerpt:
       "The self-storage sector continues to outperform traditional commercial real estate asset classes, with Alberta leading Western Canada in new development activity. Rising urbanization and lifestyle changes are driving demand, while supply constraints in key markets create compelling investment opportunities. We analyze market fundamentals and identify emerging growth corridors.",
-    image: "/placeholder.svg?height=400&width=600&text=Self+Storage+Facility",
+    image: "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=800&h=600&fit=crop",
     date: "December 28, 2024",
     category: "Industry Update",
     author: "David Rodriguez, AACI",
@@ -53,7 +53,7 @@ const blogPosts = [
     title: "Industrial Real Estate: The New Frontier for Institutional Capital",
     excerpt:
       "Industrial properties have emerged as the darling of institutional investors, driven by e-commerce growth and supply chain optimization. Western Canada's strategic location and transportation infrastructure position the region as a key logistics hub. We explore investment trends, rental growth patterns, and the impact of automation on facility design and valuation.",
-    image: "/placeholder.svg?height=400&width=600&text=Modern+Warehouse+Facility",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
     date: "December 20, 2024",
     category: "Market Analysis",
     author: "Jennifer Park, AACI",
@@ -64,7 +64,7 @@ const blogPosts = [
     title: "Land Development Valuations in a Changing Regulatory Environment",
     excerpt:
       "Municipal policy changes and evolving zoning regulations are reshaping land development valuations across Western Canada. New density requirements, sustainability mandates, and infrastructure levies are impacting project feasibility and land values. Our comprehensive guide helps developers and investors navigate these complex valuation challenges.",
-    image: "/placeholder.svg?height=400&width=600&text=Development+Site+Planning",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop",
     date: "December 12, 2024",
     category: "Regulatory Update",
     author: "Michael Chen, AACI",
@@ -75,7 +75,7 @@ const blogPosts = [
     title: "Office Market Recovery: Lessons from Calgary's Downtown Core",
     excerpt:
       "Calgary's downtown office market is showing early signs of recovery as companies adapt to hybrid work models and seek quality space at competitive rates. Flight-to-quality trends are benefiting Class A properties while creating opportunities in the Class B segment. We analyze occupancy trends, rental rates, and the factors driving tenant decision-making in the post-pandemic era.",
-    image: "/placeholder.svg?height=400&width=600&text=Calgary+Downtown+Office+Buildings",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
     date: "November 30, 2024",
     category: "Market Analysis",
     author: "Sarah Thompson, AACI",
@@ -106,14 +106,28 @@ export default function NewsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container px-4 md:px-6">
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&h=800&fit=crop"
+            fill
+            alt="Calgary Commercial District"
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-slate-900">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white">
                 Industry Insights & Updates
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Expert analysis on commercial real estate trends and market developments
               </p>
             </div>

@@ -4,7 +4,8 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight, CheckCircle, Clock, Shield, Users, Phone, FileText, Search, BarChart3 } from "lucide-react"
+import Image from "next/image"
+import { ArrowRight, CheckCircle, Clock, Shield, Users, Phone, FileText, Search, BarChart3, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,6 +16,7 @@ export default function RequestAppraisalPage() {
   const [showExistingClientForm, setShowExistingClientForm] = useState(false)
   const [showNewClientForm, setShowNewClientForm] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
@@ -59,20 +61,102 @@ export default function RequestAppraisalPage() {
     setNewClientData((prev) => ({ ...prev, [field]: value }))
   }
 
+  // Hero carousel images
+  const heroImages = [
+    {
+      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=800&fit=crop",
+      alt: "Professional workspace with documents",
+      overlayClass: "bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&h=800&fit=crop", 
+      alt: "Modern office workspace",
+      overlayClass: "bg-gradient-to-b from-black/70 via-black/50 to-black/70"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=800&fit=crop",
+      alt: "Clean document workspace",
+      overlayClass: "bg-gradient-to-br from-black/80 via-black/50 to-transparent"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=800&fit=crop",
+      alt: "Data visualization",
+      overlayClass: "bg-gradient-to-t from-black/80 to-black/40"
+    }
+  ]
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length)
+  }
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index)
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container px-4 md:px-6">
+      {/* Hero Section with Image Carousel */}
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+        {/* Background Image Carousel */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={heroImages[currentImageIndex].src}
+            fill
+            alt={heroImages[currentImageIndex].alt}
+            className="object-cover transition-all duration-700"
+            priority
+          />
+          {/* Custom overlay for each image */}
+          <div className={`absolute inset-0 ${heroImages[currentImageIndex].overlayClass}`} />
+        </div>
+        
+        {/* Carousel Controls */}
+        <button
+          onClick={prevImage}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="h-6 w-6 text-white" />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+          aria-label="Next image"
+        >
+          <ChevronRight className="h-6 w-6 text-white" />
+        </button>
+        
+        {/* Dot Indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToImage(index)}
+              className={`h-2 w-2 rounded-full transition-all ${
+                index === currentImageIndex
+                  ? "bg-white w-8"
+                  : "bg-white/50 hover:bg-white/75"
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-6 text-center">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-slate-900">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white">
                 Get Your Commercial Appraisal Started
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Professional property valuations delivered in 2-3 weeks, not 4-6. Get started with a quick consultation.
               </p>
-              <div className="flex items-center justify-center gap-2 text-slate-500">
+              <div className="flex items-center justify-center gap-2 text-white/80">
                 <Shield className="h-5 w-5" />
                 <span className="text-lg">Trusted by 200+ property investors and lenders across Western Canada</span>
               </div>
@@ -255,7 +339,7 @@ export default function RequestAppraisalPage() {
                               type="tel"
                               value={newClientData.phone}
                               onChange={(e) => handleNewClientChange("phone", e.target.value)}
-                              placeholder="(403) 555-0123"
+                              placeholder="(587) 801-5151"
                               required
                             />
                           </div>
@@ -544,7 +628,7 @@ export default function RequestAppraisalPage() {
             <div className="flex items-center gap-3">
               <Phone className="h-6 w-6 text-blue-600" />
               <div className="text-left">
-                <div className="text-2xl font-bold text-slate-900">(403) 555-VALTA</div>
+                <div className="text-2xl font-bold text-slate-900">(587) 801-5151</div>
                 <div className="text-slate-600">Call for immediate consultation</div>
               </div>
             </div>

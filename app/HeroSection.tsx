@@ -21,7 +21,7 @@ export function HeroSection({ height }: HeroSectionProps) {
       <div className="relative z-10 container px-4 md:px-6 h-full">
         <div className="flex flex-col justify-center space-y-6 text-white max-w-4xl h-full">
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-[#FFD700]">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white">
               Professional Commercial Property Appraisals
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl">
@@ -63,7 +63,7 @@ export function HeroSection({ height }: HeroSectionProps) {
                 className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg bg-transparent shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
               >
                 <Phone className="mr-2 h-5 w-5" />
-                Call (403) 555-VALTA
+                Call (587) 801-5151
               </Button>
             </Link>
           </div>

@@ -12,15 +12,16 @@ import { useState } from "react"
 
 export default function SiteHeader() {
   const router = useRouter()
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const [appraisalOpen, setAppraisalOpen] = useState(false)
 
   const handleServiceClick = (href: string) => {
-    setOpenDropdown(null)
+    setServicesOpen(false)
     router.push(href)
   }
 
   const handleAppraisalClick = (href: string) => {
-    setOpenDropdown(null)
+    setAppraisalOpen(false)
     router.push(href)
   }
 
@@ -45,7 +46,7 @@ export default function SiteHeader() {
             >
               About
             </Link>
-            <DropdownMenu open={openDropdown === 'services'} onOpenChange={(open) => setOpenDropdown(open ? 'services' : null)}>
+            <DropdownMenu open={servicesOpen} onOpenChange={setServicesOpen}>
               <DropdownMenuTrigger className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
                 Services
                 <ChevronDown className="ml-1 h-3 w-3" />
@@ -65,7 +66,7 @@ export default function SiteHeader() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <DropdownMenu open={openDropdown === 'appraisal'} onOpenChange={(open) => setOpenDropdown(open ? 'appraisal' : null)}>
+            <DropdownMenu open={appraisalOpen} onOpenChange={setAppraisalOpen}>
               <DropdownMenuTrigger className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
                 Request Appraisal
                 <ChevronDown className="ml-1 h-3 w-3" />

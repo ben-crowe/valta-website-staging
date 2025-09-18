@@ -201,7 +201,7 @@ export default function HomePage() {
               </div>
               <div className="mt-6 text-slate-600">
                 <p className="text-sm">
-                  Call us at <strong>(403) 555-VALTA</strong> for immediate consultation
+                  Call us at <strong>(587) 801-5151</strong> for immediate consultation
                 </p>
               </div>
             </CardContent>

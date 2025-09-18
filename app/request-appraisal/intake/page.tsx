@@ -24,14 +24,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 
 export default function IntakeFormPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -85,27 +77,6 @@ export default function IntakeFormPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Breadcrumb Navigation */}
-      <section className="w-full py-4 bg-muted/20">
-        <div className="container px-4 md:px-6">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/">Home</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink href="/request-appraisal">Request Appraisal</BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Intake Form</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
-      </section>
-
       {/* Welcome Section */}
       <section className="w-full py-12 md:py-16 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container px-4 md:px-6">
@@ -208,7 +179,7 @@ export default function IntakeFormPage() {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="(403) 555-0123"
+                        placeholder="(587) 801-5151"
                       />
                     </div>
                     <div className="space-y-2">
@@ -582,11 +553,11 @@ export default function IntakeFormPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div className="flex items-center gap-2">
                   <Phone className="h-5 w-5 text-blue-600" />
-                  <span className="text-slate-700">Call us at (403) 555-VALTA</span>
+                  <span className="text-slate-700">Call us at (587) 801-5151</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-5 w-5 text-blue-600" />
-                  <span className="text-slate-700">info@valtavaluations.com</span>
+                  <span className="text-slate-700">clientcare@valta.ca</span>
                 </div>
               </div>
             </div>
