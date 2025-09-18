@@ -8,7 +8,7 @@ import { ArrowRight, CheckCircle, Clock, Shield, Users } from "lucide-react"
 export default function HomePage() {
   return (
     <div>
-      <HeroSection height="h-[70vh] md:h-[80vh] lg:h-[90vh]" />
+      <HeroSection />
 
       {/* Services Section */}
       <section className="py-16 px-4 bg-white">
