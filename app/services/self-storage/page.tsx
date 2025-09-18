@@ -29,9 +29,9 @@ export default function SelfStoragePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=1920&h=800&fit=crop&crop=entropy"
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&h=800&fit=crop&crop=entropy"
             fill
-            alt="Modern self storage facility"
+            alt="Modern self storage facility with roll-up doors"
             className="object-cover"
             priority
           />
