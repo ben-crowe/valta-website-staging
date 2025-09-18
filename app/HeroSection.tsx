@@ -56,7 +56,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+    <section className="relative w-full h-[450px] md:h-[500px] lg:h-[550px] overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
         <Image 
@@ -103,7 +103,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container px-4 md:px-6">
+      <div className="relative z-10 container px-4 md:px-6 h-full flex items-center">
         <div className="flex flex-col justify-center space-y-6 text-white max-w-4xl">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-lg">
