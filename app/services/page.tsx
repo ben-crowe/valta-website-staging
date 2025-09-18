@@ -8,14 +8,28 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-16 lg:py-20 bg-white">
-        <div className="container px-4 md:px-6">
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=800&fit=crop&crop=entropy"
+            fill
+            alt="Professional commercial properties collage"
+            className="object-cover"
+            priority
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-slate-900">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white">
                 Our Valuation Services
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Professional property appraisal services with specialized expertise across multiple property types.
               </p>
             </div>
