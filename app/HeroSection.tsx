@@ -21,8 +21,8 @@ export function HeroSection({ height }: HeroSectionProps) {
       <div className="relative z-10 container px-4 md:px-6 h-full">
         <div className="flex flex-col justify-center space-y-6 text-white max-w-4xl h-full">
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-red-500">
-              STAGING TEST - THIS TEXT SHOULD BE RED
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-[#FFD700]">
+              Professional Commercial Property Appraisals
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl">
               Expert valuations for multifamily, self-storage, and commercial properties across Western Canada.
