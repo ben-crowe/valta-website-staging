@@ -1,37 +1,123 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
 export default function ServicesPage() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  // Professional property valuation images carousel
+  const heroImages = [
+    {
+      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Modern glass office building",
+      overlayClass: "bg-gradient-to-r from-black/80 via-black/60 to-transparent"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Calgary downtown skyline",
+      overlayClass: "bg-gradient-to-r from-black/75 via-black/50 to-transparent"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Modern residential complex",
+      overlayClass: "bg-gradient-to-br from-black/80 via-black/50 to-transparent"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Professional business meeting",
+      overlayClass: "bg-gradient-to-r from-black/80 via-black/60 to-black/30"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Professional office workspace",
+      overlayClass: "bg-gradient-to-b from-black/70 via-black/50 to-black/40"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Commercial real estate complex",
+      overlayClass: "bg-gradient-to-r from-black/75 via-black/50 to-transparent"
+    }
+  ]
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length)
+  }
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index)
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section with Carousel */}
       <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=800&fit=crop&crop=entropy"
+            src={heroImages[currentImageIndex].src}
             fill
-            alt="Professional commercial properties collage"
+            alt={heroImages[currentImageIndex].alt}
             className="object-cover"
             priority
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
+          {/* Dynamic overlay for text readability */}
+          <div className={`absolute inset-0 ${heroImages[currentImageIndex].overlayClass}`} />
+        </div>
+        
+        {/* Carousel Controls */}
+        <button
+          onClick={prevImage}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="h-6 w-6 text-white" />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+          aria-label="Next image"
+        >
+          <ChevronRight className="h-6 w-6 text-white" />
+        </button>
+        
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToImage(index)}
+              className={`h-2 w-2 rounded-full transition-all ${
+                index === currentImageIndex
+                  ? "bg-white w-8"
+                  : "bg-white/50 hover:bg-white/75"
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
         </div>
         
         {/* Content */}
         <div className="relative z-10 container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
                 Our Valuation Services
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
                 Professional property appraisal services with specialized expertise across multiple property types.
               </p>
+              <div className="text-lg text-white/80 font-semibold">
+                Image {currentImageIndex + 1} of {heroImages.length} - {heroImages[currentImageIndex].alt}
+              </div>
             </div>
           </div>
         </div>
