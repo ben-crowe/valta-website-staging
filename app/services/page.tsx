@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section with Background Image */}
-      <section className="relative w-full min-h-[400px] py-12 md:py-16 lg:py-20 overflow-hidden bg-slate-900">
-        {/* Background Image Container */}
+      {/* Hero Section */}
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=800&fit=crop&crop=entropy"
@@ -17,20 +17,19 @@ export default function ServicesPage() {
             alt="Professional commercial properties collage"
             className="object-cover"
             priority
-            sizes="100vw"
           />
-          {/* Dark gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/25" />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
         </div>
         
-        {/* Hero Content */}
+        {/* Content */}
         <div className="relative z-10 container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-6 text-center py-8">
+          <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white drop-shadow-lg">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Our Valuation Services
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Professional property appraisal services with specialized expertise across multiple property types.
               </p>
             </div>
