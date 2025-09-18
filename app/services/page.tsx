@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
-        {/* Background Image */}
+      {/* Hero Section with Background Image */}
+      <section className="relative w-full min-h-[400px] py-12 md:py-16 lg:py-20 overflow-hidden bg-slate-900">
+        {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=800&fit=crop&crop=entropy"
@@ -17,19 +17,20 @@ export default function ServicesPage() {
             alt="Professional commercial properties collage"
             className="object-cover"
             priority
+            sizes="100vw"
           />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent" />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/25" />
         </div>
         
-        {/* Content */}
+        {/* Hero Content */}
         <div className="relative z-10 container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="flex flex-col items-center justify-center space-y-6 text-center py-8">
             <div className="space-y-4 max-w-4xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white drop-shadow-lg">
                 Our Valuation Services
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
                 Professional property appraisal services with specialized expertise across multiple property types.
               </p>
             </div>
@@ -82,7 +83,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <Image
-              src="/placeholder.svg?height=400&width=600&text=Multifamily+Apartment+Complex"
+              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop&crop=entropy"
               width={600}
               height={400}
               alt="Multifamily Apartment Complex"
@@ -97,7 +98,7 @@ export default function ServicesPage() {
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <Image
-              src="/placeholder.svg?height=400&width=600&text=Self+Storage+Facility"
+              src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?w=600&h=400&fit=crop&crop=entropy"
               width={600}
               height={400}
               alt="Self Storage Facility"
@@ -192,7 +193,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <Image
-              src="/placeholder.svg?height=400&width=600&text=Commercial+Office+Building"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop&crop=entropy"
               width={600}
               height={400}
               alt="Commercial Office Building"
