@@ -29,7 +29,7 @@ export default function SelfStoragePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/self-storage-hero.jpg"
+            src="/images/Self Storage Exterior.jpg"
             fill
             alt="Modern self storage facility with glass facade and orange storage units"
             className="object-cover"
