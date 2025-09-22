@@ -171,7 +171,7 @@ export default function ServicesPage() {
             </div>
             <div className="relative mx-auto">
               <Image
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=450&fit=crop&crop=entropy"
+                src="/images/Multifamily Mid Rise.jpg"
                 width={600}
                 height={450}
                 alt="Multifamily Apartment Complex"
@@ -190,7 +190,7 @@ export default function ServicesPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="relative mx-auto lg:order-first">
               <Image
-                src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?w=600&h=450&fit=crop&crop=entropy"
+                src="/images/Self Storage Exterior.jpg"
                 width={600}
                 height={450}
                 alt="Self Storage Facility"
