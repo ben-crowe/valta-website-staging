@@ -41,48 +41,33 @@ export default function SelfStoragePage() {
 
         {/* Content */}
         <div className="relative z-10 container px-4 md:px-6">
-          <div className="flex flex-col justify-center space-y-6 text-white max-w-3xl">
-            <div className="space-y-4">
+          <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
+            <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Self-Storage Facility Valuations
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 max-w-2xl">
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Specialized appraisals for the fastest-growing commercial real estate sector. We understand operations,
                 not just buildings.
               </p>
             </div>
 
-            {/* Stats Bar */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 py-4">
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-teal-400">94%</div>
-                <div className="text-sm text-white/80">Average Occupancy</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-teal-400">$24B</div>
-                <div className="text-sm text-white/80">Market Size</div>
-              </div>
-              <div className="text-center sm:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-teal-400">15%</div>
-                <div className="text-sm text-white/80">YoY Growth</div>
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 min-[400px]:flex-row">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <Link href="/request-appraisal">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 text-lg">
-                  Get Storage Appraisal
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+                  Request Storage Appraisal
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-3 text-lg bg-transparent"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                Download Market Report
-              </Button>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg bg-transparent"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

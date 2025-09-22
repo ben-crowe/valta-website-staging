@@ -39,36 +39,32 @@ export default function CommercialPage() {
 
         {/* Content */}
         <div className="relative z-10 container px-4 md:px-6">
-          <div className="flex justify-end items-center">
-            <div className="bg-slate-900/90 backdrop-blur-sm p-8 md:p-12 rounded-lg max-w-2xl">
-              <div className="space-y-6 text-white">
-                <div className="space-y-4">
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                    Commercial Property Appraisals
-                  </h1>
-                  <p className="text-xl md:text-2xl text-white/90">
-                    Comprehensive valuations for office, industrial, retail, and land. Supporting your business
-                    decisions with accurate market insights.
-                  </p>
-                  <div className="text-lg font-semibold text-blue-300">From single assets to entire portfolios</div>
-                </div>
-                <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                  <Link href="/contact">
-                    <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-                      Schedule Consultation
-                      <Phone className="ml-2 h-5 w-5" />
-                    </Button>
-                  </Link>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg bg-transparent"
-                  >
-                    View Property Types
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
+          <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
+            <div className="space-y-4 max-w-4xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                Commercial Property Appraisals
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+                Comprehensive valuations for office, industrial, retail, and land. Supporting your business
+                decisions with accurate market insights.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link href="/request-appraisal">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+                  Request Commercial Appraisal
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg bg-transparent"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -25,16 +25,19 @@ export default function HomePage() {
               title="Commercial Property"
               description="Professional appraisals for office buildings, retail spaces, and industrial properties"
               icon="Home"
+              backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=entropy"
             />
             <ServiceCard
               title="Multifamily Properties"
               description="Accurate valuations for apartment complexes and residential investment properties"
               icon="Lightbulb"
+              backgroundImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=entropy"
             />
             <ServiceCard
               title="Self-Storage Facilities"
               description="Specialized appraisals for self-storage and mini-storage facilities"
               icon="Palette"
+              backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&crop=entropy"
             />
           </div>
 

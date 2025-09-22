@@ -1,44 +1,130 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Clock, Shield, Users, Award, Target, Eye, ExternalLink } from "lucide-react"
+import Image from "next/image"
+import { ArrowRight, Clock, Shield, Users, Award, Target, Eye, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
 export default function AboutPage() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  
+  // About page hero images carousel
+  const heroImages = [
+    {
+      src: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Modern apartment complex development",
+      overlayClass: "bg-gradient-to-r from-black/70 via-black/50 to-transparent"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Development planning and blueprints",
+      overlayClass: "bg-gradient-to-r from-black/75 via-black/50 to-transparent"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&h=800&fit=crop&crop=entropy",
+      alt: "Modern housing development",
+      overlayClass: "bg-gradient-to-r from-black/70 via-black/50 to-transparent"
+    }
+  ]
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % heroImages.length)
+  }
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + heroImages.length) % heroImages.length)
+  }
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index)
+  }
+  
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
-        {/* Background Image */}
+      {/* Hero Section with Carousel */}
+      <section className="relative w-full h-[500px] md:h-[550px] lg:h-[600px] overflow-hidden">
+        {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-gradient-to-br from-slate-100 to-blue-50"></div>
+          <Image
+            src={heroImages[currentImageIndex].src}
+            fill
+            alt={heroImages[currentImageIndex].alt}
+            className="object-cover"
+            priority
+          />
+          {/* Dynamic overlay for text readability */}
+          <div className={`absolute inset-0 ${heroImages[currentImageIndex].overlayClass}`} />
+        </div>
+
+        {/* Carousel Controls */}
+        <button
+          onClick={prevImage}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="h-6 w-6 text-white" />
+        </button>
+        <button
+          onClick={nextImage}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+          aria-label="Next image"
+        >
+          <ChevronRight className="h-6 w-6 text-white" />
+        </button>
+        
+        {/* Carousel Indicators */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToImage(index)}
+              className={`h-2 w-2 rounded-full transition-all ${
+                index === currentImageIndex
+                  ? "bg-white w-8"
+                  : "bg-white/50 hover:bg-white/75"
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full">
-          <div className="container px-4 md:px-6 h-full">
-            <div className="flex items-center h-full">
-              <div className="max-w-2xl">
-                <div className="flex flex-col justify-center space-y-6">
-                  <div className="space-y-4">
-                    <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-slate-900">
-                      Built by Developers, for Developers
-                    </h1>
-                    <p className="text-xl md:text-2xl text-slate-600">
-                      We understand both sides of every transaction because we've been there ourselves.
-                    </p>
-                  </div>
-                  <Card className="bg-blue-50 border-l-4 border-blue-500 shadow-lg rounded-xl border-0">
-                    <CardContent className="p-4">
-                      <p className="text-blue-800 font-semibold">
-                        Trusted by 200+ property investors and lenders across Western Canada
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
+        <div className="relative z-10 container px-4 md:px-6 h-full flex items-center">
+          <div className="flex flex-col justify-center space-y-6 text-center text-white w-full">
+            <div className="space-y-4 max-w-4xl mx-auto">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
+                Built by Developers, for Developers
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+                We understand both sides of every transaction because we've been there ourselves.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row justify-center">
+              <Link href="/request-appraisal">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
+                  Request Appraisal
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg bg-transparent"
+                >
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
+        </div>
+        
+        {/* Image Counter in Bottom Right Corner */}
+        <div className="absolute bottom-4 right-4 z-20 text-white/60 text-xs font-medium">
+          Image {currentImageIndex + 1}/{heroImages.length}
         </div>
       </section>
 

@@ -59,7 +59,7 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Carousel */}
-      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+      <section className="relative w-full py-12 md:py-16 lg:py-24 overflow-hidden">
         {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -126,7 +126,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Multifamily Appraisals Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      <section className="w-full py-12 md:py-16 lg:py-20">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4">
@@ -169,13 +169,17 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
-            <Image
-              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop&crop=entropy"
-              width={600}
-              height={400}
-              alt="Multifamily Apartment Complex"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-            />
+            <div className="relative mx-auto">
+              <Image
+                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=450&fit=crop&crop=entropy"
+                width={600}
+                height={450}
+                alt="Multifamily Apartment Complex"
+                className="rounded-xl object-cover shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+                style={{ filter: 'drop-shadow(0 15px 20px rgb(0 0 0 / 0.5))' }}
+              />
+              <div className="absolute -bottom-3 left-6 right-6 h-6 bg-black/60 blur-md rounded-full" />
+            </div>
           </div>
         </div>
       </section>
@@ -184,13 +188,17 @@ export default function ServicesPage() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <Image
-              src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?w=600&h=400&fit=crop&crop=entropy"
-              width={600}
-              height={400}
-              alt="Self Storage Facility"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover lg:order-first"
-            />
+            <div className="relative mx-auto lg:order-first">
+              <Image
+                src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?w=600&h=450&fit=crop&crop=entropy"
+                width={600}
+                height={450}
+                alt="Self Storage Facility"
+                className="rounded-xl object-cover shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+                style={{ filter: 'drop-shadow(0 15px 20px rgb(0 0 0 / 0.5))' }}
+              />
+              <div className="absolute -bottom-3 left-6 right-6 h-6 bg-black/60 blur-md rounded-full" />
+            </div>
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Self-Storage Valuations</h2>
@@ -279,13 +287,17 @@ export default function ServicesPage() {
                 </Link>
               </div>
             </div>
-            <Image
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop&crop=entropy"
-              width={600}
-              height={400}
-              alt="Commercial Office Building"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-            />
+            <div className="relative mx-auto">
+              <Image
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop&crop=entropy"
+                width={600}
+                height={450}
+                alt="Commercial Office Building"
+                className="rounded-xl object-cover shadow-2xl hover:shadow-3xl transition-shadow duration-300"
+                style={{ filter: 'drop-shadow(0 15px 20px rgb(0 0 0 / 0.5))' }}
+              />
+              <div className="absolute -bottom-3 left-6 right-6 h-6 bg-black/60 blur-md rounded-full" />
+            </div>
           </div>
         </div>
       </section>

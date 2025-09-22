@@ -17,26 +17,6 @@ export function HeroSection() {
       overlayClass: "bg-gradient-to-r from-black/70 via-black/50 to-transparent"
     },
     {
-      src: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?w=1920&h=800&fit=crop&crop=entropy",
-      alt: "Calgary skyline at dusk",
-      overlayClass: "bg-gradient-to-r from-black/70 via-black/50 to-transparent"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&h=800&fit=crop&crop=entropy",
-      alt: "Calgary downtown towers",
-      overlayClass: "bg-gradient-to-b from-black/60 via-black/50 to-black/70"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=800&fit=crop&crop=entropy",
-      alt: "Modern office building",
-      overlayClass: "bg-gradient-to-r from-black/75 via-black/50 to-transparent"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=1920&h=800&fit=crop&crop=entropy",
-      alt: "Residential complex",
-      overlayClass: "bg-gradient-to-br from-black/70 via-black/50 to-black/30"
-    },
-    {
       src: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1920&h=800&fit=crop&crop=entropy",
       alt: "Commercial property",
       overlayClass: "bg-gradient-to-r from-black/80 via-black/60 to-transparent"
@@ -56,7 +36,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative w-full h-[450px] md:h-[500px] lg:h-[550px] overflow-hidden">
+    <section className="relative w-full h-[500px] md:h-[550px] lg:h-[600px] overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0 z-0">
         <Image 
@@ -104,34 +84,34 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container px-4 md:px-6 h-full flex items-center">
-        <div className="flex flex-col justify-center space-y-6 text-white max-w-4xl">
-          <div className="space-y-4">
+        <div className="flex flex-col justify-center space-y-6 text-center text-white w-full">
+          <div className="space-y-4 max-w-4xl mx-auto">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-lg">
               Professional Commercial Property Appraisals
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl drop-shadow-md">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
               Expert valuations for multifamily, self-storage, and commercial properties across Western Canada.
               Lender-ready reports in 2-3 weeks.
             </p>
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 py-4">
-            <div className="text-center sm:text-left">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-300">AACI</div>
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-300">AACI</div>
               <div className="text-sm text-white/80">Certified</div>
             </div>
-            <div className="text-center sm:text-left">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-300">200+</div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-300">200+</div>
               <div className="text-sm text-white/80">Clients Served</div>
             </div>
-            <div className="text-center sm:text-left">
-              <div className="text-2xl sm:text-3xl font-bold text-blue-300">2-3 Week</div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-blue-300">2-3 Week</div>
               <div className="text-sm text-white/80">Delivery</div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="flex flex-col gap-4 sm:flex-row justify-center">
             <Link href="/request-appraisal">
               <Button
                 size="lg"
