@@ -136,6 +136,9 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
               Finally, an Appraisal Firm That Speaks Your Language
             </h2>
+            <p className="text-xl text-slate-600 max-w-4xl mt-4">
+              "We understand the pressures of a proforma, the urgency of a financing deadline, and the real-world factors that create value."
+            </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
             <Card className="border-0 bg-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
