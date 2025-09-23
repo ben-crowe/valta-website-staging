@@ -209,6 +209,18 @@ export default function MultifamilyPage() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Ready to Get Your Multifamily Property Appraised?
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Fast, accurate appraisals from experts who understand the investment perspective
+            </p>
+            <div className="flex justify-center">
+              <Link href="/request-appraisal">
                 <Button size="lg" className="px-8 py-3 text-lg">
                   Start Your Appraisal
                   <ArrowRight className="ml-2 h-5 w-5" />
