@@ -188,39 +188,82 @@ export default function AboutPage() {
       </section>
 
 
-      {/* Company Mission Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center space-y-8">
-              <div className="space-y-6">
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <Eye className="h-6 w-6 text-blue-600" />
-                  <h3 className="text-2xl font-bold text-slate-900">Our Vision</h3>
-                </div>
-                <Card className="bg-blue-50 shadow-lg rounded-xl border-0">
-                  <CardContent className="p-8">
-                    <p className="text-xl text-slate-700 leading-relaxed">
+      {/* Company Vision & Mission - Creative Design */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-white via-slate-50 to-blue-50 relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-600 rounded-full filter blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+        
+        <div className="container px-4 md:px-6 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Main Title */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-slate-900">
+                Our North Star
+              </h2>
+              <div className="w-24 h-1 bg-blue-600 mx-auto mt-6"></div>
+            </div>
+
+            {/* Vision and Mission Grid */}
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+              {/* Vision Card */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl transform rotate-1 group-hover:rotate-2 transition-transform duration-300"></div>
+                <Card className="relative bg-white border-0 shadow-2xl rounded-3xl overflow-hidden transform group-hover:-translate-y-2 transition-transform duration-300">
+                  <CardContent className="p-10">
+                    <div className="flex items-start space-x-4 mb-6">
+                      <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
+                        <Eye className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-slate-900 mb-2">Vision</h3>
+                        <div className="h-1 w-20 bg-blue-200"></div>
+                      </div>
+                    </div>
+                    <p className="text-lg text-slate-700 leading-relaxed font-medium">
                       To redefine excellence as the premier commercial real estate valuation provider in Canada
                     </p>
+                    <div className="mt-6 flex items-center text-blue-600">
+                      <span className="text-sm font-semibold">Leading the future</span>
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </div>
                   </CardContent>
                 </Card>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <Target className="h-6 w-6 text-blue-600" />
-                  <h3 className="text-2xl font-bold text-slate-900">Our Mission</h3>
-                </div>
-                <Card className="bg-blue-50 shadow-lg rounded-xl border-0">
-                  <CardContent className="p-8">
-                    <p className="text-xl text-slate-700 leading-relaxed">
-                      High-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients
-                      close deals faster, maximize returns, and solve housing challenges.
+              {/* Mission Card */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-slate-400 rounded-3xl transform -rotate-1 group-hover:-rotate-2 transition-transform duration-300"></div>
+                <Card className="relative bg-white border-0 shadow-2xl rounded-3xl overflow-hidden transform group-hover:-translate-y-2 transition-transform duration-300">
+                  <CardContent className="p-10">
+                    <div className="flex items-start space-x-4 mb-6">
+                      <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center flex-shrink-0">
+                        <Target className="h-7 w-7 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold text-slate-900 mb-2">Mission</h3>
+                        <div className="h-1 w-20 bg-slate-200"></div>
+                      </div>
+                    </div>
+                    <p className="text-lg text-slate-700 leading-relaxed font-medium">
+                      High-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients close deals faster, maximize returns, and solve housing challenges.
                     </p>
+                    <div className="mt-6 flex items-center text-slate-600">
+                      <span className="text-sm font-semibold">Delivering today</span>
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </div>
                   </CardContent>
                 </Card>
               </div>
+            </div>
+
+            {/* Bottom Accent */}
+            <div className="mt-16 text-center">
+              <p className="text-slate-600 text-lg italic">
+                "Where vision meets execution, value is created"
+              </p>
             </div>
           </div>
         </div>
