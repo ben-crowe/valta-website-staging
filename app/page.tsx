@@ -117,56 +117,62 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Our Difference Section - Conversational Style */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-slate-900">About Valta Property Valuations</h2>
-              <p className="text-lg text-slate-600 mb-6">
-                Founded by Chris Chornohos, an active developer and AACI-certified appraiser, Valta brings a unique
-                perspective to commercial real estate valuation.
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900">What Makes Valta Different?</h2>
+          
+          <div className="prose prose-lg max-w-none text-slate-600">
+            <p className="text-xl leading-relaxed mb-6">
+              <span className="font-semibold text-slate-900">Here's the thing about traditional appraisers:</span> They've 
+              never sweated a rate lock deadline. Never watched a deal fall apart because the valuation took six weeks. 
+              Never had to explain to investors why the report doesn't understand the development's actual potential.
+            </p>
+            
+            <p className="text-lg leading-relaxed mb-6">
+              <span className="font-semibold text-slate-900">We're different because we've been you.</span> Active developers 
+              who got tired of appraisals that missed the mark. So we became AACI-certified appraisers ourselves—combining 
+              15+ years of boots-on-the-ground development experience with professional valuation expertise. The result? 
+              Reports that actually understand construction costs, market dynamics, and what makes a project viable.
+            </p>
+            
+            <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-2xl my-8 border-l-4 border-blue-500">
+              <p className="text-lg leading-relaxed mb-4">
+                <span className="font-semibold text-slate-900">When you work with Valta, you get:</span>
               </p>
-              <p className="text-lg text-slate-600 mb-8">
-                We understand the pressures of financing deadlines, the complexities of development pro formas, and the
-                real-world factors that create value in commercial properties.
-              </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-slate-700">15+ years combined development and appraisal experience</span>
+              <div className="space-y-3 ml-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
+                  <span className="text-slate-700">Someone who speaks fluent "developer"—no translation needed</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-slate-700">Specialized in multifamily and self-storage properties</span>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
+                  <span className="text-slate-700">Deep expertise in multifamily and self-storage—the assets that actually cash flow</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-slate-700">Serving property investors across Western Canada</span>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
+                  <span className="text-slate-700">Coverage across Western Canada—because opportunities don't stop at city limits</span>
                 </div>
               </div>
-              <Button
-                asChild
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
-              >
-                <Link href="/about">
-                  Learn More About Us
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
             </div>
-            <div className="relative">
-              <Card className="overflow-hidden shadow-xl rounded-xl border-0">
-                <div className="relative h-[350px] md:h-[400px] lg:h-[450px] bg-slate-200 flex items-center justify-center">
-                  <div className="text-center text-slate-500">
-                    <div className="text-lg font-semibold mb-2">Photo Placeholder</div>
-                    <div className="text-sm">Chris Chornohos</div>
-                    <div className="text-xs">Founder & Principal Appraiser</div>
-                  </div>
-                </div>
-              </Card>
-            </div>
+            
+            <p className="text-lg leading-relaxed">
+              <span className="font-semibold text-slate-900">Ready to experience the difference?</span> Let's talk about your 
+              project and how we can help you close faster with confidence.
+            </p>
+          </div>
+          
+          <div className="mt-8">
+            <Button
+              asChild
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
+            >
+              <Link href="/about">
+                Learn More About Our Approach
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
