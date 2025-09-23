@@ -720,8 +720,11 @@ export default function RequestAppraisalPage() {
                             <SelectValue placeholder="Please Select" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="new-development">New Development</SelectItem>
-                            <SelectItem value="existing-property">Existing Property</SelectItem>
+                            <SelectItem value="Excellent">Excellent</SelectItem>
+                            <SelectItem value="Very Good">Very Good</SelectItem>
+                            <SelectItem value="Good">Good</SelectItem>
+                            <SelectItem value="Fair">Fair</SelectItem>
+                            <SelectItem value="Poor">Poor</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>

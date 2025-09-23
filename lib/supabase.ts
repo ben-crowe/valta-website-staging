@@ -6,7 +6,7 @@ const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiO
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 
-// Types for form submission
+// Types for form submission - matches APR Dashboard exactly
 export interface FormData {
   clientFirstName: string;
   clientLastName: string;
@@ -19,9 +19,8 @@ export interface FormData {
   propertyAddress: string;
   propertyType: string;
   intendedUse: string;
-  valuationPremises: string;
   assetCondition: string;
-  additionalInfo: string;
+  additionalInfo: string;  // renamed from notes to match UI
   files?: File[];
 }
 
@@ -38,9 +37,8 @@ export interface JobSubmission {
   property_address: string;
   property_type: string | null;
   intended_use: string | null;
-  // valuation_premises field doesn't exist in database - included in notes instead
   asset_condition: string | null;
-  notes: string;
+  notes: string;  // additionalInfo from form maps to notes in DB
   status: string;
   created_at?: string;
 }

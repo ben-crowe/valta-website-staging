@@ -57,10 +57,8 @@ export const useAppraisalFormSubmission = () => {
         property_address: formData.propertyAddress || '',
         property_type: formData.propertyType || null,
         intended_use: formData.intendedUse || null,
-        // valuation_premises field doesn't exist in database - add to notes instead
-        // This is the correct approach according to APR Dashboard field mapping
         asset_condition: formData.assetCondition || null,
-        notes: formData.valuationPremises ? `Valuation Premises: ${formData.valuationPremises}\n\n${formData.additionalInfo || ''}` : (formData.additionalInfo || ''),
+        notes: formData.additionalInfo || '',
         status: "submitted",
       };
 
@@ -98,7 +96,6 @@ Original form data:
 - Property: ${formData.propertyName}
 - Property Type: ${formData.propertyType}
 - Intended Use: ${formData.intendedUse}
-- Valuation Premises: ${formData.valuationPremises}
 - Asset Condition: ${formData.assetCondition}
 - Additional Info: ${formData.additionalInfo}`,
           status: "submitted",
