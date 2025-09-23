@@ -225,10 +225,12 @@ export default function AboutPage() {
                     <p className="text-lg text-slate-700 leading-relaxed font-medium">
                       To redefine excellence as the premier commercial real estate valuation provider in Canada
                     </p>
-                    <div className="mt-6 flex items-center text-blue-600">
-                      <span className="text-sm font-semibold">Leading the future</span>
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </div>
+                    <Link href="/request-appraisal">
+                      <div className="mt-6 flex items-center text-blue-600 hover:text-blue-700 transition-colors cursor-pointer">
+                        <span className="text-sm font-semibold">Leading the future</span>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
@@ -250,10 +252,12 @@ export default function AboutPage() {
                     <p className="text-lg text-slate-700 leading-relaxed font-medium">
                       High-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients close deals faster, maximize returns, and solve housing challenges.
                     </p>
-                    <div className="mt-6 flex items-center text-slate-600">
-                      <span className="text-sm font-semibold">Delivering today</span>
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </div>
+                    <Link href="/request-appraisal">
+                      <div className="mt-6 flex items-center text-slate-600 hover:text-slate-700 transition-colors cursor-pointer">
+                        <span className="text-sm font-semibold">Delivering today</span>
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </div>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
