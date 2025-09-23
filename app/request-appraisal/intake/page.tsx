@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import {
   ArrowRight,
   Upload,
@@ -24,18 +25,22 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useAppraisalFormSubmission } from "@/hooks/useAppraisalFormSubmission"
+import { type FormData } from "@/lib/supabase"
 
 export default function IntakeFormPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const router = useRouter()
+  const { submitForm, isSubmitting, isSubmitted, errors, setErrors } = useAppraisalFormSubmission()
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
-  const [formData, setFormData] = useState({
-    // Client Information
-    fullName: "",
+  const [formData, setFormData] = useState<FormData>({
+    // Client Information - mapped to match Supabase fields
+    clientFirstName: "",
+    clientLastName: "",
     clientTitle: "",
-    organizationName: "",
-    organizationAddress: "",
-    phone: "",
-    email: "",
+    clientOrganization: "",
+    clientAddress: "",
+    clientPhone: "",
+    clientEmail: "",
 
     // Property & Job Information
     propertyName: "",
@@ -49,10 +54,13 @@ export default function IntakeFormPage() {
 
   // Check if user came from main page (in real app, this would come from URL params or state)
   const isNewClient = true // For demo purposes
-  const clientName = "John Smith" // For demo purposes
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+    // Clear error for this field when user starts typing
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: undefined }))
+    }
   }
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,13 +74,25 @@ export default function IntakeFormPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+    
+    // Add files to form data
+    const submissionData = { ...formData, files: uploadedFiles }
+    
+    const result = await submitForm(submissionData)
+    
+    if (result.success) {
+      // Redirect to success page or show success message
       alert("Appraisal request submitted successfully! You'll receive confirmation via email.")
-    }, 2000)
+      // Optionally redirect back to main request page
+      setTimeout(() => {
+        router.push("/request-appraisal")
+      }, 2000)
+    } else {
+      // Error handling is managed by the hook
+      if (result.error) {
+        alert(result.error)
+      }
+    }
   }
 
   return (
@@ -87,7 +107,7 @@ export default function IntakeFormPage() {
               </h1>
               <p className="text-xl text-slate-600">
                 {isNewClient
-                  ? `Welcome ${clientName}! Let's gather your property details to get started.`
+                  ? "Welcome! Let's gather your property details to get started."
                   : "Welcome back! Submit your new appraisal request below."}
               </p>
             </div>
@@ -129,17 +149,40 @@ export default function IntakeFormPage() {
                 <CardContent className="space-y-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="fullName">
-                        Full Name <span className="text-red-500">*</span>
+                      <Label htmlFor="clientFirstName">
+                        First Name <span className="text-red-500">*</span>
                       </Label>
                       <Input
-                        id="fullName"
-                        value={formData.fullName}
-                        onChange={(e) => handleInputChange("fullName", e.target.value)}
-                        placeholder="John Smith"
+                        id="clientFirstName"
+                        value={formData.clientFirstName}
+                        onChange={(e) => handleInputChange("clientFirstName", e.target.value)}
+                        placeholder="John"
                         required
+                        className={errors.clientFirstName ? "border-red-500" : ""}
                       />
+                      {errors.clientFirstName && (
+                        <p className="text-sm text-red-500">{errors.clientFirstName}</p>
+                      )}
                     </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="clientLastName">
+                        Last Name <span className="text-red-500">*</span>
+                      </Label>
+                      <Input
+                        id="clientLastName"
+                        value={formData.clientLastName}
+                        onChange={(e) => handleInputChange("clientLastName", e.target.value)}
+                        placeholder="Smith"
+                        required
+                        className={errors.clientLastName ? "border-red-500" : ""}
+                      />
+                      {errors.clientLastName && (
+                        <p className="text-sm text-red-500">{errors.clientLastName}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="clientTitle">Client Title</Label>
                       <Input
@@ -149,51 +192,61 @@ export default function IntakeFormPage() {
                         placeholder="Development Manager"
                       />
                     </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="clientOrganization">Client Organization</Label>
+                      <Input
+                        id="clientOrganization"
+                        value={formData.clientOrganization}
+                        onChange={(e) => handleInputChange("clientOrganization", e.target.value)}
+                        placeholder="ABC Development Corp"
+                      />
+                    </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="organizationName">Client Organization Name</Label>
+                    <Label htmlFor="clientAddress">Client Organization Address</Label>
                     <Input
-                      id="organizationName"
-                      value={formData.organizationName}
-                      onChange={(e) => handleInputChange("organizationName", e.target.value)}
-                      placeholder="ABC Development Corp"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="organizationAddress">Client Organization Address</Label>
-                    <Input
-                      id="organizationAddress"
-                      value={formData.organizationAddress}
-                      onChange={(e) => handleInputChange("organizationAddress", e.target.value)}
+                      id="clientAddress"
+                      value={formData.clientAddress}
+                      onChange={(e) => handleInputChange("clientAddress", e.target.value)}
                       placeholder="123 Main Street, Calgary, AB T2P 1A1"
                     />
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Client Phone</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={(e) => handleInputChange("phone", e.target.value)}
-                        placeholder="(587) 801-5151"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">
-                        Client Email <span className="text-red-500">*</span>
+                      <Label htmlFor="clientPhone">
+                        Phone <span className="text-red-500">*</span>
                       </Label>
                       <Input
-                        id="email"
+                        id="clientPhone"
+                        type="tel"
+                        value={formData.clientPhone}
+                        onChange={(e) => handleInputChange("clientPhone", e.target.value)}
+                        placeholder="(587) 801-5151"
+                        required
+                        className={errors.clientPhone ? "border-red-500" : ""}
+                      />
+                      {errors.clientPhone && (
+                        <p className="text-sm text-red-500">{errors.clientPhone}</p>
+                      )}
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="clientEmail">
+                        Email <span className="text-red-500">*</span>
+                      </Label>
+                      <Input
+                        id="clientEmail"
                         type="email"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
+                        value={formData.clientEmail}
+                        onChange={(e) => handleInputChange("clientEmail", e.target.value)}
                         placeholder="john@abcdevelopment.com"
                         required
+                        className={errors.clientEmail ? "border-red-500" : ""}
                       />
+                      {errors.clientEmail && (
+                        <p className="text-sm text-red-500">{errors.clientEmail}</p>
+                      )}
                     </div>
                   </div>
                 </CardContent>
@@ -219,7 +272,11 @@ export default function IntakeFormPage() {
                         onChange={(e) => handleInputChange("propertyName", e.target.value)}
                         placeholder="Riverside Apartments"
                         required
+                        className={errors.propertyName ? "border-red-500" : ""}
                       />
+                      {errors.propertyName && (
+                        <p className="text-sm text-red-500">{errors.propertyName}</p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="propertyAddress">Property Address</Label>
@@ -241,7 +298,7 @@ export default function IntakeFormPage() {
                         value={formData.propertyType}
                         onValueChange={(value) => handleInputChange("propertyType", value)}
                       >
-                        <SelectTrigger>
+                        <SelectTrigger className={errors.propertyType ? "border-red-500" : ""}>
                           <SelectValue placeholder="Please Select" />
                         </SelectTrigger>
                         <SelectContent>
@@ -256,6 +313,9 @@ export default function IntakeFormPage() {
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
+                      {errors.propertyType && (
+                        <p className="text-sm text-red-500">{errors.propertyType}</p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="intendedUse">Intended Use</Label>

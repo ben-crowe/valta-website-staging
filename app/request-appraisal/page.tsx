@@ -235,8 +235,8 @@ export default function RequestAppraisalPage() {
                             type="button"
                             className="w-full bg-blue-600 hover:bg-blue-700"
                             onClick={() => {
-                              // For testing purposes, navigate to intake form
-                              alert("Would navigate to intake form")
+                              // Navigate to intake form (future: will validate login first)
+                              window.location.href = "/request-appraisal/intake"
                             }}
                           >
                             Access Intake Form
@@ -347,8 +347,8 @@ export default function RequestAppraisalPage() {
                             type="button"
                             className="w-full bg-slate-900 hover:bg-slate-800"
                             onClick={() => {
-                              // For testing purposes, navigate to intake form
-                              alert("Would navigate to intake form")
+                              // Navigate to intake form - new clients go directly
+                              window.location.href = "/request-appraisal/intake"
                             }}
                           >
                             Continue to Intake Form
