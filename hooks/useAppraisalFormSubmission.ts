@@ -56,9 +56,9 @@ export const useAppraisalFormSubmission = () => {
         property_address: formData.propertyAddress || '',
         property_type: formData.propertyType || null,
         intended_use: formData.intendedUse || null,
-        valuation_premises: formData.valuationPremises || null,
+        // valuation_premises field doesn't exist in database - add to notes instead
         asset_condition: formData.assetCondition || null,
-        notes: formData.additionalInfo || '',
+        notes: formData.valuationPremises ? `Valuation Premises: ${formData.valuationPremises}\n\n${formData.additionalInfo || ''}` : (formData.additionalInfo || ''),
         status: "submitted",
       };
 
@@ -71,7 +71,10 @@ export const useAppraisalFormSubmission = () => {
 
       if (saveError) {
         console.error('Submission error:', saveError);
-        throw new Error(saveError.message);
+        // Never show database errors to users
+        setErrors({ submit: 'There was an issue submitting your request. Please try again or contact us at (587) 801-5151.' });
+        setIsSubmitting(false);
+        return { success: false, error: 'Submission failed. Please contact us for assistance.' };
       }
 
       if (!jobData) {
@@ -116,7 +119,7 @@ export const useAppraisalFormSubmission = () => {
       setIsSubmitting(false);
       return { 
         success: false, 
-        error: error instanceof Error ? error.message : "An error occurred during submission" 
+        error: "We're sorry, there was an issue submitting your request. Please try again or contact us at (587) 801-5151." 
       };
     }
   };

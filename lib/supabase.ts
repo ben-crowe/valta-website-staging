@@ -38,7 +38,7 @@ export interface JobSubmission {
   property_address: string;
   property_type: string | null;
   intended_use: string | null;
-  valuation_premises?: string | null;
+  // valuation_premises field doesn't exist in database - included in notes instead
   asset_condition: string | null;
   notes: string;
   status: string;
