@@ -447,171 +447,182 @@ export default function RequestAppraisalPage() {
         </div>
       </section>
 
-      {/* Trust Building Section */}
+      {/* Why Choose Us - Narrative Style */}
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              Why Property Professionals Choose Us
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-8">
+              Why Property Professionals Trust Their Deals to Us
             </h2>
-          </div>
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
-            <Card>
-              <CardContent className="p-8 text-center">
-                <div className="mb-6 flex justify-center">
-                  <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Users className="h-8 w-8 text-blue-600" />
+            
+            <div className="prose prose-lg max-w-none text-slate-600">
+              <p className="text-xl leading-relaxed mb-6">
+                <span className="font-semibold text-slate-900">Remember your last appraisal nightmare?</span> Six weeks of 
+                waiting. Daily calls to check status. A report that came back needing revisions because the appraiser didn't 
+                understand your development model. Sound familiar?
+              </p>
+              
+              <p className="text-lg leading-relaxed mb-6">
+                <span className="font-semibold text-slate-900">We built Valta because we lived that nightmare too.</span> As 
+                active developers ourselves, we got tired of appraisers who didn't understand proformas, construction draws, 
+                or why missing a rate lock deadline could kill an entire project. So we became AACI-certified appraisers and 
+                fixed the broken process.
+              </p>
+              
+              <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-2xl my-8 border-l-4 border-blue-500">
+                <p className="text-lg font-semibold text-slate-900 mb-4">
+                  Here's what that means for your next deal:
+                </p>
+                <div className="space-y-4 ml-4">
+                  <div>
+                    <span className="font-bold text-slate-900">Your report in 2-3 weeks, guaranteed.</span>
+                    <span className="text-slate-700"> Not "approximately" or "hopefully"—we commit to dates because we know 
+                    rate locks don't wait. Track progress in real-time through your portal, with rush options when you really need them.</span>
+                  </div>
+                  
+                  <div>
+                    <span className="font-bold text-slate-900">Lender-ready on first submission.</span>
+                    <span className="text-slate-700"> Our reports sail through bank reviews because we know exactly what lenders 
+                    look for. AACI certification is just the baseline—we go beyond to ensure zero friction in your financing process.</span>
+                  </div>
+                  
+                  <div>
+                    <span className="font-bold text-slate-900">A partner who actually gets it.</span>
+                    <span className="text-slate-700"> When we review your proforma, we understand the assumptions because we've 
+                    built our own. When you explain your exit strategy, we see the vision because we've executed similar plans ourselves.</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-slate-900">Developer Experience</h3>
-                <p className="text-slate-600 mb-4">
-                  Built by developers who understand your timeline pressures and financing requirements
-                </p>
-                <ul className="text-left space-y-2 text-sm text-slate-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Real-world development experience</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Understanding of financing deadlines</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Proforma validation expertise</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-8 text-center">
-                <div className="mb-6 flex justify-center">
-                  <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Clock className="h-8 w-8 text-blue-600" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-slate-900">Guaranteed Delivery</h3>
-                <p className="text-slate-600 mb-4">
-                  2-3 week turnaround with real-time progress tracking through your portal
-                </p>
-                <ul className="text-left space-y-2 text-sm text-slate-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Firm delivery commitments</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Real-time progress updates</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Rush options available</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="p-8 text-center">
-                <div className="mb-6 flex justify-center">
-                  <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Shield className="h-8 w-8 text-blue-600" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-slate-900">Lender Acceptance</h3>
-                <p className="text-slate-600 mb-4">
-                  AACI certified reports accepted by all major lenders and institutions
-                </p>
-                <ul className="text-left space-y-2 text-sm text-slate-600">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>AACI certified professionals</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Bank-ready reports</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 text-blue-600" />
-                    <span>Institutional standards</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+              </div>
+              
+              <p className="text-lg leading-relaxed italic">
+                <span className="font-semibold text-slate-900">The bottom line?</span> You're not hiring just another appraiser. 
+                You're partnering with someone who's closed deals from both sides of the table—and knows exactly what it takes 
+                to get yours across the finish line.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Process Section - Vertical Timeline */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              Our Streamlined Process
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4 text-center">
+              Your Appraisal Journey
             </h2>
-          </div>
-          <div className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="relative">
-                  <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <FileText className="h-8 w-8 text-blue-600" />
+            <p className="text-xl text-slate-600 text-center mb-12">
+              Simple. Transparent. Fast.
+            </p>
+            
+            {/* Vertical Timeline */}
+            <div className="relative">
+              {/* Vertical Line */}
+              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-blue-400 to-blue-600 md:-translate-x-1/2"></div>
+              
+              {/* Step 1 */}
+              <div className="relative flex items-start mb-12 md:mb-16">
+                <div className="flex items-center md:w-full">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg">
+                      <span className="text-2xl font-bold">1</span>
+                    </div>
                   </div>
-                  <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">
-                    1
+                  <div className="ml-6 md:ml-0 md:absolute md:left-1/2 md:pl-12 md:w-1/2">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Submit Your Request</h3>
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      Fill out our intake form with your property details. Upload documents, photos, and any relevant 
+                      materials. Takes about 10 minutes—no phone tag required.
+                    </p>
+                    <div className="mt-3 inline-flex items-center text-sm text-blue-600 font-medium">
+                      <Clock className="h-4 w-4 mr-1" />
+                      Same day acknowledgment
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">Submit Request</h3>
-                  <p className="text-slate-600 text-sm">
-                    Initial property details and consultation to understand your needs
-                  </p>
                 </div>
               </div>
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="relative">
-                  <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Clock className="h-8 w-8 text-blue-600" />
+              
+              {/* Step 2 */}
+              <div className="relative flex items-start mb-12 md:mb-16">
+                <div className="flex items-center md:w-full md:flex-row-reverse">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg">
+                      <span className="text-2xl font-bold">2</span>
+                    </div>
                   </div>
-                  <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">
-                    2
+                  <div className="ml-6 md:ml-0 md:mr-6 md:absolute md:right-1/2 md:pr-12 md:w-1/2 md:text-right">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Get Your Quote</h3>
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      Within 24 hours, receive a detailed scope confirmation, transparent fee quote, and firm delivery 
+                      date. No surprises, no hidden fees, no "it depends."
+                    </p>
+                    <div className="mt-3 inline-flex items-center text-sm text-blue-600 font-medium">
+                      <CheckCircle className="h-4 w-4 mr-1" />
+                      Guaranteed pricing
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">24-Hour Response</h3>
-                  <p className="text-slate-600 text-sm">
-                    Scope confirmation and detailed fee quote with delivery timeline
-                  </p>
                 </div>
               </div>
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="relative">
-                  <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Search className="h-8 w-8 text-blue-600" />
+              
+              {/* Step 3 */}
+              <div className="relative flex items-start mb-12 md:mb-16">
+                <div className="flex items-center md:w-full">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg">
+                      <span className="text-2xl font-bold">3</span>
+                    </div>
                   </div>
-                  <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">
-                    3
+                  <div className="ml-6 md:ml-0 md:absolute md:left-1/2 md:pl-12 md:w-1/2">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Professional Inspection</h3>
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      Our AACI appraiser conducts a thorough site inspection. We document everything, ask the right 
+                      questions, and gather all necessary data for an accurate valuation.
+                    </p>
+                    <div className="mt-3 inline-flex items-center text-sm text-blue-600 font-medium">
+                      <Search className="h-4 w-4 mr-1" />
+                      Comprehensive assessment
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">Site Inspection</h3>
-                  <p className="text-slate-600 text-sm">Professional assessment and comprehensive documentation</p>
                 </div>
               </div>
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="relative">
-                  <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Users className="h-8 w-8 text-blue-600" />
+              
+              {/* Step 4 */}
+              <div className="relative flex items-start">
+                <div className="flex items-center md:w-full md:flex-row-reverse">
+                  <div className="flex-shrink-0 relative z-10">
+                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-600 to-green-700 text-white shadow-lg">
+                      <CheckCircle className="h-8 w-8" />
+                    </div>
                   </div>
-                  <div className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-bold">
-                    4
+                  <div className="ml-6 md:ml-0 md:mr-6 md:absolute md:right-1/2 md:pr-12 md:w-1/2 md:text-right">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Receive Your Report</h3>
+                    <p className="text-lg text-slate-600 leading-relaxed">
+                      Your lender-ready report arrives on schedule. Access it anytime through your client portal, 
+                      along with all supporting documentation. Need another copy? It's always there.
+                    </p>
+                    <div className="mt-3 inline-flex items-center text-sm text-green-600 font-medium">
+                      <Shield className="h-4 w-4 mr-1" />
+                      Bank-approved format
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">Report & Portal</h3>
-                  <p className="text-slate-600 text-sm">
-                    Final delivery with ongoing client portal access for future needs
-                  </p>
-                </div>
+              </div>
+            </div>
+            
+            {/* Bottom CTA */}
+            <div className="mt-16 text-center">
+              <div className="inline-block p-6 bg-white rounded-2xl shadow-lg">
+                <p className="text-lg text-slate-700 mb-4">
+                  <span className="font-bold text-slate-900">Start to finish in 2-3 weeks.</span> That's our promise.
+                </p>
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  Start Your Appraisal Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
               </div>
             </div>
           </div>
