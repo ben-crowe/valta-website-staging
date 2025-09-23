@@ -19,10 +19,6 @@ export default function SiteHeader() {
     router.push(href)
   }
 
-  const handleAppraisalClick = (href: string) => {
-    setOpenDropdown(null)
-    router.push(href)
-  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -65,30 +61,12 @@ export default function SiteHeader() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <DropdownMenu open={openDropdown === 'appraisal'} onOpenChange={(open) => setOpenDropdown(open ? 'appraisal' : null)}>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary" onClick={(e) => {
-                // If clicked on the main text (not chevron), go to main page
-                const target = e.target as HTMLElement;
-                if (!target.closest('svg')) {
-                  e.preventDefault();
-                  handleAppraisalClick("/request-appraisal");
-                }
-              }}>
-                Request Appraisal
-                <ChevronDown className="ml-1 h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal")}>
-                  Choose Your Path
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal?form=direct")}>
-                  Quick Form (No Account)
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal/intake")}>
-                  Direct to Form
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link
+              href="/request-appraisal"
+              className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              Request Appraisal
+            </Link>
             <Link
               href="/news"
               className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
@@ -151,22 +129,12 @@ export default function SiteHeader() {
                       </Link>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <Link
-                      href="/request-appraisal"
-                      className="text-sm font-medium transition-colors hover:text-primary"
-                    >
-                      Request Appraisal
-                    </Link>
-                    <div className="pl-4 space-y-2">
-                      <Link
-                        href="/request-appraisal/intake"
-                        className="block text-sm text-muted-foreground transition-colors hover:text-primary"
-                      >
-                        Intake Form
-                      </Link>
-                    </div>
-                  </div>
+                  <Link
+                    href="/request-appraisal"
+                    className="text-sm font-medium transition-colors hover:text-primary"
+                  >
+                    Request Appraisal
+                  </Link>
                   <Link href="/news" className="text-sm font-medium transition-colors hover:text-primary">
                     News/Blog
                   </Link>
