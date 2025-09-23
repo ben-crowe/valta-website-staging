@@ -508,11 +508,11 @@ export default function RequestAppraisalPage() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4 text-center">
-              How We Work
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 text-center">
+              Four Simple Steps to Your Appraisal
             </h2>
-            <p className="text-xl text-slate-600 text-center mb-16">
-              Simple. Transparent. Fast.
+            <p className="text-xl md:text-2xl text-slate-600 text-center mb-16 max-w-3xl mx-auto">
+              No games. No surprises. No six-week waits. Just a straightforward process that respects your time and gets deals done.
             </p>
             
             <div className="space-y-12">
