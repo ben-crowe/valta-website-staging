@@ -273,52 +273,60 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Service Promise Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-blue-50 to-slate-50">
+      {/* The Valta Difference - Narrative Style */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
         <div className="container px-4 md:px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-slate-900">The Valta Difference</h2>
-              <p className="text-xl text-slate-600">
-                Professional accuracy with personalized service - we speak your language and help you de-risk your
-                project
-              </p>
-            </div>
+          <div className="max-w-5xl mx-auto">
+            {/* Section Header */}
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-8">
+                Here's What Actually Sets Us Apart
+              </h2>
+              
+              {/* Two Column Narrative Content */}
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                {/* Left Column */}
+                <div className="prose prose-lg text-slate-600">
+                  <p className="leading-relaxed">
+                    <span className="font-semibold text-slate-900">You know that sinking feeling when your appraisal takes six weeks?</span> Rate 
+                    locks expire. Sellers get nervous. Deals die. That's why we turned the traditional timeline on its head—delivering 
+                    comprehensive reports in 2-3 weeks without cutting corners. Because in development, timing isn't just important; 
+                    it's everything.
+                  </p>
+                  
+                  <p className="leading-relaxed mt-6">
+                    <span className="font-semibold text-slate-900">And here's something most appraisers won't tell you:</span> half 
+                    the reports that cross lenders' desks come back for revisions. More delays. More frustration. We engineered our 
+                    process differently. Every report ships lender-ready on the first submission—no revisions, no back-and-forth, 
+                    just clean approvals that keep your project moving.
+                  </p>
+                </div>
 
-            <div className="grid gap-6 md:grid-cols-3 mt-12">
-              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Clock className="h-6 w-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">2-3 Week Delivery Commitment</h3>
-                  <p className="text-sm text-slate-600">Guaranteed turnaround faster than industry standard</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Shield className="h-6 w-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">Lender-Ready Reports Upon Delivery</h3>
-                  <p className="text-sm text-slate-600">No revisions needed - accepted by all major lenders</p>
-                </CardContent>
-              </Card>
-              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Award className="h-6 w-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">AACI Certified Quality Assurance</h3>
-                  <p className="text-sm text-slate-600">Professional standards and regulatory compliance guaranteed</p>
-                </CardContent>
-              </Card>
+                {/* Right Column */}
+                <div className="prose prose-lg text-slate-600">
+                  <p className="leading-relaxed">
+                    <span className="font-semibold text-slate-900">Sure, we have the AACI certification</span>—that's table stakes. 
+                    But certifications don't understand construction draws or why your proforma needs that specific cap rate. We do, 
+                    because we've sat on your side of the table. We've sweated the same deadlines, fought the same battles with 
+                    lenders, and know exactly what keeps developers up at night.
+                  </p>
+                  
+                  <p className="leading-relaxed mt-6">
+                    <span className="font-semibold text-slate-900">Think of us as your inside advantage.</span> While traditional 
+                    appraisers see numbers on a spreadsheet, we see the story behind your project—the vision, the challenges, the 
+                    opportunity. That perspective transforms a routine valuation into strategic intelligence that actually helps 
+                    you build better, finance smarter, and close with confidence.
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Call-out */}
+              <div className="mt-12 p-8 bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl border-l-4 border-blue-500">
+                <p className="text-xl text-slate-800 font-medium italic">
+                  Bottom line? When your appraiser has actually been a developer, you get more than a report—you get a partner 
+                  who genuinely understands what's at stake.
+                </p>
+              </div>
             </div>
           </div>
         </div>
