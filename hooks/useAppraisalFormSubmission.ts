@@ -8,7 +8,7 @@ interface ValidationErrors {
 const validateForm = (formData: FormData): ValidationErrors => {
   const errors: ValidationErrors = {};
 
-  // Required fields validation
+  // Only 4 critical required fields
   if (!formData.clientFirstName?.trim()) errors.clientFirstName = "First name is required";
   if (!formData.clientLastName?.trim()) errors.clientLastName = "Last name is required";
   if (!formData.clientEmail?.trim()) {
@@ -16,9 +16,11 @@ const validateForm = (formData: FormData): ValidationErrors => {
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.clientEmail)) {
     errors.clientEmail = "Please enter a valid email address";
   }
-  if (!formData.clientPhone?.trim()) errors.clientPhone = "Phone number is required";
-  if (!formData.propertyName?.trim()) errors.propertyName = "Property name is required";
-  if (!formData.propertyType) errors.propertyType = "Property type is required";
+  if (!formData.clientPhone?.trim()) {
+    errors.clientPhone = "Phone number is required";
+  } else if (!/^[\d\s()-]+$/.test(formData.clientPhone) || formData.clientPhone.replace(/\D/g, '').length < 10) {
+    errors.clientPhone = "Please enter a valid phone number";
+  }
 
   return errors;
 };

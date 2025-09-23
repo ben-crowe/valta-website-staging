@@ -39,6 +39,24 @@ export default function RequestAppraisalPage() {
   const formRef = useRef<HTMLDivElement>(null)
   const { submitForm, isSubmitting, isSubmitted, errors, setErrors } = useAppraisalFormSubmission()
   
+  // Phone number formatting function
+  const formatPhoneNumber = (value: string) => {
+    // Remove all non-digit characters
+    const phoneNumber = value.replace(/\D/g, '')
+    
+    // Apply formatting
+    if (phoneNumber.length <= 3) {
+      return phoneNumber
+    } else if (phoneNumber.length <= 6) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`
+    } else if (phoneNumber.length <= 10) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`
+    } else {
+      // Don't allow more than 10 digits
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`
+    }
+  }
+  
   const [showExistingClientForm, setShowExistingClientForm] = useState(false)
   const [showNewClientForm, setShowNewClientForm] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -571,7 +589,10 @@ export default function RequestAppraisalPage() {
                             id="clientPhone"
                             type="tel"
                             value={formData.clientPhone}
-                            onChange={(e) => handleInputChange("clientPhone", e.target.value)}
+                            onChange={(e) => {
+                              const formatted = formatPhoneNumber(e.target.value)
+                              handleInputChange("clientPhone", formatted)
+                            }}
                             placeholder="(587) 801-5151"
                             required
                             className={errors.clientPhone ? "border-red-500" : ""}
@@ -611,14 +632,13 @@ export default function RequestAppraisalPage() {
                       <div className="grid gap-6 md:grid-cols-2">
                         <div className="space-y-2">
                           <Label htmlFor="propertyName">
-                            Property Name <span className="text-red-500">*</span>
+                            Property Name
                           </Label>
                           <Input
                             id="propertyName"
                             value={formData.propertyName}
                             onChange={(e) => handleInputChange("propertyName", e.target.value)}
                             placeholder="Riverside Apartments"
-                            required
                             className={errors.propertyName ? "border-red-500" : ""}
                           />
                           {errors.propertyName && (
@@ -639,7 +659,7 @@ export default function RequestAppraisalPage() {
                       <div className="grid gap-6 md:grid-cols-2">
                         <div className="space-y-2">
                           <Label htmlFor="propertyType">
-                            Property Type <span className="text-red-500">*</span>
+                            Property Type
                           </Label>
                           <Select
                             value={formData.propertyType}
