@@ -504,120 +504,119 @@ export default function RequestAppraisalPage() {
         </div>
       </section>
 
-      {/* Process Section - Vertical Timeline */}
+      {/* Process Section - Clean Steps */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-4 text-center">
-              Your Appraisal Journey
+              Our Simple Four-Step Process
             </h2>
-            <p className="text-xl text-slate-600 text-center mb-12">
-              Simple. Transparent. Fast.
+            <p className="text-xl text-slate-600 text-center mb-16">
+              No complexity. No confusion. Just results.
             </p>
             
-            {/* Vertical Timeline */}
-            <div className="relative">
-              {/* Vertical Line */}
-              <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-blue-400 to-blue-600 md:-translate-x-1/2"></div>
+            {/* Clean Steps Layout */}
+            <div className="space-y-12 md:space-y-16">
               
-              {/* Step 1 */}
-              <div className="relative flex items-start mb-12 md:mb-16">
-                <div className="flex items-center md:w-full">
-                  <div className="flex-shrink-0 relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg">
-                      <span className="text-2xl font-bold">1</span>
-                    </div>
+              {/* Step One */}
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <div className="text-5xl md:text-6xl font-bold text-blue-600 uppercase tracking-tight">
+                    One
                   </div>
-                  <div className="ml-6 md:ml-0 md:absolute md:left-1/2 md:pl-12 md:w-1/2">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Submit Your Request</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">
-                      Fill out our intake form with your property details. Upload documents, photos, and any relevant 
-                      materials. Takes about 10 minutes—no phone tag required.
-                    </p>
-                    <div className="mt-3 inline-flex items-center text-sm text-blue-600 font-medium">
-                      <Clock className="h-4 w-4 mr-1" />
-                      Same day acknowledgment
-                    </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Submit Your Request</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed mb-4">
+                    Fill out our intake form with your property details. Upload documents, photos, and any relevant 
+                    materials. Takes about 10 minutes—no phone tag required.
+                  </p>
+                  <div className="inline-flex items-center text-sm text-blue-600 font-medium">
+                    <Clock className="h-4 w-4 mr-2" />
+                    Same day acknowledgment
                   </div>
                 </div>
               </div>
               
-              {/* Step 2 */}
-              <div className="relative flex items-start mb-12 md:mb-16">
-                <div className="flex items-center md:w-full md:flex-row-reverse">
-                  <div className="flex-shrink-0 relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg">
-                      <span className="text-2xl font-bold">2</span>
-                    </div>
+              {/* Divider */}
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+              
+              {/* Step Two */}
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <div className="text-5xl md:text-6xl font-bold text-blue-600 uppercase tracking-tight">
+                    Two
                   </div>
-                  <div className="ml-6 md:ml-0 md:mr-6 md:absolute md:right-1/2 md:pr-12 md:w-1/2 md:text-right">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Get Your Quote</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">
-                      Within 24 hours, receive a detailed scope confirmation, transparent fee quote, and firm delivery 
-                      date. No surprises, no hidden fees, no "it depends."
-                    </p>
-                    <div className="mt-3 inline-flex items-center text-sm text-blue-600 font-medium">
-                      <CheckCircle className="h-4 w-4 mr-1" />
-                      Guaranteed pricing
-                    </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Get Your Quote</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed mb-4">
+                    Within 24 hours, receive a detailed scope confirmation, transparent fee quote, and firm delivery 
+                    date. No surprises, no hidden fees, no "it depends."
+                  </p>
+                  <div className="inline-flex items-center text-sm text-blue-600 font-medium">
+                    <CheckCircle className="h-4 w-4 mr-2" />
+                    Guaranteed pricing
                   </div>
                 </div>
               </div>
               
-              {/* Step 3 */}
-              <div className="relative flex items-start mb-12 md:mb-16">
-                <div className="flex items-center md:w-full">
-                  <div className="flex-shrink-0 relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg">
-                      <span className="text-2xl font-bold">3</span>
-                    </div>
+              {/* Divider */}
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+              
+              {/* Step Three */}
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <div className="text-5xl md:text-6xl font-bold text-blue-600 uppercase tracking-tight">
+                    Three
                   </div>
-                  <div className="ml-6 md:ml-0 md:absolute md:left-1/2 md:pl-12 md:w-1/2">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Professional Inspection</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">
-                      Our AACI appraiser conducts a thorough site inspection. We document everything, ask the right 
-                      questions, and gather all necessary data for an accurate valuation.
-                    </p>
-                    <div className="mt-3 inline-flex items-center text-sm text-blue-600 font-medium">
-                      <Search className="h-4 w-4 mr-1" />
-                      Comprehensive assessment
-                    </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Professional Inspection</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed mb-4">
+                    Our AACI appraiser conducts a thorough site inspection. We document everything, ask the right 
+                    questions, and gather all necessary data for an accurate valuation.
+                  </p>
+                  <div className="inline-flex items-center text-sm text-blue-600 font-medium">
+                    <Search className="h-4 w-4 mr-2" />
+                    Comprehensive assessment
                   </div>
                 </div>
               </div>
               
-              {/* Step 4 */}
-              <div className="relative flex items-start">
-                <div className="flex items-center md:w-full md:flex-row-reverse">
-                  <div className="flex-shrink-0 relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-600 to-green-700 text-white shadow-lg">
-                      <CheckCircle className="h-8 w-8" />
-                    </div>
+              {/* Divider */}
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
+              
+              {/* Step Four */}
+              <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+                <div className="flex-shrink-0">
+                  <div className="text-5xl md:text-6xl font-bold text-green-600 uppercase tracking-tight">
+                    Four
                   </div>
-                  <div className="ml-6 md:ml-0 md:mr-6 md:absolute md:right-1/2 md:pr-12 md:w-1/2 md:text-right">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Receive Your Report</h3>
-                    <p className="text-lg text-slate-600 leading-relaxed">
-                      Your lender-ready report arrives on schedule. Access it anytime through your client portal, 
-                      along with all supporting documentation. Need another copy? It's always there.
-                    </p>
-                    <div className="mt-3 inline-flex items-center text-sm text-green-600 font-medium">
-                      <Shield className="h-4 w-4 mr-1" />
-                      Bank-approved format
-                    </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Receive Your Report</h3>
+                  <p className="text-lg text-slate-600 leading-relaxed mb-4">
+                    Your lender-ready report arrives on schedule. Access it anytime through your client portal, 
+                    along with all supporting documentation. Need another copy? It's always there.
+                  </p>
+                  <div className="inline-flex items-center text-sm text-green-600 font-medium">
+                    <Shield className="h-4 w-4 mr-2" />
+                    Bank-approved format
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Bottom CTA */}
-            <div className="mt-16 text-center">
-              <div className="inline-block p-6 bg-white rounded-2xl shadow-lg">
+            <div className="mt-20 text-center">
+              <div className="inline-block p-8 bg-white rounded-2xl shadow-lg">
                 <p className="text-lg text-slate-700 mb-4">
                   <span className="font-bold text-slate-900">Start to finish in 2-3 weeks.</span> That's our promise.
                 </p>
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
                   Start Your Appraisal Now
