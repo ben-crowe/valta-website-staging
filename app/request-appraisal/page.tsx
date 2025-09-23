@@ -2,64 +2,90 @@
 
 import type React from "react"
 
-import { useState } from "react"
-import Link from "next/link"
+import { useState, useEffect, useRef } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import Image from "next/image"
-import { ArrowRight, CheckCircle, Clock, Shield, Users, Phone, FileText, Search, BarChart3, ChevronLeft, ChevronRight } from "lucide-react"
+import { 
+  ArrowRight, 
+  CheckCircle, 
+  Clock, 
+  Shield, 
+  Phone, 
+  FileText, 
+  Search, 
+  BarChart3, 
+  ChevronLeft, 
+  ChevronRight,
+  Upload,
+  Mail,
+  User,
+  Building,
+  Loader2,
+  ZapIcon
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useAppraisalFormSubmission } from "@/hooks/useAppraisalFormSubmission"
+import { type FormData } from "@/lib/supabase"
 
 export default function RequestAppraisalPage() {
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const formRef = useRef<HTMLDivElement>(null)
+  const { submitForm, isSubmitting, isSubmitted, errors, setErrors } = useAppraisalFormSubmission()
+  
   const [showExistingClientForm, setShowExistingClientForm] = useState(false)
   const [showNewClientForm, setShowNewClientForm] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
+  
+  // Login data for existing clients
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   })
+  
+  // Mini-form data for new clients
   const [newClientData, setNewClientData] = useState({
     companyName: "",
     name: "",
     email: "",
     phone: "",
   })
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    propertyType: "",
+  
+  // Main intake form data
+  const [formData, setFormData] = useState<FormData>({
+    // Client Information
+    clientFirstName: "",
+    clientLastName: "",
+    clientTitle: "",
+    clientOrganization: "",
+    clientAddress: "",
+    clientPhone: "",
+    clientEmail: "",
+    // Property Information
+    propertyName: "",
     propertyAddress: "",
-    description: "",
-    timeline: "standard",
+    propertyType: "",
+    intendedUse: "",
+    valuationPremises: "",
+    assetCondition: "",
+    additionalInfo: "",
   })
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      // Here you would typically redirect to a success page or show success message
-      alert("Request submitted successfully! We'll contact you within 24 hours.")
-    }, 2000)
-  }
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
-
-  const handleLoginChange = (field: string, value: string) => {
-    setLoginData((prev) => ({ ...prev, [field]: value }))
-  }
-
-  const handleNewClientChange = (field: string, value: string) => {
-    setNewClientData((prev) => ({ ...prev, [field]: value }))
-  }
+  // Check if we should scroll to form on mount (from direct link)
+  useEffect(() => {
+    if (searchParams.get('form') === 'direct') {
+      setTimeout(() => {
+        formRef.current?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
+  }, [searchParams])
 
   // Hero carousel images
   const heroImages = [
@@ -97,11 +123,97 @@ export default function RequestAppraisalPage() {
     setCurrentImageIndex(index)
   }
 
+  const handleLoginChange = (field: string, value: string) => {
+    setLoginData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleNewClientChange = (field: string, value: string) => {
+    setNewClientData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleInputChange = (field: keyof FormData, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+    // Clear error for this field when user starts typing
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: undefined }))
+    }
+  }
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files || [])
+    setUploadedFiles((prev) => [...prev, ...files])
+  }
+
+  const removeFile = (index: number) => {
+    setUploadedFiles((prev) => prev.filter((_, i) => i !== index))
+  }
+
+  // Handle existing client login - populate form and scroll
+  const handleExistingClientSubmit = () => {
+    // Populate email in main form
+    setFormData(prev => ({
+      ...prev,
+      clientEmail: loginData.email
+    }))
+    // Close the mini form
+    setShowExistingClientForm(false)
+    // Scroll to main form
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+
+  // Handle new client mini-form - populate main form and scroll
+  const handleNewClientSubmit = () => {
+    // Parse the name into first and last
+    const nameParts = newClientData.name.trim().split(' ')
+    const firstName = nameParts[0] || ''
+    const lastName = nameParts.slice(1).join(' ') || ''
+    
+    // Populate main form with data from mini-form
+    setFormData(prev => ({
+      ...prev,
+      clientFirstName: firstName,
+      clientLastName: lastName,
+      clientOrganization: newClientData.companyName,
+      clientPhone: newClientData.phone,
+      clientEmail: newClientData.email,
+    }))
+    // Close the mini form
+    setShowNewClientForm(false)
+    // Scroll to main form
+    setTimeout(() => {
+      formRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }, 100)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    // Add files to form data
+    const submissionData = { ...formData, files: uploadedFiles }
+    
+    const result = await submitForm(submissionData)
+    
+    if (result.success) {
+      // Show success message and redirect
+      alert("Appraisal request submitted successfully! You'll receive confirmation via email.")
+      // Reset form or redirect
+      setTimeout(() => {
+        router.push("/")
+      }, 2000)
+    } else {
+      // Error handling is managed by the hook
+      if (result.error) {
+        alert(result.error)
+      }
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section with Image Carousel */}
       <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
-        {/* Background Image Carousel */}
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImages[currentImageIndex].src}
@@ -110,11 +222,9 @@ export default function RequestAppraisalPage() {
             className="object-cover transition-all duration-700"
             priority
           />
-          {/* Custom overlay for each image */}
           <div className={`absolute inset-0 ${heroImages[currentImageIndex].overlayClass}`} />
         </div>
         
-        {/* Carousel Controls */}
         <button
           onClick={prevImage}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
@@ -130,7 +240,6 @@ export default function RequestAppraisalPage() {
           <ChevronRight className="h-6 w-6 text-white" />
         </button>
         
-        {/* Dot Indicators */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
           {heroImages.map((_, index) => (
             <button
@@ -146,7 +255,6 @@ export default function RequestAppraisalPage() {
           ))}
         </div>
         
-        {/* Content */}
         <div className="relative z-10 container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-6 text-center">
             <div className="space-y-4 max-w-4xl">
@@ -205,7 +313,6 @@ export default function RequestAppraisalPage() {
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
 
-                    {/* Existing Client Login Form */}
                     {showExistingClientForm && (
                       <div className="mt-4 p-4 bg-white rounded-lg border animate-in slide-in-from-top duration-300">
                         <form className="space-y-4">
@@ -234,19 +341,10 @@ export default function RequestAppraisalPage() {
                           <Button
                             type="button"
                             className="w-full bg-blue-600 hover:bg-blue-700"
-                            onClick={() => {
-                              // Navigate to intake form (future: will validate login first)
-                              window.location.href = "/request-appraisal/intake"
-                            }}
+                            onClick={handleExistingClientSubmit}
                           >
-                            Access Intake Form
+                            Continue to Form
                           </Button>
-                          <Link
-                            href="/forgot-password"
-                            className="block text-sm text-blue-600 hover:underline text-center"
-                          >
-                            Forgot password?
-                          </Link>
                           <p className="text-xs text-slate-500 text-center">
                             Takes you directly to the appraisal submission form
                           </p>
@@ -289,7 +387,6 @@ export default function RequestAppraisalPage() {
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
 
-                    {/* New Client Form */}
                     {showNewClientForm && (
                       <div className="mt-4 p-4 bg-white rounded-lg border animate-in slide-in-from-top duration-300">
                         <form className="space-y-4">
@@ -346,15 +443,12 @@ export default function RequestAppraisalPage() {
                           <Button
                             type="button"
                             className="w-full bg-slate-900 hover:bg-slate-800"
-                            onClick={() => {
-                              // Navigate to intake form - new clients go directly
-                              window.location.href = "/request-appraisal/intake"
-                            }}
+                            onClick={handleNewClientSubmit}
                           >
-                            Continue to Intake Form
+                            Continue to Form
                           </Button>
                           <p className="text-xs text-slate-500 text-center">
-                            We'll create your account and take you to the full submission form
+                            We'll populate the form with your information
                           </p>
                         </form>
                       </div>
@@ -369,142 +463,411 @@ export default function RequestAppraisalPage() {
         </div>
       </section>
 
-      {/* Process Preview Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">
+      {/* NEW: Submit Without Account Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50" ref={formRef}>
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-8 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-              See How Easy It Is To Work With Us
-            </h2>
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full mb-4">
+                <ZapIcon className="h-5 w-5" />
+                <span className="font-semibold">Quick Submit - No Account Required</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+                Or Submit Your Appraisal Request Directly
+              </h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Skip the account setup and submit your property details immediately. We'll create your account 
+                automatically and send you access details via email.
+              </p>
+            </div>
 
-            {/* Large centered mockup */}
-            <div className="max-w-4xl w-full">
-              <div className="relative bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl p-8 shadow-2xl">
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                      <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                      <div className="h-3 w-3 rounded-full bg-green-400"></div>
-                      <div className="flex-1 bg-slate-100 rounded-full h-8 flex items-center px-4">
-                        <span className="text-sm text-slate-600">valta.app/intake-form</span>
+            {/* Embedded Intake Form */}
+            <Card className="border-2 border-blue-200">
+              <CardHeader className="bg-blue-50/50">
+                <CardTitle className="text-2xl text-center">Complete Appraisal Request Form</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-8">
+                <form onSubmit={handleSubmit} className="space-y-12">
+                  {/* Section 1: Client Information */}
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                      <User className="h-5 w-5 text-blue-600" />
+                      Client Information
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="clientFirstName">
+                            First Name <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="clientFirstName"
+                            value={formData.clientFirstName}
+                            onChange={(e) => handleInputChange("clientFirstName", e.target.value)}
+                            placeholder="John"
+                            required
+                            className={errors.clientFirstName ? "border-red-500" : ""}
+                          />
+                          {errors.clientFirstName && (
+                            <p className="text-sm text-red-500">{errors.clientFirstName}</p>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="clientLastName">
+                            Last Name <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="clientLastName"
+                            value={formData.clientLastName}
+                            onChange={(e) => handleInputChange("clientLastName", e.target.value)}
+                            placeholder="Smith"
+                            required
+                            className={errors.clientLastName ? "border-red-500" : ""}
+                          />
+                          {errors.clientLastName && (
+                            <p className="text-sm text-red-500">{errors.clientLastName}</p>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                    <div className="text-left space-y-3">
-                      <div className="h-4 bg-slate-200 rounded w-1/3"></div>
-                      <div className="h-3 bg-slate-100 rounded w-2/3"></div>
-                      <div className="grid grid-cols-2 gap-4 mt-4">
-                        <div className="h-10 bg-blue-50 border-2 border-blue-200 rounded"></div>
-                        <div className="h-10 bg-slate-50 border rounded"></div>
+
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="clientTitle">Client Title</Label>
+                          <Input
+                            id="clientTitle"
+                            value={formData.clientTitle}
+                            onChange={(e) => handleInputChange("clientTitle", e.target.value)}
+                            placeholder="Development Manager"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="clientOrganization">Client Organization</Label>
+                          <Input
+                            id="clientOrganization"
+                            value={formData.clientOrganization}
+                            onChange={(e) => handleInputChange("clientOrganization", e.target.value)}
+                            placeholder="ABC Development Corp"
+                          />
+                        </div>
                       </div>
-                      <div className="h-20 bg-slate-50 border rounded mt-4"></div>
-                      <div className="flex gap-2 mt-4">
-                        <div className="h-8 w-24 bg-blue-600 rounded"></div>
-                        <div className="h-8 w-20 bg-slate-200 rounded"></div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="clientAddress">Client Organization Address</Label>
+                        <Input
+                          id="clientAddress"
+                          value={formData.clientAddress}
+                          onChange={(e) => handleInputChange("clientAddress", e.target.value)}
+                          placeholder="123 Main Street, Calgary, AB T2P 1A1"
+                        />
+                      </div>
+
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="clientPhone">
+                            Phone <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="clientPhone"
+                            type="tel"
+                            value={formData.clientPhone}
+                            onChange={(e) => handleInputChange("clientPhone", e.target.value)}
+                            placeholder="(587) 801-5151"
+                            required
+                            className={errors.clientPhone ? "border-red-500" : ""}
+                          />
+                          {errors.clientPhone && (
+                            <p className="text-sm text-red-500">{errors.clientPhone}</p>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="clientEmail">
+                            Email <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="clientEmail"
+                            type="email"
+                            value={formData.clientEmail}
+                            onChange={(e) => handleInputChange("clientEmail", e.target.value)}
+                            placeholder="john@abcdevelopment.com"
+                            required
+                            className={errors.clientEmail ? "border-red-500" : ""}
+                          />
+                          {errors.clientEmail && (
+                            <p className="text-sm text-red-500">{errors.clientEmail}</p>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
 
-            <p className="text-xl text-slate-600 max-w-3xl">
-              No phone tag. No back-and-forth emails. Submit all your property details in one organized form.
-            </p>
+                  {/* Section 2: Property & Job Information */}
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                      <Building className="h-5 w-5 text-blue-600" />
+                      Property & Job Information
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="propertyName">
+                            Property Name <span className="text-red-500">*</span>
+                          </Label>
+                          <Input
+                            id="propertyName"
+                            value={formData.propertyName}
+                            onChange={(e) => handleInputChange("propertyName", e.target.value)}
+                            placeholder="Riverside Apartments"
+                            required
+                            className={errors.propertyName ? "border-red-500" : ""}
+                          />
+                          {errors.propertyName && (
+                            <p className="text-sm text-red-500">{errors.propertyName}</p>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="propertyAddress">Property Address</Label>
+                          <Input
+                            id="propertyAddress"
+                            value={formData.propertyAddress}
+                            onChange={(e) => handleInputChange("propertyAddress", e.target.value)}
+                            placeholder="456 River Road, Calgary, AB T2P 2B2"
+                          />
+                        </div>
+                      </div>
 
-            {/* 3-column benefits */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full mt-12">
-              <div className="text-center space-y-4">
-                <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto">
-                  <FileText className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">Upload Documents Directly</h3>
-                <p className="text-slate-600">Drag and drop property docs, photos, surveys</p>
-              </div>
-              <div className="text-center space-y-4">
-                <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto">
-                  <BarChart3 className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">Track Progress Real-Time</h3>
-                <p className="text-slate-600">Know exactly where your appraisal stands</p>
-              </div>
-              <div className="text-center space-y-4">
-                <div className="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center mx-auto">
-                  <CheckCircle className="h-8 w-8 text-blue-600" />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">Automated Updates</h3>
-                <p className="text-slate-600">Email notifications at each milestone</p>
-              </div>
-            </div>
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="propertyType">
+                            Property Type <span className="text-red-500">*</span>
+                          </Label>
+                          <Select
+                            value={formData.propertyType}
+                            onValueChange={(value) => handleInputChange("propertyType", value)}
+                          >
+                            <SelectTrigger className={errors.propertyType ? "border-red-500" : ""}>
+                              <SelectValue placeholder="Please Select" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="multifamily">Multifamily</SelectItem>
+                              <SelectItem value="self-storage">Self Storage</SelectItem>
+                              <SelectItem value="retail">Retail</SelectItem>
+                              <SelectItem value="industrial">Industrial</SelectItem>
+                              <SelectItem value="land">Land</SelectItem>
+                              <SelectItem value="office">Office</SelectItem>
+                              <SelectItem value="hotel">Hotel</SelectItem>
+                              <SelectItem value="senior">Senior</SelectItem>
+                              <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          {errors.propertyType && (
+                            <p className="text-sm text-red-500">{errors.propertyType}</p>
+                          )}
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="intendedUse">Intended Use</Label>
+                          <Select
+                            value={formData.intendedUse}
+                            onValueChange={(value) => handleInputChange("intendedUse", value)}
+                          >
+                            <SelectTrigger>
+                              <SelectValue placeholder="Please Select" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="financing">Financing Purposes</SelectItem>
+                              <SelectItem value="internal">Internal Business Decisions</SelectItem>
+                              <SelectItem value="underwriting">Underwriting Decisions</SelectItem>
+                              <SelectItem value="litigation">Litigation Purposes</SelectItem>
+                              <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                      </div>
 
-            {/* Social proof callout */}
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg max-w-4xl w-full">
-              <p className="text-blue-800 font-semibold text-lg">
-                "Our clients love the streamlined process - no more 20-question phone calls"
-              </p>
+                      <div className="space-y-2">
+                        <Label htmlFor="valuationPremises">Valuation Premises</Label>
+                        <Select
+                          value={formData.valuationPremises}
+                          onValueChange={(value) => handleInputChange("valuationPremises", value)}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Please Select" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="market-value-as-is">Market Value As Is</SelectItem>
+                            <SelectItem value="market-value-as-is-stabilized">
+                              Market Value As Is & As Stabilized
+                            </SelectItem>
+                            <SelectItem value="market-value-complete-stabilized">
+                              Market Value As Complete & As Stabilized
+                            </SelectItem>
+                            <SelectItem value="market-value-land-complete-stabilized">
+                              Market Value Land As Is & As Complete & As Stabilized
+                            </SelectItem>
+                            <SelectItem value="market-value-land-as-is">Market Value Land As Is</SelectItem>
+                            <SelectItem value="market-value-land-rezoned">Market Value Land As Is & As Rezoned</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="assetCondition">Asset Current Condition</Label>
+                        <Select
+                          value={formData.assetCondition}
+                          onValueChange={(value) => handleInputChange("assetCondition", value)}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Please Select" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="new-development">New Development</SelectItem>
+                            <SelectItem value="existing-property">Existing Property</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="additionalInfo">Additional Information</Label>
+                        <Textarea
+                          id="additionalInfo"
+                          value={formData.additionalInfo}
+                          onChange={(e) => handleInputChange("additionalInfo", e.target.value)}
+                          placeholder="Please provide any additional details about the property, special circumstances, timeline requirements, or other relevant information..."
+                          className="min-h-[120px]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Section 3: Document Upload */}
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                      <FileText className="h-5 w-5 text-blue-600" />
+                      Required Documents
+                    </h3>
+                    <div className="space-y-6">
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h4 className="font-semibold text-blue-900 mb-3">Please upload the following documents:</h4>
+                        <ul className="space-y-2 text-sm text-blue-800">
+                          <li className="flex items-start gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"></div>
+                            <span>Full Property Details or Prior Appraisal</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"></div>
+                            <span>Proforma</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"></div>
+                            <span>Unit Mix (MF/SS) or Rent Roll (Retail/Office/Industrial)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"></div>
+                            <span>Operating Expenses (1-3 Years Historical and Budget)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"></div>
+                            <span>Drawings/Plans (New Developments only)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0"></div>
+                            <span>Contact for property tour (Existing Buildings only)</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="relative border-2 border-dashed border-slate-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors">
+                        <Upload className="h-12 w-12 text-slate-400 mx-auto mb-4" />
+                        <div className="space-y-2">
+                          <p className="text-lg font-medium text-slate-700">Drop files here or click to upload</p>
+                          <p className="text-sm text-slate-500">
+                            Supported formats: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG (Max 10MB per file)
+                          </p>
+                        </div>
+                        <input
+                          type="file"
+                          multiple
+                          accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"
+                          onChange={handleFileUpload}
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                        />
+                      </div>
+
+                      {uploadedFiles.length > 0 && (
+                        <div className="space-y-2">
+                          <h4 className="font-medium text-slate-900">Uploaded Files:</h4>
+                          <div className="space-y-2">
+                            {uploadedFiles.map((file, index) => (
+                              <div key={index} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                                <div className="flex items-center gap-2">
+                                  <FileText className="h-4 w-4 text-slate-500" />
+                                  <span className="text-sm text-slate-700">{file.name}</span>
+                                  <span className="text-xs text-slate-500">
+                                    ({(file.size / 1024 / 1024).toFixed(1)} MB)
+                                  </span>
+                                </div>
+                                <Button
+                                  type="button"
+                                  variant="ghost"
+                                  size="sm"
+                                  onClick={() => removeFile(index)}
+                                  className="text-red-600 hover:text-red-700"
+                                >
+                                  Remove
+                                </Button>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="flex justify-center">
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="bg-blue-600 hover:bg-blue-700 px-12 py-4 text-lg"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                          Submitting Request...
+                        </>
+                      ) : (
+                        <>
+                          Submit Appraisal Request
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <div className="flex items-center justify-center gap-2">
+                <Shield className="h-6 w-6 text-blue-600" />
+                <span className="font-semibold text-slate-900">Secure Submission</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <CheckCircle className="h-6 w-6 text-blue-600" />
+                <span className="font-semibold text-slate-900">AACI Certified</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <Clock className="h-6 w-6 text-blue-600" />
+                <span className="font-semibold text-slate-900">2-3 Week Guarantee</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Narrative Style */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-8">
-              Why Property Professionals Trust Their Deals to Us
-            </h2>
-            
-            <div className="prose prose-lg max-w-none text-slate-600">
-              <p className="text-xl leading-relaxed mb-6">
-                <span className="font-semibold text-slate-900">Remember your last appraisal nightmare?</span> Six weeks of 
-                waiting. Daily calls to check status. A report that came back needing revisions because the appraiser didn't 
-                understand your development model. Sound familiar?
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                <span className="font-semibold text-slate-900">We built Valta because we lived that nightmare too.</span> As 
-                active developers ourselves, we got tired of appraisers who didn't understand proformas, construction draws, 
-                or why missing a rate lock deadline could kill an entire project. So we became AACI-certified appraisers and 
-                fixed the broken process.
-              </p>
-              
-              <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-2xl my-8 border-l-4 border-blue-500">
-                <p className="text-lg font-semibold text-slate-900 mb-4">
-                  Here's what that means for your next deal:
-                </p>
-                <div className="space-y-4 ml-4">
-                  <div>
-                    <span className="font-bold text-slate-900">Your report in 2-3 weeks, guaranteed.</span>
-                    <span className="text-slate-700"> Not "approximately" or "hopefully"—we commit to dates because we know 
-                    rate locks don't wait. Track progress in real-time through your portal, with rush options when you really need them.</span>
-                  </div>
-                  
-                  <div>
-                    <span className="font-bold text-slate-900">Lender-ready on first submission.</span>
-                    <span className="text-slate-700"> Our reports sail through bank reviews because we know exactly what lenders 
-                    look for. AACI certification is just the baseline—we go beyond to ensure zero friction in your financing process.</span>
-                  </div>
-                  
-                  <div>
-                    <span className="font-bold text-slate-900">A partner who actually gets it.</span>
-                    <span className="text-slate-700"> When we review your proforma, we understand the assumptions because we've 
-                    built our own. When you explain your exit strategy, we see the vision because we've executed similar plans ourselves.</span>
-                  </div>
-                </div>
-              </div>
-              
-              <p className="text-lg leading-relaxed italic">
-                <span className="font-semibold text-slate-900">The bottom line?</span> You're not hiring just another appraiser. 
-                You're partnering with someone who's closed deals from both sides of the table—and knows exactly what it takes 
-                to get yours across the finish line.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section - Minimal Steps Design */}
+      {/* Process Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
@@ -516,7 +879,6 @@ export default function RequestAppraisalPage() {
             </p>
             
             <div className="space-y-12">
-              {/* Step One */}
               <div className="border-l-4 border-blue-600 pl-8">
                 <div className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Step One</div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">Submit Your Request</h3>
@@ -530,7 +892,6 @@ export default function RequestAppraisalPage() {
                 </div>
               </div>
               
-              {/* Step Two */}
               <div className="border-l-4 border-blue-600 pl-8">
                 <div className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Step Two</div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">Get Your Quote</h3>
@@ -544,7 +905,6 @@ export default function RequestAppraisalPage() {
                 </div>
               </div>
               
-              {/* Step Three */}
               <div className="border-l-4 border-blue-600 pl-8">
                 <div className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Step Three</div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">Professional Inspection</h3>
@@ -558,7 +918,6 @@ export default function RequestAppraisalPage() {
                 </div>
               </div>
               
-              {/* Step Four */}
               <div className="border-l-4 border-green-600 pl-8">
                 <div className="text-sm font-bold text-green-600 uppercase tracking-wider mb-2">Step Four</div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">Receive Your Report</h3>
@@ -573,7 +932,6 @@ export default function RequestAppraisalPage() {
               </div>
             </div>
             
-            {/* Bottom CTA */}
             <div className="mt-20 text-center">
               <div className="inline-block p-8 bg-white rounded-2xl shadow-lg">
                 <p className="text-lg text-slate-700 mb-4">
@@ -582,7 +940,7 @@ export default function RequestAppraisalPage() {
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  onClick={() => formRef.current?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Start Your Appraisal Now
                   <ArrowRight className="ml-2 h-5 w-5" />

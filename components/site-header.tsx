@@ -66,16 +66,26 @@ export default function SiteHeader() {
               </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu open={openDropdown === 'appraisal'} onOpenChange={(open) => setOpenDropdown(open ? 'appraisal' : null)}>
-              <DropdownMenuTrigger className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+              <DropdownMenuTrigger className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary" onClick={(e) => {
+                // If clicked on the main text (not chevron), go to main page
+                const target = e.target as HTMLElement;
+                if (!target.closest('svg')) {
+                  e.preventDefault();
+                  handleAppraisalClick("/request-appraisal");
+                }
+              }}>
                 Request Appraisal
                 <ChevronDown className="ml-1 h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal")}>
-                  Main Page
+                  Choose Your Path
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal?form=direct")}>
+                  Quick Form (No Account)
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleAppraisalClick("/request-appraisal/intake")}>
-                  Intake Form
+                  Direct to Form
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
