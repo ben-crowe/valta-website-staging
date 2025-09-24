@@ -188,10 +188,13 @@ export default function NewsPage() {
           {/* Coming Soon Content */}
           <div className="space-y-4 max-w-2xl px-4">
             <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl text-white">
-              Coming Soon
+              News & Blog Section
             </h1>
-            <p className="text-lg md:text-xl text-white/90">
-              Our industry insights blog is launching soon.
+            <h2 className="text-2xl sm:text-3xl font-semibold text-white/95">
+              Coming Soon
+            </h2>
+            <p className="text-lg md:text-xl text-white/90 mt-2">
+              Industry insights and market analysis launching soon.
             </p>
           </div>
 
