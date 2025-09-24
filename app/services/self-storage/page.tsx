@@ -98,28 +98,28 @@ export default function SelfStoragePage() {
                 </p>
                 <ul className="grid gap-3">
                   <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
                       <strong>Revenue per square foot calculations</strong> - Understanding unit mix optimization and
                       pricing strategies across different unit sizes
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
                       <strong>Occupancy and rental rate analysis</strong> - Seasonal trends, move-in/move-out patterns,
                       and market penetration rates
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
                       <strong>Management efficiency factors</strong> - Staffing models, operational costs, and
                       automation impact on profitability
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
                       <strong>Technology and security considerations</strong> - Modern access systems, surveillance, and
                       customer management platforms
@@ -127,8 +127,8 @@ export default function SelfStoragePage() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
-                <p className="font-semibold text-teal-800">
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p className="font-semibold text-blue-800">
                   We've appraised $50M+ in self-storage facilities across Western Canada
                 </p>
               </div>
@@ -151,55 +151,55 @@ export default function SelfStoragePage() {
             </div>
           </div>
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="border-teal-200">
+            <Card className="border-blue-200">
               <CardContent className="p-6 text-center">
                 <div className="mb-4 flex justify-center">
-                  <Building className="h-12 w-12 text-teal-600" />
+                  <Building className="h-12 w-12 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-bold mb-3">Supply Constraints</h3>
                 <p className="text-muted-foreground text-sm mb-3">
                   Limited new development opportunities due to zoning restrictions and land costs
                 </p>
-                <div className="text-2xl font-bold text-teal-600">2.1%</div>
+                <div className="text-2xl font-bold text-blue-600">2.1%</div>
                 <div className="text-xs text-muted-foreground">Annual supply growth</div>
               </CardContent>
             </Card>
-            <Card className="border-teal-200">
+            <Card className="border-blue-200">
               <CardContent className="p-6 text-center">
                 <div className="mb-4 flex justify-center">
-                  <Users className="h-12 w-12 text-teal-600" />
+                  <Users className="h-12 w-12 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-bold mb-3">Demand Drivers</h3>
                 <p className="text-muted-foreground text-sm mb-3">
                   Urbanization and downsizing trends creating consistent demand growth
                 </p>
-                <div className="text-2xl font-bold text-teal-600">4.2%</div>
+                <div className="text-2xl font-bold text-blue-600">4.2%</div>
                 <div className="text-xs text-muted-foreground">Annual demand growth</div>
               </CardContent>
             </Card>
-            <Card className="border-teal-200">
+            <Card className="border-blue-200">
               <CardContent className="p-6 text-center">
                 <div className="mb-4 flex justify-center">
-                  <Smartphone className="h-12 w-12 text-teal-600" />
+                  <Smartphone className="h-12 w-12 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-bold mb-3">Technology Integration</h3>
                 <p className="text-muted-foreground text-sm mb-3">
                   Automated facilities and online booking improving operational efficiency
                 </p>
-                <div className="text-2xl font-bold text-teal-600">78%</div>
+                <div className="text-2xl font-bold text-blue-600">78%</div>
                 <div className="text-xs text-muted-foreground">Online rentals</div>
               </CardContent>
             </Card>
-            <Card className="border-teal-200">
+            <Card className="border-blue-200">
               <CardContent className="p-6 text-center">
                 <div className="mb-4 flex justify-center">
-                  <Shield className="h-12 w-12 text-teal-600" />
+                  <Shield className="h-12 w-12 text-blue-600" />
                 </div>
                 <h3 className="text-lg font-bold mb-3">Investment Appeal</h3>
                 <p className="text-muted-foreground text-sm mb-3">
                   Recession-resistant asset class with stable cash flows
                 </p>
-                <div className="text-2xl font-bold text-teal-600">6.5%</div>
+                <div className="text-2xl font-bold text-blue-600">6.5%</div>
                 <div className="text-xs text-muted-foreground">Average cap rates</div>
               </CardContent>
             </Card>
@@ -223,78 +223,78 @@ export default function SelfStoragePage() {
           <div className="mx-auto max-w-6xl py-12">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
               <div className="flex flex-col items-center text-center space-y-6">
-                <div className="h-20 w-20 rounded-full bg-teal-100 flex items-center justify-center">
-                  <BarChart3 className="h-10 w-10 text-teal-600" />
+                <div className="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center">
+                  <BarChart3 className="h-10 w-10 text-blue-600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4">Operational Analysis</h3>
                   <ul className="text-left space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Revenue stream breakdown by unit type and size</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Operating expense ratios and management efficiency</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Customer acquisition and retention metrics</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Ancillary revenue opportunities assessment</span>
                     </li>
                   </ul>
                 </div>
               </div>
               <div className="flex flex-col items-center text-center space-y-6">
-                <div className="h-20 w-20 rounded-full bg-teal-100 flex items-center justify-center">
-                  <MapPin className="h-10 w-10 text-teal-600" />
+                <div className="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center">
+                  <MapPin className="h-10 w-10 text-blue-600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4">Market Positioning</h3>
                   <ul className="text-left space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Competition analysis within 3-5 mile radius</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Pricing studies and rate optimization potential</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Demographic trends and demand drivers</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Market penetration and growth opportunities</span>
                     </li>
                   </ul>
                 </div>
               </div>
               <div className="flex flex-col items-center text-center space-y-6">
-                <div className="h-20 w-20 rounded-full bg-teal-100 flex items-center justify-center">
-                  <Calculator className="h-10 w-10 text-teal-600" />
+                <div className="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center">
+                  <Calculator className="h-10 w-10 text-blue-600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4">Financial Modeling</h3>
                   <ul className="text-left space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Income approach with storage-specific metrics</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Stabilized NOI projections and lease-up analysis</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Cap rate extraction from comparable sales</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-teal-500 mt-2 flex-shrink-0"></div>
+                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Sensitivity analysis for key performance metrics</span>
                     </li>
                   </ul>
@@ -305,172 +305,8 @@ export default function SelfStoragePage() {
         </div>
       </section>
 
-      {/* Facility Types Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Storage Facility Types We Appraise
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                From traditional drive-up units to specialized storage solutions
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto max-w-7xl py-12">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="overflow-hidden border-teal-200">
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg?height=200&width=400&text=Climate+Controlled+Storage"
-                    width={400}
-                    height={200}
-                    alt="Climate-controlled facilities"
-                    className="aspect-video object-cover w-full"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Thermometer className="h-5 w-5 text-teal-600" />
-                    <h3 className="text-lg font-bold">Climate-Controlled Facilities</h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Premium storage with temperature and humidity control for sensitive items.
-                  </p>
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Premium rates: $1.50-2.50/sq ft</span>
-                    <span>85-95% occupancy</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden border-teal-200">
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg?height=200&width=400&text=Drive+Up+Storage"
-                    width={400}
-                    height={200}
-                    alt="Drive-up storage units"
-                    className="aspect-video object-cover w-full"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Car className="h-5 w-5 text-teal-600" />
-                    <h3 className="text-lg font-bold">Drive-Up Storage Units</h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Traditional ground-level units with direct vehicle access for convenience.
-                  </p>
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Standard rates: $0.80-1.20/sq ft</span>
-                    <span>90-95% occupancy</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden border-teal-200">
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg?height=200&width=400&text=Multi+Story+Storage"
-                    width={400}
-                    height={200}
-                    alt="Multi-story facilities"
-                    className="aspect-video object-cover w-full"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Building2 className="h-5 w-5 text-teal-600" />
-                    <h3 className="text-lg font-bold">Multi-Story Facilities</h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    High-density urban facilities maximizing storage capacity per land area.
-                  </p>
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Mixed rates: $1.00-2.00/sq ft</span>
-                    <span>88-93% occupancy</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden border-teal-200">
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg?height=200&width=400&text=Boat+RV+Storage"
-                    width={400}
-                    height={200}
-                    alt="Boat/RV storage"
-                    className="aspect-video object-cover w-full"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Anchor className="h-5 w-5 text-teal-600" />
-                    <h3 className="text-lg font-bold">Boat/RV Storage</h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Specialized large-unit storage for recreational vehicles and watercraft.
-                  </p>
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Premium rates: $50-150/month</span>
-                    <span>75-85% occupancy</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden border-teal-200">
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg?height=200&width=400&text=Wine+Storage"
-                    width={400}
-                    height={200}
-                    alt="Wine storage facilities"
-                    className="aspect-video object-cover w-full"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Wine className="h-5 w-5 text-teal-600" />
-                    <h3 className="text-lg font-bold">Wine Storage Facilities</h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Ultra-premium climate-controlled storage for wine collections and valuables.
-                  </p>
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Luxury rates: $3.00-5.00/sq ft</span>
-                    <span>95-98% occupancy</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden border-teal-200">
-                <div className="relative">
-                  <Image
-                    src="/placeholder.svg?height=200&width=400&text=Mixed+Use+Storage"
-                    width={400}
-                    height={200}
-                    alt="Mixed-use with retail"
-                    className="aspect-video object-cover w-full"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Store className="h-5 w-5 text-teal-600" />
-                    <h3 className="text-lg font-bold">Mixed-Use with Retail</h3>
-                  </div>
-                  <p className="text-muted-foreground text-sm mb-2">
-                    Storage facilities combined with retail space for moving supplies and services.
-                  </p>
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>Combined revenue streams</span>
-                    <span>Enhanced profitability</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-teal-50 to-blue-50">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-6 text-center">
             <div className="space-y-4">
@@ -483,7 +319,7 @@ export default function SelfStoragePage() {
             </div>
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
               <Link href="/request-appraisal">
-                <Button size="lg" className="bg-teal-600 hover:bg-teal-700 px-8 py-3 text-lg">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 text-lg">
                   Request Storage Valuation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
