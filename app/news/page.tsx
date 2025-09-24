@@ -66,7 +66,7 @@ const blogPosts = [
 
 export default function NewsPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen">
       {/* Full Blog Layout - Visible but non-interactive */}
       <div className="pointer-events-none select-none">
         {/* Hero Section */}
@@ -177,11 +177,11 @@ export default function NewsPage() {
         </div>
       </div>
 
-      {/* Dark Semi-Transparent Overlay with Coming Soon - Centered in viewport */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-        <div className="text-center space-y-6">
+      {/* Dark Semi-Transparent Overlay with Coming Soon - Positioned below menu */}
+      <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/75 pointer-events-none">
+        <div className="text-center space-y-6 pointer-events-auto">
           {/* Lock Icon */}
-          <div className="h-20 w-20 rounded-full bg-white/10 backdrop-blur flex items-center justify-center mx-auto">
+          <div className="h-20 w-20 rounded-full bg-white/10 flex items-center justify-center mx-auto">
             <Lock className="h-10 w-10 text-white" />
           </div>
           
@@ -204,7 +204,7 @@ export default function NewsPage() {
               </Button>
             </Link>
             <Link href="/">
-              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20">
+              <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
                 Return Home
               </Button>
             </Link>
