@@ -66,17 +66,17 @@ const blogPosts = [
 
 export default function NewsPage() {
   return (
-    <div className="relative flex flex-col min-h-screen">
-      {/* Full Blog Layout - Blurred and Non-Interactive */}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Full Blog Layout - Visible but non-interactive */}
       <div className="pointer-events-none select-none">
         {/* Hero Section */}
-        <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden opacity-30">
+        <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&h=800&fit=crop"
               fill
               alt="Calgary Commercial District"
-              className="object-cover blur-sm"
+              className="object-cover"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50" />
@@ -96,8 +96,8 @@ export default function NewsPage() {
           </div>
         </section>
 
-        {/* Main Blog Layout with Sidebar - Blurred */}
-        <div className="container px-4 md:px-6 py-12 opacity-20 blur-[1px]">
+        {/* Main Blog Layout with Sidebar - Just top section */}
+        <div className="container px-4 md:px-6 py-12">
           <div className="grid gap-8 lg:grid-cols-4">
             {/* Main Blog Section */}
             <div className="lg:col-span-3">
@@ -105,13 +105,13 @@ export default function NewsPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <div className="flex items-center gap-2">
                   <Label className="text-sm font-medium">Filter by year:</Label>
-                  <div className="w-32 h-10 bg-gray-100 rounded-md"></div>
+                  <div className="w-32 h-10 bg-gray-100 rounded-md border"></div>
                 </div>
               </div>
 
-              {/* Blog Posts Grid */}
+              {/* Blog Posts Grid - Only show first 2 to keep above fold */}
               <div className="grid gap-8 md:grid-cols-2">
-                {blogPosts.map((post) => (
+                {blogPosts.slice(0, 2).map((post) => (
                   <Card key={post.id} className="overflow-hidden">
                     <div className="relative">
                       <Image
@@ -151,13 +151,6 @@ export default function NewsPage() {
                   </Card>
                 ))}
               </div>
-
-              {/* Load More Button */}
-              <div className="flex justify-center mt-12">
-                <Button size="lg" variant="outline">
-                  Load More Articles
-                </Button>
-              </div>
             </div>
 
             {/* Sidebar */}
@@ -178,82 +171,43 @@ export default function NewsPage() {
                     </div>
                   </CardContent>
                 </Card>
-
-                {/* Archive */}
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-bold">Archive</h3>
-                      <div className="space-y-2">
-                        <div className="text-sm text-muted-foreground">2025 (2 articles)</div>
-                        <div className="text-sm text-muted-foreground">2024 (4 articles)</div>
-                        <div className="text-sm text-muted-foreground">2023 (0 articles)</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Categories */}
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-bold">Categories</h3>
-                      <div className="space-y-2">
-                        <div className="text-sm text-muted-foreground">Market Analysis</div>
-                        <div className="text-sm text-muted-foreground">Investment Analysis</div>
-                        <div className="text-sm text-muted-foreground">Industry Update</div>
-                        <div className="text-sm text-muted-foreground">Regulatory Update</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Coming Soon Overlay */}
-      <div className="absolute inset-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-sm">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-8 text-center">
-            {/* Lock Icon */}
-            <div className="h-24 w-24 rounded-full bg-blue-100 flex items-center justify-center shadow-xl">
-              <Lock className="h-12 w-12 text-blue-600" />
-            </div>
-            
-            {/* Coming Soon Content */}
-            <div className="space-y-4 max-w-2xl">
-              <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
-                Coming Soon
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
-                Our industry insights blog is launching soon. Get ready for expert analysis on commercial real estate trends across Western Canada.
-              </p>
-            </div>
+      {/* Dark Semi-Transparent Overlay with Coming Soon - Centered in viewport */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div className="text-center space-y-6">
+          {/* Lock Icon */}
+          <div className="h-20 w-20 rounded-full bg-white/10 backdrop-blur flex items-center justify-center mx-auto">
+            <Lock className="h-10 w-10 text-white" />
+          </div>
+          
+          {/* Coming Soon Content */}
+          <div className="space-y-4 max-w-2xl px-4">
+            <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl text-white">
+              Coming Soon
+            </h1>
+            <p className="text-lg md:text-xl text-white/90">
+              Our industry insights blog is launching soon.
+            </p>
+          </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="/contact">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 shadow-lg">
-                  <Bell className="mr-2 h-5 w-5" />
-                  Notify Me When Live
-                </Button>
-              </Link>
-              <Link href="/">
-                <Button size="lg" variant="outline" className="shadow-lg">
-                  Return to Homepage
-                </Button>
-              </Link>
-            </div>
-
-            {/* Contact Info */}
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg max-w-md shadow-md">
-              <p className="text-sm text-muted-foreground">
-                Need immediate insights? Call us at{" "}
-                <strong className="text-slate-900">(587) 801-5151</strong>
-              </p>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col gap-3 sm:flex-row justify-center">
+            <Link href="/contact">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-6">
+                <Bell className="mr-2 h-5 w-5" />
+                Notify Me
+              </Button>
+            </Link>
+            <Link href="/">
+              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white/20 text-white hover:bg-white/20">
+                Return Home
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
