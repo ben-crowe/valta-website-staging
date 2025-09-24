@@ -16,28 +16,28 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Our Appraisal Services</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              We provide comprehensive real estate appraisal services for various property types across Western Canada
+              We provide comprehensive real estate appraisal services for developers and investors for various property types across Western Canada
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
-              title="Commercial Property"
-              description="Professional appraisals for office buildings, retail spaces, and industrial properties"
-              icon="Home"
-              backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=entropy"
-            />
-            <ServiceCard
               title="Multifamily Properties"
-              description="Accurate valuations for apartment complexes and residential investment properties"
+              description="In depth appraisals valuations for purpose-built apartment and townhouse properties"
               icon="Lightbulb"
               backgroundImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=entropy"
             />
             <ServiceCard
               title="Self-Storage Facilities"
-              description="Specialized appraisals for self-storage and mini-storage facilities"
+              description="Specialized appraisals for next generation self-storage and mini-storage facilities"
               icon="Palette"
               backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&crop=entropy"
+            />
+            <ServiceCard
+              title="Commercial Property"
+              description="Professional appraisals for office buildings, retail spaces, and industrial properties"
+              icon="Home"
+              backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=entropy"
             />
           </div>
 
@@ -61,7 +61,7 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Why Choose Valta</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Built by developers, for developers. We understand both sides of every transaction.
+              Built by developers and investors, for developers and investors. We have been on your side of the table and understand the importance of getting fast, accurate and lender-ready reports to fund a deal.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-slate-900">AACI Certified</h3>
-                <p className="text-sm text-slate-600">Professional standards and lender acceptance guaranteed</p>
+                <p className="text-sm text-slate-600">Professional, peer reviewed and lender-approved appraisals for commercial, multifamily, and self-storage properties.</p>
               </CardContent>
             </Card>
 
@@ -97,8 +97,8 @@ export default function HomePage() {
                     <Users className="h-6 w-6 text-blue-600" />
                   </div>
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-slate-900">Developer Experience</h3>
-                <p className="text-sm text-slate-600">Real-world development experience and market knowledge</p>
+                <h3 className="text-lg font-bold mb-2 text-slate-900">Developer & Investor Experience</h3>
+                <p className="text-sm text-slate-600">Real-world development and investor experienced and deep market knowledge</p>
               </CardContent>
             </Card>
 
@@ -125,15 +125,15 @@ export default function HomePage() {
           <div className="prose prose-lg max-w-none text-slate-600">
             <p className="text-xl leading-relaxed mb-6">
               <span className="font-semibold text-slate-900">Here's the thing about traditional appraisers:</span> They've 
-              never sweated a rate lock deadline. Never watched a deal fall apart because the valuation took six weeks. 
-              Never had to explain to investors why the report doesn't understand the development's actual potential.
+              never sweated a rate lock deadline. Never felt the stress during a deal because the valuation took six weeks. 
+              Never had to explain to a lender or mortgage broker why the appraisal report doesn't reflect the upside potential of a development or value add play.
             </p>
             
             <p className="text-lg leading-relaxed mb-6">
               <span className="font-semibold text-slate-900">We're different because we've been you.</span> Active developers 
-              who got tired of appraisals that missed the mark. So we became AACI-certified appraisers ourselves—combining 
-              15+ years of boots-on-the-ground development experience with professional valuation expertise. The result? 
-              Reports that actually understand construction costs, market dynamics, and what makes a project viable.
+              and investors who got tired of appraisals that missed the mark. So we became AACI-certified appraisers ourselves—combining 
+              20+ years of boots-on-the-ground development and investor experience with professional valuation expertise. The result? 
+              Reports that actually reflect current construction costs, land values, rental market dynamics, and what makes a project viable.
             </p>
             
             <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-2xl my-8 border-l-4 border-blue-500">
@@ -143,11 +143,11 @@ export default function HomePage() {
               <div className="space-y-3 ml-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
-                  <span className="text-slate-700">Someone who speaks fluent "developer"—no translation needed</span>
+                  <span className="text-slate-700">Someone who speaks fluent "developer and investor"—no translation needed</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
-                  <span className="text-slate-700">Deep expertise in multifamily and self-storage—the assets that actually cash flow</span>
+                  <span className="text-slate-700">Deep expertise in multifamily and self-storage—where the action is</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
@@ -158,7 +158,7 @@ export default function HomePage() {
             
             <p className="text-lg leading-relaxed">
               <span className="font-semibold text-slate-900">Ready to experience the difference?</span> Let's talk about your 
-              project and how we can help you close faster with confidence.
+              deal and how we can help you close faster with confidence.
             </p>
           </div>
           
@@ -186,7 +186,7 @@ export default function HomePage() {
                 Ready to Get Your Property Appraised?
               </h2>
               <p className="text-xl mb-8 text-slate-700">
-                Contact us today for a professional appraisal consultation. Same-day response guaranteed.
+                Contact us today for a professional appraisal. Same-day response guaranteed.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -210,7 +210,7 @@ export default function HomePage() {
               </div>
               <div className="mt-6 text-slate-600">
                 <p className="text-sm">
-                  Call us at <strong>(587) 801-5151</strong> for immediate consultation
+                  Call us at <strong>(587) 801-5151</strong> or email <strong>clientcare@valta.ca</strong> for immediate consultation
                 </p>
               </div>
             </CardContent>
