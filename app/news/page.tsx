@@ -1,7 +1,9 @@
 import Image from "next/image"
-import { Bell, Calendar, User, Tag, Lock } from "lucide-react"
+import { Bell, Calendar, User, Tag, Lock, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import Link from "next/link"
 
 // Sample blog data for visual effect only
@@ -9,7 +11,7 @@ const blogPosts = [
   {
     id: 1,
     title: "Western Canada Commercial Real Estate Market Outlook 2025",
-    excerpt: "As we enter 2025, the Western Canadian commercial real estate market shows signs of stabilization after a volatile period...",
+    excerpt: "As we enter 2025, the Western Canadian commercial real estate market shows signs of stabilization after a volatile period. Interest rate adjustments and shifting investment patterns are creating new opportunities.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
     date: "January 15, 2025",
     category: "Market Analysis",
@@ -18,7 +20,7 @@ const blogPosts = [
   {
     id: 2,
     title: "Understanding Cap Rate Trends in Calgary's Multifamily Sector",
-    excerpt: "Calgary's multifamily market has experienced significant cap rate compression over the past 18 months...",
+    excerpt: "Calgary's multifamily market has experienced significant cap rate compression over the past 18 months, with institutional investors driving demand for quality assets.",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop",
     date: "January 8, 2025",
     category: "Investment Analysis",
@@ -27,7 +29,7 @@ const blogPosts = [
   {
     id: 3,
     title: "Self-Storage Investment Opportunities Across Alberta",
-    excerpt: "The self-storage sector continues to outperform traditional commercial real estate asset classes...",
+    excerpt: "The self-storage sector continues to outperform traditional commercial real estate asset classes, with Alberta leading Western Canada in new development activity.",
     image: "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?w=800&h=600&fit=crop",
     date: "December 28, 2024",
     category: "Industry Update",
@@ -36,9 +38,27 @@ const blogPosts = [
   {
     id: 4,
     title: "Industrial Real Estate: The New Frontier for Institutional Capital",
-    excerpt: "Industrial properties have emerged as the darling of institutional investors...",
+    excerpt: "Industrial properties have emerged as the darling of institutional investors, driven by e-commerce growth and supply chain optimization.",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop",
     date: "December 20, 2024",
+    category: "Market Analysis",
+    author: "Valta Team",
+  },
+  {
+    id: 5,
+    title: "Land Development Valuations in a Changing Regulatory Environment",
+    excerpt: "Municipal policy changes and evolving zoning regulations are reshaping land development valuations across Western Canada.",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop",
+    date: "December 12, 2024",
+    category: "Regulatory Update",
+    author: "Chris Chornohos, AACI",
+  },
+  {
+    id: 6,
+    title: "Office Market Recovery: Lessons from Calgary's Downtown Core",
+    excerpt: "Calgary's downtown office market is showing early signs of recovery as companies adapt to hybrid work models.",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+    date: "November 30, 2024",
     category: "Market Analysis",
     author: "Valta Team",
   },
@@ -47,16 +67,16 @@ const blogPosts = [
 export default function NewsPage() {
   return (
     <div className="relative flex flex-col min-h-screen">
-      {/* Blurred Blog Content Background */}
+      {/* Full Blog Layout - Blurred and Non-Interactive */}
       <div className="pointer-events-none select-none">
         {/* Hero Section */}
-        <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden opacity-40 blur-[2px]">
+        <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden opacity-30">
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&h=800&fit=crop"
               fill
               alt="Calgary Commercial District"
-              className="object-cover"
+              className="object-cover blur-sm"
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50" />
@@ -76,60 +96,135 @@ export default function NewsPage() {
           </div>
         </section>
 
-        {/* Blog Grid - Blurred and Non-Interactive */}
-        <div className="container px-4 md:px-6 py-12 opacity-30 blur-sm">
-          <div className="grid gap-8 lg:grid-cols-3">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="overflow-hidden">
-                <div className="relative">
-                  <Image
-                    src={post.image}
-                    width={600}
-                    height={400}
-                    alt={post.title}
-                    className="aspect-video object-cover w-full"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                      <Tag className="h-3 w-3" />
-                      {post.category}
-                    </span>
-                  </div>
+        {/* Main Blog Layout with Sidebar - Blurred */}
+        <div className="container px-4 md:px-6 py-12 opacity-20 blur-[1px]">
+          <div className="grid gap-8 lg:grid-cols-4">
+            {/* Main Blog Section */}
+            <div className="lg:col-span-3">
+              {/* Filter Section */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex items-center gap-2">
+                  <Label className="text-sm font-medium">Filter by year:</Label>
+                  <div className="w-32 h-10 bg-gray-100 rounded-md"></div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        {post.date}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <User className="h-4 w-4" />
-                        {post.author}
+              </div>
+
+              {/* Blog Posts Grid */}
+              <div className="grid gap-8 md:grid-cols-2">
+                {blogPosts.map((post) => (
+                  <Card key={post.id} className="overflow-hidden">
+                    <div className="relative">
+                      <Image
+                        src={post.image}
+                        width={600}
+                        height={400}
+                        alt={post.title}
+                        className="aspect-video object-cover w-full"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          <Tag className="h-3 w-3" />
+                          {post.category}
+                        </span>
                       </div>
                     </div>
-                    <h2 className="text-xl font-bold leading-tight">{post.title}</h2>
-                    <p className="text-muted-foreground leading-relaxed line-clamp-3">{post.excerpt}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <CardContent className="p-6">
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-4 w-4" />
+                            {post.date}
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <User className="h-4 w-4" />
+                            {post.author}
+                          </div>
+                        </div>
+                        <h2 className="text-xl font-bold leading-tight">{post.title}</h2>
+                        <p className="text-muted-foreground leading-relaxed line-clamp-3">{post.excerpt}</p>
+                        <Button variant="outline" className="group">
+                          Read More
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {/* Load More Button */}
+              <div className="flex justify-center mt-12">
+                <Button size="lg" variant="outline">
+                  Load More Articles
+                </Button>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="space-y-8">
+                {/* Newsletter Signup */}
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-bold">Stay Informed</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Get the latest commercial real estate insights delivered to your inbox.
+                      </p>
+                      <div className="space-y-3">
+                        <Input placeholder="your@email.com" disabled />
+                        <Button className="w-full" disabled>Subscribe</Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Archive */}
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-bold">Archive</h3>
+                      <div className="space-y-2">
+                        <div className="text-sm text-muted-foreground">2025 (2 articles)</div>
+                        <div className="text-sm text-muted-foreground">2024 (4 articles)</div>
+                        <div className="text-sm text-muted-foreground">2023 (0 articles)</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Categories */}
+                <Card>
+                  <CardContent className="p-6">
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-bold">Categories</h3>
+                      <div className="space-y-2">
+                        <div className="text-sm text-muted-foreground">Market Analysis</div>
+                        <div className="text-sm text-muted-foreground">Investment Analysis</div>
+                        <div className="text-sm text-muted-foreground">Industry Update</div>
+                        <div className="text-sm text-muted-foreground">Regulatory Update</div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Coming Soon Overlay */}
-      <div className="absolute inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-sm">
+      <div className="absolute inset-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-sm">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-8 text-center">
             {/* Lock Icon */}
-            <div className="h-24 w-24 rounded-full bg-blue-100 flex items-center justify-center shadow-lg">
+            <div className="h-24 w-24 rounded-full bg-blue-100 flex items-center justify-center shadow-xl">
               <Lock className="h-12 w-12 text-blue-600" />
             </div>
             
             {/* Coming Soon Content */}
             <div className="space-y-4 max-w-2xl">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+              <h1 className="text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl">
                 Coming Soon
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
@@ -153,7 +248,7 @@ export default function NewsPage() {
             </div>
 
             {/* Contact Info */}
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg max-w-md">
+            <div className="mt-8 p-6 bg-blue-50 rounded-lg max-w-md shadow-md">
               <p className="text-sm text-muted-foreground">
                 Need immediate insights? Call us at{" "}
                 <strong className="text-slate-900">(587) 801-5151</strong>
