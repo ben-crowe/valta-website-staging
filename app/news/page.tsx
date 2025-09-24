@@ -68,7 +68,7 @@ export default function NewsPage() {
   return (
     <div className="relative min-h-screen">
       {/* Full Blog Layout - Visible but non-interactive and blurred */}
-      <div className="pointer-events-none select-none blur-md">
+      <div className="pointer-events-none select-none blur-sm">
         {/* Hero Section with lighter image */}
         <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -109,9 +109,9 @@ export default function NewsPage() {
                 </div>
               </div>
 
-              {/* Blog Posts Grid - Only show first 2 to keep above fold */}
+              {/* Blog Posts Grid - Show all 6 posts */}
               <div className="grid gap-8 md:grid-cols-2">
-                {blogPosts.slice(0, 2).map((post) => (
+                {blogPosts.map((post) => (
                   <Card key={post.id} className="overflow-hidden">
                     <div className="relative">
                       <Image
@@ -178,7 +178,7 @@ export default function NewsPage() {
       </div>
 
       {/* Dark Semi-Transparent Overlay with Coming Soon - Positioned below menu */}
-      <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 backdrop-blur-sm pointer-events-none">
+      <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 pointer-events-none">
         <div className="text-center space-y-6 pointer-events-auto">
           {/* Lock Icon */}
           <div className="h-20 w-20 rounded-full bg-white/10 backdrop-blur flex items-center justify-center mx-auto">

@@ -83,7 +83,7 @@ export default function SelfStoragePage() {
           </div>
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <Image
-              src="/images/storagebuildinghome.jpg"
+              src="/images/Selfstorage-hero3.jpg"
               width={600}
               height={400}
               alt="Modern self-storage facility with orange roll-up doors"
