@@ -96,7 +96,7 @@ export default function AboutPage() {
           <div className="flex flex-col justify-center space-y-6 text-center text-white w-full">
             <div className="space-y-4 max-w-4xl mx-auto">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
-                Built by Developers, for Developers
+                Built by Developers and Investors, for Developers and Investors
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
                 We understand both sides of every transaction because we've been there ourselves.
@@ -137,7 +137,7 @@ export default function AboutPage() {
               Finally, an Appraisal Firm That Speaks Your Language
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mt-4">
-              "We understand the pressures of a proforma, the urgency of a financing deadline, and the real-world factors that create value."
+              "We understand the pressures of a putting a deal together the urgency of a financing condition, and the real-world factors that create value."
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
@@ -150,8 +150,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-slate-900">Enhanced Understanding</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Accurate assessment of pro forma assumptions and construction practicalities based on real development
-                  experience.
+                  Accurate assessment of market conditions, valuation assumptions and true comparables based on real world experience.
                 </p>
               </CardContent>
             </Card>
@@ -162,10 +161,9 @@ export default function AboutPage() {
                     <Award className="h-8 w-8 text-blue-600" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-slate-900">More Accurate Valuations</h3>
+                <h3 className="text-xl font-bold mb-4 text-slate-900">Accurate Valuations</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Sophisticated ability to project stabilized values critical for development financing and investment
-                  decisions.
+                  Sophisticated ability to project stabilized values critical for development, acquisition and renewal financing.
                 </p>
               </CardContent>
             </Card>
@@ -176,10 +174,9 @@ export default function AboutPage() {
                     <Clock className="h-8 w-8 text-blue-600" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-slate-900">Innate Urgency Appreciation</h3>
+                <h3 className="text-xl font-bold mb-4 text-slate-900">Real Urgency</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Understanding of financing deadlines and rate lock pressures that drive real estate development
-                  timelines.
+                  Understanding of financing conditions and rate lock pressures that drive real estate deal timelines.
                 </p>
               </CardContent>
             </Card>
@@ -250,7 +247,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                      High-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients close deals faster, maximize returns, and solve housing challenges.
+                      Fast, high-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients' close deals faster, maximize returns, and solve housing challenges.
                     </p>
                     <Link href="/request-appraisal">
                       <div className="mt-6 flex items-center text-slate-600 hover:text-slate-700 transition-colors cursor-pointer">
@@ -290,14 +287,13 @@ export default function AboutPage() {
                   <p className="leading-relaxed">
                     <span className="font-semibold text-slate-900">You know that sinking feeling when your appraisal takes six weeks?</span> Rate 
                     locks expire. Sellers get nervous. Deals die. That's why we turned the traditional timeline on its head—delivering 
-                    comprehensive reports in 2-3 weeks without cutting corners. Because in development, timing isn't just important; 
-                    it's everything.
+                    comprehensive reports in 2-3 weeks without cutting corners. Because in commercial real estate, time kills deals.
                   </p>
                   
                   <p className="leading-relaxed mt-6">
                     <span className="font-semibold text-slate-900">And here's something most appraisers won't tell you:</span> half 
                     the reports that cross lenders' desks come back for revisions. More delays. More frustration. We engineered our 
-                    process differently. Every report ships lender-ready on the first submission—no revisions, no back-and-forth, 
+                    process differently. Every report is peer reviewed and lender-ready on the first submission—no revisions, no back-and-forth, 
                     just clean approvals that keep your project moving.
                   </p>
                 </div>
@@ -305,17 +301,17 @@ export default function AboutPage() {
                 {/* Right Column */}
                 <div className="prose prose-lg text-slate-600">
                   <p className="leading-relaxed">
-                    <span className="font-semibold text-slate-900">Sure, we have the AACI certification</span>—that's table stakes. 
-                    But certifications don't understand construction draws or why your proforma needs that specific cap rate. We do, 
+                    <span className="font-semibold text-slate-900">Sure, we have the AACI designation</span>—that's table stakes. 
+                    But designations don't tell full story. We understand construction draws or why your property will achieve that market rental or cap rate. We do, 
                     because we've sat on your side of the table. We've sweated the same deadlines, fought the same battles with 
-                    lenders, and know exactly what keeps developers up at night.
+                    lenders, and know exactly what keeps developers and investors up at night.
                   </p>
                   
                   <p className="leading-relaxed mt-6">
                     <span className="font-semibold text-slate-900">Think of us as your inside advantage.</span> While traditional 
                     appraisers see numbers on a spreadsheet, we see the story behind your project—the vision, the challenges, the 
                     opportunity. That perspective transforms a routine valuation into strategic intelligence that actually helps 
-                    you build better, finance smarter, and close with confidence.
+                    you close more deals with confidence.
                   </p>
                 </div>
               </div>
@@ -323,7 +319,7 @@ export default function AboutPage() {
               {/* Bottom Call-out */}
               <div className="mt-12 p-8 bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl border-l-4 border-blue-500">
                 <p className="text-xl text-slate-800 font-medium italic">
-                  Bottom line? When your appraiser has actually been a developer, you get more than a report—you get a partner 
+                  Bottom line? When your appraiser has actually been a developer and an owenr, you get more than a report—you get a partner 
                   who genuinely understands what's at stake.
                 </p>
               </div>
@@ -343,7 +339,7 @@ export default function AboutPage() {
                     Ready to Work with Someone Who's Been on Both Sides?
                   </h2>
                   <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-                    Experience the difference of working with an appraiser who truly understands development challenges
+                    Experience the difference of working with an appraiser who truly understands commercial real estate challenges
                     and financing pressures.
                   </p>
                 </div>
