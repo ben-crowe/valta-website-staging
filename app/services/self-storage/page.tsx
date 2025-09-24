@@ -29,7 +29,7 @@ export default function SelfStoragePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/Self Storage Exterior.jpg"
+            src="/images/Self%20Storage%20Exterior.jpg"
             fill
             alt="Modern self storage facility with glass facade and orange storage units"
             className="object-cover"
@@ -78,12 +78,12 @@ export default function SelfStoragePage() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Self-Storage Isn't Just Real Estate—It's a Business
+              Self-Storage Valuations
             </h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <Image
-              src="/images/services/self-storage-hero.jpg"
+              src="/images/storagebuildinghome.jpg"
               width={600}
               height={400}
               alt="Modern self-storage facility with orange roll-up doors"
@@ -92,37 +92,37 @@ export default function SelfStoragePage() {
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-4">
                 <p className="text-muted-foreground md:text-lg">
-                  Unlike traditional commercial real estate, self-storage facilities are operating businesses with
-                  complex revenue models, customer management systems, and operational efficiencies that directly impact
-                  value.
+                  Specialized knowledge in the rapidly growing self-storage market. We understand the unique operational aspects of storage facilities, including occupancy rates, rental rates, and the impact of location and competition on facility performance.
                 </p>
                 <ul className="grid gap-3">
                   <li className="flex items-start gap-3">
                     <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
-                      <strong>Revenue per square foot calculations</strong> - Understanding unit mix optimization and
-                      pricing strategies across different unit sizes
+                      Climate-controlled and standard storage units
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
-                      <strong>Occupancy and rental rate analysis</strong> - Seasonal trends, move-in/move-out patterns,
-                      and market penetration rates
+                      Facility operations analysis
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
-                      <strong>Management efficiency factors</strong> - Staffing models, operational costs, and
-                      automation impact on profitability
+                      Market positioning assessment
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                     <div>
-                      <strong>Technology and security considerations</strong> - Modern access systems, surveillance, and
-                      customer management platforms
+                      Occupancy and rental rate analysis
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                    <div>
+                      Investment potential evaluation
                     </div>
                   </li>
                 </ul>
