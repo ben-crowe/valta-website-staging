@@ -83,10 +83,10 @@ export default function SelfStoragePage() {
           </div>
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <Image
-              src="/placeholder.svg?height=400&width=600&text=Storage+Facility+Operations"
+              src="/images/services/self-storage-hero.jpg"
               width={600}
               height={400}
-              alt="Storage Facility Operations"
+              alt="Modern self-storage facility with orange roll-up doors"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
             />
             <div className="flex flex-col justify-center space-y-6">
