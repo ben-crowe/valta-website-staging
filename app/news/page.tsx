@@ -67,19 +67,19 @@ const blogPosts = [
 export default function NewsPage() {
   return (
     <div className="relative min-h-screen">
-      {/* Full Blog Layout - Visible but non-interactive */}
-      <div className="pointer-events-none select-none">
-        {/* Hero Section */}
+      {/* Full Blog Layout - Visible but non-interactive and blurred */}
+      <div className="pointer-events-none select-none blur-md">
+        {/* Hero Section with lighter image */}
         <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&h=800&fit=crop"
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=800&fit=crop"
               fill
-              alt="Calgary Commercial District"
+              alt="Modern Office Building"
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/20" />
           </div>
           
           <div className="relative z-10 container px-4 md:px-6">
@@ -178,10 +178,10 @@ export default function NewsPage() {
       </div>
 
       {/* Dark Semi-Transparent Overlay with Coming Soon - Positioned below menu */}
-      <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/75 pointer-events-none">
+      <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/70 backdrop-blur-sm pointer-events-none">
         <div className="text-center space-y-6 pointer-events-auto">
           {/* Lock Icon */}
-          <div className="h-20 w-20 rounded-full bg-white/10 flex items-center justify-center mx-auto">
+          <div className="h-20 w-20 rounded-full bg-white/10 backdrop-blur flex items-center justify-center mx-auto">
             <Lock className="h-10 w-10 text-white" />
           </div>
           
