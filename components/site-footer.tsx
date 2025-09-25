@@ -9,11 +9,11 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-3">
             <Image
-              src="/images/Valta-logo-lt.blue.png"
+              src="/images/ValtaLogo-Med-blue-2.png"
               alt="Valta Property Valuations"
-              width={200}
-              height={40}
-              className="h-8 w-auto"
+              width={400}
+              height={71}
+              className="h-10 w-auto"
             />
             <p className="text-sm text-muted-foreground">
               Professional commercial real estate appraisal services across Western Canada. AACI certified appraisers

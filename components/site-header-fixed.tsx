@@ -31,10 +31,10 @@ export default function SiteHeader() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-8 flex items-center space-x-2">
             <Image
-              src="/images/Valta-logo-lt.blue.png"
+              src="/images/ValtaLogo-Med-blue-2.png"
               alt="Valta Property Valuations"
-              width={200}
-              height={40}
+              width={400}
+              height={71}
               className="h-8 w-auto"
               priority
             />
