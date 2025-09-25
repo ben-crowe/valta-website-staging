@@ -247,7 +247,7 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <p className="text-lg text-slate-700 leading-relaxed font-medium">
-                      Fast, high-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients' close deals faster, maximize returns, and solve housing challenges.
+                      Fast, high-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients close deals faster, maximize returns, and solve housing challenges.
                     </p>
                     <Link href="/request-appraisal">
                       <div className="mt-6 flex items-center text-slate-600 hover:text-slate-700 transition-colors cursor-pointer">
@@ -302,7 +302,7 @@ export default function AboutPage() {
                 <div className="prose prose-lg text-slate-600">
                   <p className="leading-relaxed">
                     <span className="font-semibold text-slate-900">Sure, we have the AACI designation</span>—that's table stakes. 
-                    But designations don't tell full story. We understand construction draws or why your property will achieve that market rental or cap rate. We do, 
+                    But designations don't tell the full story. We understand construction draws or why your property will achieve that market rental or cap rate. We do, 
                     because we've sat on your side of the table. We've sweated the same deadlines, fought the same battles with 
                     lenders, and know exactly what keeps developers and investors up at night.
                   </p>
