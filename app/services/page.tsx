@@ -119,10 +119,6 @@ export default function ServicesPage() {
           </div>
         </div>
         
-        {/* Image Counter in Bottom Corner */}
-        <div className="absolute bottom-4 right-4 z-20 text-white/60 text-xs font-medium">
-          Image {currentImageIndex + 1}/{heroImages.length}
-        </div>
       </section>
 
       {/* Multifamily Appraisals Section */}
@@ -141,23 +137,27 @@ export default function ServicesPage() {
               <ul className="grid gap-2">
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Apartment complexes and condominiums</span>
+                  <span>Purpose-Built Apartments</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Multi-unit residential properties</span>
+                  <span>Purpose-Built Townhome</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Income approach valuations</span>
+                  <span>Mixed Use</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Market rent analysis</span>
+                  <span>Build to Rent Single Family</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Operating expense analysis</span>
+                  <span>Multifamily Land</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-primary"></div>
+                  <span>Market Rent Studies</span>
                 </li>
               </ul>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -203,7 +203,7 @@ export default function ServicesPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Self-Storage Valuations</h2>
                 <p className="text-muted-foreground md:text-lg">
-                  Specialized knowledge in the rapidly growing self-storage market. We understand the unique operational
+                  Specialized knowledge in the rapidly growing self-storage sector. We understand the unique operational
                   aspects of storage facilities, including occupancy rates, rental rates, and the impact of location and
                   competition on facility performance.
                 </p>
@@ -211,23 +211,15 @@ export default function ServicesPage() {
               <ul className="grid gap-2">
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Climate-controlled and standard storage units</span>
+                  <span>New Generation Self Storage</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Facility operations analysis</span>
+                  <span>Mini Storage</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Market positioning assessment</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Occupancy and rental rate analysis</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Investment potential evaluation</span>
+                  <span>Land Valuation</span>
                 </li>
               </ul>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -251,15 +243,13 @@ export default function ServicesPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Commercial Property</h2>
                 <p className="text-muted-foreground md:text-lg">
-                  Professional appraisals for office buildings, industrial facilities, and land development projects. We
-                  provide thorough analysis using all three approaches to value, with particular expertise in
-                  development-ready land and income-producing commercial properties.
+                  Professional appraisals for office, retail, and industrial land. We provide thorough analysis using all three approaches to value, with particular expertise in development-ready land and income-producing commercial properties.
                 </p>
               </div>
               <ul className="grid gap-2">
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Office buildings and complexes</span>
+                  <span>Office buildings and campus</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
@@ -267,15 +257,7 @@ export default function ServicesPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Development land analysis</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>Highest and best use analysis</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="h-2 w-2 rounded-full bg-primary"></div>
-                  <span>All three approaches to value</span>
+                  <span>Retail and shopping centres</span>
                 </li>
               </ul>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
