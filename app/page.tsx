@@ -23,7 +23,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
               title="Multifamily Properties"
-              description="In depth appraisals valuations for purpose-built apartment and townhouse properties"
+              description="In-depth valuations for purpose-built apartment and townhouse properties"
               icon="Lightbulb"
               backgroundImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=entropy"
             />
@@ -98,7 +98,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-slate-900">Developer & Investor Experience</h3>
-                <p className="text-sm text-slate-600">Real-world development and investor experienced and deep market knowledge</p>
+                <p className="text-sm text-slate-600">Real-world development and investor experience and deep market knowledge</p>
               </CardContent>
             </Card>
 
