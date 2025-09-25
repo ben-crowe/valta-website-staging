@@ -9,6 +9,8 @@ import {
   TrendingUp,
   Calculator,
   CheckCircle,
+  ShoppingCart,
+  Download,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -40,7 +42,7 @@ export default function CommercialPage() {
                 Commercial Property Appraisals
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-                Expert valuations for office, industrial, and development properties across Western Canada
+                Comprehensive valuations for office, industrial, retail, and land. Supporting your business decisions with accurate market insights.
               </p>
             </div>
 
@@ -65,66 +67,79 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* Main Content Section - Using Client's Text */}
+      {/* Commercial Properties We Appraise */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Commercial Property
+              Commercial Properties We Appraise
             </h2>
           </div>
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-            <Image
-              src="/images/storagebuildinghome.jpg"
-              width={600}
-              height={400}
-              alt="Modern commercial storage facility"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-            />
-            <div className="flex flex-col justify-center space-y-6">
-              <div className="space-y-4">
-                <p className="text-muted-foreground md:text-lg">
-                  Professional appraisals for office buildings, industrial facilities, and land development projects. We provide thorough analysis using all three approaches to value, with particular expertise in development-ready land and income-producing commercial properties.
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+            <Card className="border-blue-200">
+              <CardContent className="p-6">
+                <div className="mb-4 flex justify-center">
+                  <MapPin className="h-12 w-12 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-center">Land & Development</h3>
+                <p className="text-muted-foreground text-sm text-center mb-4">
+                  Commercial sites, development sites, land assemblies, and highest-best-use analysis
                 </p>
-                <ul className="grid gap-3">
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      Office buildings and complexes
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      Industrial and warehouse facilities
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      Development land analysis
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      Highest and best use analysis
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      All three approaches to value
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                <p className="font-semibold text-blue-800">
-                  Trusted by investors and lenders for accurate commercial valuations
+                <div className="flex justify-center">
+                  <Button variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-200">
+              <CardContent className="p-6">
+                <div className="mb-4 flex justify-center">
+                  <Building className="h-12 w-12 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-center">Office Buildings</h3>
+                <p className="text-muted-foreground text-sm text-center mb-4">
+                  Class A, B, C properties and professional buildings across all market segments
                 </p>
-              </div>
-            </div>
+                <div className="flex justify-center">
+                  <Button variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-200">
+              <CardContent className="p-6">
+                <div className="mb-4 flex justify-center">
+                  <Factory className="h-12 w-12 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-center">Industrial Properties</h3>
+                <p className="text-muted-foreground text-sm text-center mb-4">
+                  Warehouses, manufacturing facilities, distribution centers, and flex space
+                </p>
+                <div className="flex justify-center">
+                  <Button variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-200">
+              <CardContent className="p-6">
+                <div className="mb-4 flex justify-center">
+                  <ShoppingCart className="h-12 w-12 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-center">Retail Properties</h3>
+                <p className="text-muted-foreground text-sm text-center mb-4">
+                  Shopping centers, standalone retail, mixed-use developments, and specialty retail
+                </p>
+                <div className="flex justify-center">
+                  <Button variant="outline" size="sm">
+                    Learn More
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -311,7 +326,21 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* Final CTA Section - Using Client's Text */}
+      {/* Western Canada Market Knowledge Section */}
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Western Canada Market Knowledge
+            </h2>
+            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+              Deep local expertise across major Western Canadian commercial markets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-6 text-center">
@@ -326,12 +355,21 @@ export default function CommercialPage() {
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
               <Link href="/request-appraisal">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-3 text-lg">
-                  Request Commercial Valuation
+                  Request Commercial Appraisal
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+              <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
+                <Download className="mr-2 h-5 w-5" />
+                Download Commercial Market Report
+              </Button>
             </div>
-            <div className="text-center text-sm text-muted-foreground mt-4">
+            <div className="text-center mt-6">
+              <p className="text-muted-foreground">
+                Serving investors, lenders, and developers across Western Canada.
+              </p>
+            </div>
+            <div className="text-center text-sm text-muted-foreground">
               <p>
                 Questions? Call us at <strong>(587) 801-5151</strong>
               </p>
