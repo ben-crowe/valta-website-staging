@@ -280,7 +280,7 @@ export default function RequestAppraisalPage() {
                 Get Your Commercial Appraisal Started
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-                Professional property valuations delivered in 2-3 weeks, not 4-6. Get started with a quick consultation.
+                Professional peer reviewed property appraisals delivered in 2-3 weeks, not 4-6. Get started with a quick consultation.
               </p>
               <div className="flex items-center justify-center gap-2 text-white/80">
                 <Shield className="h-5 w-5" />
@@ -632,13 +632,14 @@ export default function RequestAppraisalPage() {
                       <div className="grid gap-6 md:grid-cols-2">
                         <div className="space-y-2">
                           <Label htmlFor="propertyName">
-                            Property Name
+                            Property Name <span className="text-red-500">*</span>
                           </Label>
                           <Input
                             id="propertyName"
                             value={formData.propertyName}
                             onChange={(e) => handleInputChange("propertyName", e.target.value)}
                             placeholder="Riverside Apartments"
+                            required
                             className={errors.propertyName ? "border-red-500" : ""}
                           />
                           {errors.propertyName && (
@@ -740,11 +741,8 @@ export default function RequestAppraisalPage() {
                             <SelectValue placeholder="Please Select" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="Excellent">Excellent</SelectItem>
-                            <SelectItem value="Very Good">Very Good</SelectItem>
-                            <SelectItem value="Good">Good</SelectItem>
-                            <SelectItem value="Fair">Fair</SelectItem>
-                            <SelectItem value="Poor">Poor</SelectItem>
+                            <SelectItem value="New Development">New Development</SelectItem>
+                            <SelectItem value="Existing Property">Existing Property</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
@@ -945,7 +943,7 @@ export default function RequestAppraisalPage() {
                 <div className="text-sm font-bold text-green-600 uppercase tracking-wider mb-2">Step Four</div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">Receive Your Report</h3>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  Your lender-ready report arrives on schedule. Access it anytime through your client portal, 
+                  Your peer reviewed, lender-ready report arrives on schedule. Access it anytime through your client portal, 
                   along with all supporting documentation. Need another copy? It's always there.
                 </p>
                 <div className="mt-4 inline-flex items-center text-sm text-green-600 font-medium">
@@ -985,7 +983,8 @@ export default function RequestAppraisalPage() {
               <Phone className="h-6 w-6 text-blue-600" />
               <div className="text-left">
                 <div className="text-2xl font-bold text-slate-900">(587) 801-5151</div>
-                <div className="text-slate-600">Call for immediate consultation</div>
+                <div className="text-lg text-slate-700">clientcare@valta.ca</div>
+                <div className="text-slate-600">Call or email for immediate consultation</div>
               </div>
             </div>
             <p className="text-sm text-slate-500">Current clients can also call for priority support</p>
