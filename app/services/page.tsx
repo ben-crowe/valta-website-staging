@@ -129,9 +129,7 @@ export default function ServicesPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Multifamily Appraisals</h2>
                 <p className="text-muted-foreground md:text-lg">
-                  Our primary specialization with deep expertise in apartment complexes, condominiums, and multi-unit
-                  residential properties. We understand the complexities of income-producing residential properties and
-                  provide comprehensive market analysis using the income approach.
+                  Our primary specialization with deep expertise in purpose-built rental apartments and townhome properties. We understand the complexities of income-producing multifamily properties and provide comprehensive market analysis.
                 </p>
               </div>
               <ul className="grid gap-2">
@@ -203,9 +201,7 @@ export default function ServicesPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Self-Storage Valuations</h2>
                 <p className="text-muted-foreground md:text-lg">
-                  Specialized knowledge in the rapidly growing self-storage sector. We understand the unique operational
-                  aspects of storage facilities, including occupancy rates, rental rates, and the impact of location and
-                  competition on facility performance.
+                  Specialized knowledge in the rapidly growing self-storage market. We understand the unique operational aspects of self storage facilities, including occupancy rates, rental rates, and the impact of location and competition on facility performance.
                 </p>
               </div>
               <ul className="grid gap-2">

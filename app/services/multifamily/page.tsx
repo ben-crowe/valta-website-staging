@@ -36,7 +36,7 @@ export default function MultifamilyPage() {
           <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
             <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Multifamily Property Appraisals
+                Multifamily Appraisals
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Expert valuations for purpose-built rental apartments and townhome properties. Lender-ready reports in 2-3 weeks.
@@ -69,6 +69,9 @@ export default function MultifamilyPage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Valta's Deep Multifamily Market Knowledge
             </h2>
+            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+              Our specialized expertise in multifamily properties ensures accurate valuations that reflect current market conditions.
+            </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <Image
@@ -81,21 +84,21 @@ export default function MultifamilyPage() {
             <div className="flex flex-col justify-center space-y-6">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold mb-3">Comprehensive Market Analysis</h3>
+                  <h3 className="text-xl font-bold mb-3">Existing & Value Add Properties</h3>
                   <p className="text-muted-foreground">
-                    We don't just appraise properties—we analyze entire markets. Our reports include detailed competitor analysis, absorption studies, and rent growth projections that give you the complete picture.
+                    Expert appraisals for stabilized and major renovation projects. Comprehensive analysis and valuation for existing and value add rental properties. We understand the nuances of below market rents and capital expenditures on values.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3">Income Optimization Insights</h3>
+                  <h3 className="text-xl font-bold mb-3">Purpose-Built Rental Properties</h3>
                   <p className="text-muted-foreground">
-                    Our unique background means we understand operational efficiencies, expense ratios, and revenue opportunities that traditional appraisers miss. We identify value-add potential and provide actionable recommendations.
+                    Expert appraisals for new construction, purpose-built rentals. Our development and ownership background provides unique insight into construction costs and project feasibility.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3">Development-Ready Valuations</h3>
+                  <h3 className="text-xl font-bold mb-3">Portfolio Valuations</h3>
                   <p className="text-muted-foreground">
-                    Whether it's new construction, value-add repositioning, or stabilized assets, we provide accurate "as-is" and "as-complete" valuations that lenders trust and developers rely on.
+                    Efficient multiple property valuations for real estate investors, institutional clients and financial reporting. Coordinated timing and consistent methodology across your entire portfolio.
                   </p>
                 </div>
               </div>
@@ -113,7 +116,7 @@ export default function MultifamilyPage() {
               Valta's Multifamily Appraisal Process
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
-              Built for Speed Without Sacrificing Accuracy
+              A systematic approach that ensures thorough analysis and timely delivery of your appraisal report.
             </p>
           </div>
           <div className="mx-auto max-w-4xl">
@@ -125,9 +128,9 @@ export default function MultifamilyPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Initial Consultation (Same Day)</h3>
+                  <h3 className="text-xl font-bold mb-2">Property Analysis</h3>
                   <p className="text-muted-foreground">
-                    We review your requirements, timeline, and specific needs. You'll receive a formal quote and engagement letter within hours, not days.
+                    Timely inspection and detailed physical and financial review to understand the property's physical characteristics and income potential.
                   </p>
                 </div>
               </div>
@@ -139,9 +142,9 @@ export default function MultifamilyPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Property Inspection (Week 1)</h3>
+                  <h3 className="text-xl font-bold mb-2">Market Research</h3>
                   <p className="text-muted-foreground">
-                    Comprehensive on-site review including all units types, amenities, and mechanical systems. We coordinate directly with property management to minimize disruption.
+                    Extensive comparable sales and rental analysis to establish current market conditions and trends affecting property values.
                   </p>
                 </div>
               </div>
@@ -153,9 +156,9 @@ export default function MultifamilyPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Analysis & Valuation (Week 2)</h3>
+                  <h3 className="text-xl font-bold mb-2">Income Approach</h3>
                   <p className="text-muted-foreground">
-                    Deep-dive market analysis, income verification, and expense review. Our dual perspective as appraisers and investors ensures nothing is overlooked.
+                    Detailed NOI calculations and cap rate analysis using market-extracted rates to determine the property's investment value.
                   </p>
                 </div>
               </div>
@@ -167,9 +170,9 @@ export default function MultifamilyPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Report Delivery (Week 2-3)</h3>
+                  <h3 className="text-xl font-bold mb-2">Report Delivery</h3>
                   <p className="text-muted-foreground">
-                    Peer-reviewed, lender-ready report delivered on time. No surprises, no delays, no revision requests—just clean approvals that keep your deal moving.
+                    Peer reviewed and CUSPAP compliant report delivered within 2-3 weeks, ready for lender submission and financing approval.
                   </p>
                 </div>
               </div>
@@ -200,7 +203,7 @@ export default function MultifamilyPage() {
             </div>
             <div className="text-center text-sm text-muted-foreground mt-4">
               <p>
-                Questions? Call us at <strong>(587) 801-5151</strong> or email <strong>clientcare@valta.ca</strong>
+                Or call us at <strong>(587) 801-5151</strong> or email at <strong>clientcare@valta.ca</strong> for immediate consultation
               </p>
             </div>
           </div>

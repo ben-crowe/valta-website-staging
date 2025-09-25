@@ -16,8 +16,7 @@ export default function SiteFooter() {
               className="h-10 w-auto"
             />
             <p className="text-sm text-muted-foreground">
-              Professional commercial real estate appraisal services across Western Canada. AACI certified appraisers
-              specializing in multifamily, self-storage, and commercial properties.
+              Professional commercial real estate appraisal services across Western Canada. Fast response, AACI designated appraisers specializing in multifamily, self-storage, and commercial properties.
             </p>
           </div>
           <div className="space-y-3">
@@ -55,12 +54,12 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link href="/services/self-storage" className="text-sm text-muted-foreground hover:text-foreground">
-                  Self-Storage Valuations
+                  Self Storage Appraisals
                 </Link>
               </li>
               <li>
                 <Link href="/services/commercial" className="text-sm text-muted-foreground hover:text-foreground">
-                  Commercial Property
+                  Commercial Appraisals
                 </Link>
               </li>
             </ul>
@@ -68,7 +67,7 @@ export default function SiteFooter() {
           <div className="space-y-3">
             <h3 className="text-lg font-medium">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">Calgary, AB, Canada</li>
+              <li className="text-sm text-muted-foreground">300, 4838 Richard Road SW, Calgary, AB, T3E 6L1</li>
               <li className="text-sm text-muted-foreground">clientcare@valta.ca</li>
               <li className="text-sm text-muted-foreground">(587) 801-5151</li>
             </ul>
