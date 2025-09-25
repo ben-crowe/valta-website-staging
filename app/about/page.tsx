@@ -319,7 +319,7 @@ export default function AboutPage() {
               {/* Bottom Call-out */}
               <div className="mt-12 p-8 bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl border-l-4 border-blue-500">
                 <p className="text-xl text-slate-800 font-medium italic">
-                  Bottom line? When your appraiser has actually been a developer and an owenr, you get more than a report—you get a partner 
+                  Bottom line? When your appraiser has actually been a developer and an owner, you get more than a report—you get a partner 
                   who genuinely understands what's at stake.
                 </p>
               </div>
