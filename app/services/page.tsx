@@ -169,7 +169,7 @@ export default function ServicesPage() {
             </div>
             <div className="relative mx-auto">
               <Image
-                src="/images/Multifamily Mid Rise.jpg"
+                src="/images/01-updated-images/Service- Multifamily -Multifamily Mid Rise.jpg"
                 width={600}
                 height={450}
                 alt="Multifamily Apartment Complex"
@@ -188,7 +188,7 @@ export default function ServicesPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="relative mx-auto lg:order-first">
               <Image
-                src="/images/Self Storage Exterior.jpg"
+                src="/images/01-updated-images/Service- Self-Storage -Self Storage Units - Interior.jpg"
                 width={600}
                 height={450}
                 alt="Self Storage Facility"
@@ -267,7 +267,7 @@ export default function ServicesPage() {
             </div>
             <div className="relative mx-auto">
               <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop&crop=entropy"
+                src="/images/01-updated-images/Service- Commercial-Calgary Commerical Building.webp"
                 width={600}
                 height={450}
                 alt="Commercial Office Building"

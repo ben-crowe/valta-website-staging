@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Success Message - Updated Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl font-bold mb-6">Updated Success Message (Blue/Gray):</h1>
+        
+        <!-- NEW DESIGN - This is what users see after submitting -->
+        <div class="border-0 shadow-xl rounded-xl bg-slate-50 p-12">
+            <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                <!-- Blue checkmark circle -->
+                <div class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
+                    <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                
+                <!-- Thank you message -->
+                <div class="space-y-2">
+                    <h3 class="text-2xl font-bold text-slate-900">Thank You!</h3>
+                    <p class="text-slate-600 max-w-md">
+                        Your message has been received. We'll get back to you within 24 hours to discuss your appraisal needs.
+                    </p>
+                </div>
+                
+                <!-- Button to send another message -->
+                <button class="px-4 py-2 border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-white">
+                    Send Another Message
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-8 p-4 bg-white rounded-lg shadow">
+            <h2 class="font-bold mb-2 text-blue-600">What the "Send Another Message" Button Does:</h2>
+            <ul class="list-disc list-inside space-y-2 text-sm">
+                <li>Clears the success message</li>
+                <li>Shows a fresh empty form</li>
+                <li>Allows users to submit multiple inquiries</li>
+                <li>Useful for different properties or questions</li>
+                <li class="text-red-600 font-semibold">Can be removed if you don't want it!</li>
+            </ul>
+        </div>
+
+        <div class="mt-6">
+            <h2 class="text-xl font-bold mb-4">Alternative Options:</h2>
+            
+            <!-- Option 1: Without button -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-2">Option 1: No Button (Simpler)</h3>
+                <div class="border-0 shadow-xl rounded-xl bg-slate-50 p-12">
+                    <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                        <div class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-2xl font-bold text-slate-900">Thank You!</h3>
+                            <p class="text-slate-600 max-w-md">
+                                Your message has been received. We'll get back to you within 24 hours to discuss your appraisal needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 2: Different button text -->
+            <div class="mb-6">
+                <h3 class="font-semibold mb-2">Option 2: Different Button Text</h3>
+                <div class="border-0 shadow-xl rounded-xl bg-slate-50 p-12">
+                    <div class="flex flex-col items-center justify-center space-y-4 text-center">
+                        <div class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center">
+                            <svg class="h-8 w-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-2xl font-bold text-slate-900">Thank You!</h3>
+                            <p class="text-slate-600 max-w-md">
+                                Your message has been received. We'll get back to you within 24 hours to discuss your appraisal needs.
+                            </p>
+                        </div>
+                        <button class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300">
+                            Return to Website
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+            <h3 class="font-bold mb-2">Current Changes Made:</h3>
+            <ul class="list-disc list-inside space-y-1 text-sm">
+                <li>Changed green background to gray (slate-50)</li>
+                <li>Changed green checkmark circle to blue</li>
+                <li>Kept the professional look with subtle colors</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

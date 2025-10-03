@@ -73,9 +73,9 @@ export default function NewsPage() {
         <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=800&fit=crop"
+              src="/images/01-updated-images/News-Aparment New Developemt Calgary.jpg"
               fill
-              alt="Modern Office Building"
+              alt="New apartment development in Calgary"
               className="object-cover"
               priority
             />

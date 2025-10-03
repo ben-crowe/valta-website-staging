@@ -29,9 +29,9 @@ export default function SelfStoragePage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/Self%20Storage%20Exterior.jpg"
+            src="/images/01-updated-images/Service- Self-Storage -Self Storage Units - Interior.jpg"
             fill
-            alt="Modern self storage facility with glass facade and orange storage units"
+            alt="Modern self storage facility interior units"
             className="object-cover"
             priority
           />
@@ -92,38 +92,31 @@ export default function SelfStoragePage() {
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
             />
             <div className="flex flex-col justify-center space-y-6">
-              <div className="space-y-4">
-                <ul className="grid gap-3">
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      <strong>Revenue per square foot calculations</strong> - Understanding unit mix optimization and pricing strategies across different unit sizes
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      <strong>Occupancy and rental rate analysis</strong> - Seasonal trends, move-in/move-out patterns, and market penetration rates
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      <strong>Management efficiency factors</strong> - Staffing models, operational costs, and automation impact on profitability
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="h-2 w-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                    <div>
-                      <strong>Technology and security considerations</strong> - Modern access systems, surveillance, and customer management platforms
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                <p className="font-semibold text-blue-800">
-                  We've appraised hundreds of self-storage facilities across Western Canada.
-                </p>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Revenue per square foot calculations</h3>
+                  <p className="text-muted-foreground">
+                    Understanding unit mix optimization and pricing strategies across different unit sizes
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Occupancy and rental rate analysis</h3>
+                  <p className="text-muted-foreground">
+                    Seasonal trends, move-in/move-out patterns, and market penetration rates
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Management efficiency factors</h3>
+                  <p className="text-muted-foreground">
+                    Staffing models, operational costs, and automation impact on profitability
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Technology and security considerations</h3>
+                  <p className="text-muted-foreground">
+                    Modern access systems, surveillance, and customer management platforms
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -133,67 +126,72 @@ export default function SelfStoragePage() {
       {/* Market Trends Section */}
       <section className="w-full py-12 md:py-24 lg:py-32">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Understanding the Self-Storage Market
-              </h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl">
-                Key market dynamics driving value in the self-storage sector
-              </p>
-            </div>
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Understanding the Self-Storage Market
+            </h2>
+            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+              Key market dynamics driving value in the self-storage sector
+            </p>
           </div>
-          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="border-blue-200">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <Building className="h-12 w-12 text-blue-600" />
+          <div className="mx-auto max-w-4xl">
+            <div className="space-y-8">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-10 w-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                    1
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold mb-3">Supply Constraints</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Limited new development opportunities due to zoning restrictions and land costs
-                </p>
-                <div className="text-2xl font-bold text-blue-600">2.1%</div>
-                <div className="text-xs text-muted-foreground">Annual supply growth</div>
-              </CardContent>
-            </Card>
-            <Card className="border-blue-200">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <Users className="h-12 w-12 text-blue-600" />
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Supply Constraints</h3>
+                  <p className="text-muted-foreground">
+                    Limited new development opportunities due to zoning restrictions and land costs. Annual supply growth of 2.1% creates favorable market conditions.
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold mb-3">Demand Drivers</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Urbanization and downsizing trends creating consistent demand growth
-                </p>
-                <div className="text-2xl font-bold text-blue-600">4.2%</div>
-                <div className="text-xs text-muted-foreground">Annual demand growth</div>
-              </CardContent>
-            </Card>
-            <Card className="border-blue-200">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <Smartphone className="h-12 w-12 text-blue-600" />
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-10 w-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                    2
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold mb-3">Technology Integration</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Automated facilities and online booking improving operational efficiency
-                </p>
-                <div className="text-2xl font-bold text-blue-600">78%</div>
-                <div className="text-xs text-muted-foreground">Online rentals</div>
-              </CardContent>
-            </Card>
-            <Card className="border-blue-200">
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <Shield className="h-12 w-12 text-blue-600" />
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Demand Drivers</h3>
+                  <p className="text-muted-foreground">
+                    Urbanization and downsizing trends creating consistent demand growth. Annual demand growth of 4.2% outpaces supply expansion.
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold mb-3">Investment Appeal</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  Recession-resistant asset class with stable cash flows
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-10 w-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                    3
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Technology Integration</h3>
+                  <p className="text-muted-foreground">
+                    Automated facilities and online booking improving operational efficiency. 78% of rentals now completed online, reducing overhead costs.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-10 w-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">
+                    4
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Investment Appeal</h3>
+                  <p className="text-muted-foreground">
+                    Recession-resistant asset class with stable cash flows and predictable revenue streams across economic cycles.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -254,10 +252,6 @@ export default function SelfStoragePage() {
                       <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Demographic trends and demand drivers</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                      <span>Market penetration and growth opportunities</span>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -270,7 +264,7 @@ export default function SelfStoragePage() {
                   <ul className="text-left space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                      <span>Income approach with storage-specific metrics</span>
+                      <span>Income approach with self-storage specific metrics</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
@@ -279,10 +273,6 @@ export default function SelfStoragePage() {
                     <li className="flex items-start gap-2">
                       <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                       <span>Cap rate extraction from comparable sales</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="h-1.5 w-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                      <span>Sensitivity analysis for key performance metrics</span>
                     </li>
                   </ul>
                 </div>
@@ -299,6 +289,9 @@ export default function SelfStoragePage() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Self-Storage Facility Types We Appraise
             </h2>
+            <p className="max-w-[900px] text-muted-foreground md:text-xl">
+              From traditional drive-up units to specialized new generation multi storey self storage properties.
+            </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
             <Card className="border-blue-200">
@@ -306,9 +299,9 @@ export default function SelfStoragePage() {
                 <div className="mb-4 flex justify-center">
                   <Building2 className="h-12 w-12 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-center">Multi-Storey</h3>
+                <h3 className="text-xl font-bold mb-3 text-center">Mult-Storey Self-Storage Facilities</h3>
                 <p className="text-muted-foreground">
-                  Urban facilities with multiple floors, elevators, and climate-controlled options. Higher construction costs but premium rental rates in dense markets.
+                  Premium storage with temperature and humidity control for sensitive items. High-density urban facilities maximizing storage capacity per land area.
                 </p>
               </CardContent>
             </Card>
@@ -317,9 +310,9 @@ export default function SelfStoragePage() {
                 <div className="mb-4 flex justify-center">
                   <Car className="h-12 w-12 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-center">Drive-Up</h3>
+                <h3 className="text-xl font-bold mb-3 text-center">Drive-Up Mini Storage</h3>
                 <p className="text-muted-foreground">
-                  Single-story facilities with direct vehicle access. Lower operational costs and preferred by commercial tenants and RV/boat storage customers.
+                  Traditional ground-level units with direct vehicle access for convenience.
                 </p>
               </CardContent>
             </Card>

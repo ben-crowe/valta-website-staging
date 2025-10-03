@@ -17,8 +17,15 @@ export interface FormData {
   clientEmail: string;
   propertyName: string;
   propertyAddress: string;
+  // Property Contact fields
+  sameAsClientContact: boolean;
+  propertyContactFirstName: string;
+  propertyContactLastName: string;
+  propertyContactEmail: string;
+  propertyContactPhone: string;
   propertyType: string;
   intendedUse: string;
+  valuationPremises: string;
   assetCondition: string;
   additionalInfo: string;  // renamed from notes to match UI
   files?: File[];

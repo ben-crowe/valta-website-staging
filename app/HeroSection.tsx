@@ -12,8 +12,8 @@ export function HeroSection() {
   // Professional Calgary and property images carousel
   const heroImages = [
     {
-      src: "/images/hero-cityscape.jpg",
-      alt: "Calgary cityscape",
+      src: "/images/01-updated-images/Home-Calgary Developments.jpg",
+      alt: "Calgary Developments",
       overlayClass: "bg-gradient-to-r from-black/70 via-black/50 to-transparent"
     },
     {

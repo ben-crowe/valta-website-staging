@@ -24,9 +24,9 @@ export default function CommercialPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=800&fit=crop&crop=entropy"
+            src="/images/01-updated-images/Service- Commercial-Calgary Commerical Building.webp"
             fill
-            alt="Modern commercial office building"
+            alt="Modern commercial office building in Calgary"
             className="object-cover"
             priority
           />
@@ -80,10 +80,10 @@ export default function CommercialPage() {
           </div>
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <Image
-              src="/images/storagebuildinghome.jpg"
+              src="/images/commercial/professional-office-entrance.jpg"
               width={600}
               height={400}
-              alt="Modern commercial storage facility"
+              alt="Professional office interior with modern design"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
             />
             <div className="flex flex-col justify-center space-y-6">
@@ -118,54 +118,16 @@ export default function CommercialPage() {
         </div>
       </section>
 
-
-      {/* Western Canada Market Knowledge Section - 3 Blocks */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
+      {/* Western Canada Market Knowledge Section */}
+      <section className="w-full py-12 md:py-16 lg:py-20">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Western Canada Market Knowledge
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl">
               Deep local expertise across major Western Canadian commercial markets.
             </p>
-          </div>
-          <div className="mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-              <div className="flex flex-col items-center text-center space-y-6">
-                <div className="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center">
-                  <TrendingUp className="h-10 w-10 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Market Analysis</h3>
-                  <p className="text-muted-foreground">
-                    Current trends and comparable sales data across Western Canadian markets
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center text-center space-y-6">
-                <div className="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Calculator className="h-10 w-10 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Investment Insights</h3>
-                  <p className="text-muted-foreground">
-                    Cap rates and return projections for informed investment decisions
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center text-center space-y-6">
-                <div className="h-20 w-20 rounded-full bg-blue-100 flex items-center justify-center">
-                  <MapPin className="h-10 w-10 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Development Potential</h3>
-                  <p className="text-muted-foreground">
-                    Highest and best use analysis for maximum property value
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -176,10 +138,10 @@ export default function CommercialPage() {
           <div className="flex flex-col items-center justify-center space-y-6 text-center">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Ready to Get Started?
+                Ready to discuss your commercial property?
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-xl">
-                Contact us today to discuss your property valuation needs and how we can help with your project.
+                Get expert analysis and market insights for your commercial real estate financing.
               </p>
             </div>
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
@@ -197,11 +159,6 @@ export default function CommercialPage() {
             <div className="text-center mt-6">
               <p className="text-muted-foreground">
                 Serving investors, lenders, and developers across Western Canada.
-              </p>
-            </div>
-            <div className="text-center text-sm text-muted-foreground">
-              <p>
-                Questions? Call us at <strong>(587) 801-5151</strong>
               </p>
             </div>
           </div>

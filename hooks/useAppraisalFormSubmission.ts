@@ -59,8 +59,14 @@ export const useAppraisalFormSubmission = () => {
         property_address: formData.propertyAddress || '',
         property_type: formData.propertyType || null,
         intended_use: formData.intendedUse || null,
+        valuation_premises: formData.valuationPremises || null,
         asset_condition: formData.assetCondition || null,
         notes: formData.additionalInfo || '',
+        same_as_client_contact: formData.sameAsClientContact || false,
+        property_contact_first_name: formData.propertyContactFirstName || null,
+        property_contact_last_name: formData.propertyContactLastName || null,
+        property_contact_email: formData.propertyContactEmail || null,
+        property_contact_phone: formData.propertyContactPhone || null,
         status: "submitted",
       };
 
@@ -129,8 +135,13 @@ Original form data:
       // Handle file uploads if any
       if (formData.files && formData.files.length > 0) {
         for (const file of formData.files) {
-          const filePath = `${jobData.id}/${file.name}`;
-          
+          // Sanitize filename: replace spaces with underscores, remove special characters
+          const sanitizedFilename = file.name
+            .replace(/\s+/g, '_')  // Replace spaces with underscores
+            .replace(/[^a-zA-Z0-9._-]/g, '');  // Remove special characters except . _ -
+
+          const filePath = `${jobData.id}/${sanitizedFilename}`;
+
           // Upload to storage
           const { error: uploadError } = await supabase.storage
             .from('job-files')
@@ -142,11 +153,11 @@ Original form data:
             continue;
           }
 
-          // Record file reference in database
+          // Record file reference in database (use original name for display)
           await supabase.from('job_files').insert({
             job_id: jobData.id,
-            file_name: file.name,
-            file_path: filePath,
+            file_name: file.name,  // Keep original name for display
+            file_path: filePath,   // Use sanitized path for storage
             file_type: file.type,
             file_size: file.size,
           });

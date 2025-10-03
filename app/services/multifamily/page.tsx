@@ -21,7 +21,7 @@ export default function MultifamilyPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/Multifamily%20Mid%20Rise.jpg"
+            src="/images/01-updated-images/Service- Multifamily -Multifamily Mid Rise.jpg"
             fill
             alt="Modern multifamily apartment building"
             className="object-cover"

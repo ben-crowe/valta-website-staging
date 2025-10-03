@@ -29,17 +29,58 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
+import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { useAppraisalFormSubmission } from "@/hooks/useAppraisalFormSubmission"
 import { type FormData } from "@/lib/supabase"
+import { useToast } from "@/components/ui/use-toast"
 
 export default function RequestAppraisalPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const formRef = useRef<HTMLDivElement>(null)
+  const { toast } = useToast()
   const { submitForm, isSubmitting, isSubmitted, errors, setErrors } = useAppraisalFormSubmission()
   
   // Phone number formatting function
+  // Test data generator function
+  const fillTestData = () => {
+    const testData = {
+      clientFirstName: "John",
+      clientLastName: "Smith",
+      clientTitle: "Property Manager",
+      clientOrganization: "Apex Properties Ltd.",
+      clientAddress: "Suite 300, 123 Main Street, Calgary, AB T2P 1A1",
+      clientPhone: "(403) 555-0123",
+      clientEmail: "john.smith@test.com",
+      propertyName: "Riverside Plaza",
+      propertyAddress: "456 7th Avenue SW, Calgary, AB",
+      sameAsClientContact: false,
+      propertyContactFirstName: "Marcus / Property Management",
+      propertyContactLastName: "Johnson",
+      propertyContactEmail: "property.manager@test.com",
+      propertyContactPhone: "(403) 555-0456",
+      propertyType: "Multifamily",
+      intendedUse: "Financing/Refinancing",
+      valuationPremises: "Market Value",
+      assetCondition: "Good",
+      additionalInfo: "Test submission - 24 unit apartment building requiring financing appraisal. Building constructed in 1985, recently renovated common areas. Please contact property manager for access."
+    }
+    setFormData(testData)
+
+    // Create a test PDF file
+    const testPdfContent = '%PDF-1.4\n1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n3 0 obj\n<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /MediaBox [0 0 612 792] /Contents 4 0 R >>\nendobj\n4 0 obj\n<< /Length 44 >>\nstream\nBT\n/F1 12 Tf\n100 700 Td\n(Test Document) Tj\nET\nendstream\nendobj\nxref\n0 5\n0000000000 65535 f\n0000000009 00000 n\n0000000058 00000 n\n0000000115 00000 n\n0000000317 00000 n\ntrailer\n<< /Size 5 /Root 1 0 R >>\nstartxref\n408\n%%EOF';
+    const blob = new Blob([testPdfContent], { type: 'application/pdf' });
+    const testFile = new File([blob], 'test-property-document.pdf', { type: 'application/pdf' });
+    setUploadedFiles([testFile]);
+
+    toast({
+      title: "Test Data Filled",
+      description: "Form populated with test values and sample PDF",
+    })
+  }
+
   const formatPhoneNumber = (value: string) => {
     // Remove all non-digit characters
     const phoneNumber = value.replace(/\D/g, '')
@@ -89,6 +130,12 @@ export default function RequestAppraisalPage() {
     // Property Information
     propertyName: "",
     propertyAddress: "",
+    // Property Contact fields
+    sameAsClientContact: false,
+    propertyContactFirstName: "",
+    propertyContactLastName: "",
+    propertyContactEmail: "",
+    propertyContactPhone: "",
     propertyType: "",
     intendedUse: "",
     valuationPremises: "",
@@ -108,12 +155,12 @@ export default function RequestAppraisalPage() {
   // Hero carousel images
   const heroImages = [
     {
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=800&fit=crop",
-      alt: "Professional workspace with documents",
+      src: "/images/01-updated-images/Appraisal Req-Apartment Kitchen Interior (2).jpg",
+      alt: "Modern apartment kitchen interior",
       overlayClass: "bg-gradient-to-r from-black/80 via-black/60 to-transparent"
     },
     {
-      src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&h=800&fit=crop", 
+      src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1920&h=800&fit=crop",
       alt: "Modern office workspace",
       overlayClass: "bg-gradient-to-b from-black/70 via-black/50 to-black/70"
     },
@@ -149,12 +196,42 @@ export default function RequestAppraisalPage() {
     setNewClientData((prev) => ({ ...prev, [field]: value }))
   }
 
-  const handleInputChange = (field: keyof FormData, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
+  const handleInputChange = (field: keyof FormData, value: string | boolean) => {
+    setFormData((prev) => {
+      const newData = { ...prev, [field]: value }
+      
+      // If "Same as Client Contact" is checked, update property contact fields when client fields change
+      if (prev.sameAsClientContact && typeof value === 'string') {
+        if (field === 'clientFirstName') {
+          newData.propertyContactFirstName = value
+        } else if (field === 'clientLastName') {
+          newData.propertyContactLastName = value
+        } else if (field === 'clientEmail') {
+          newData.propertyContactEmail = value
+        } else if (field === 'clientPhone') {
+          newData.propertyContactPhone = value
+        }
+      }
+      
+      return newData
+    })
+    
     // Clear error for this field when user starts typing
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }))
     }
+  }
+
+  // Handle "Same as Client Contact" checkbox change
+  const handleSameAsClientContactChange = (checked: boolean) => {
+    setFormData((prev) => ({
+      ...prev,
+      sameAsClientContact: checked,
+      propertyContactFirstName: checked ? prev.clientFirstName : "",
+      propertyContactLastName: checked ? prev.clientLastName : "",
+      propertyContactEmail: checked ? prev.clientEmail : "",
+      propertyContactPhone: checked ? prev.clientPhone : "",
+    }))
   }
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -171,7 +248,9 @@ export default function RequestAppraisalPage() {
     // Populate email in main form
     setFormData(prev => ({
       ...prev,
-      clientEmail: loginData.email
+      clientEmail: loginData.email,
+      // Also update property contact email if "Same as Client Contact" is checked
+      propertyContactEmail: prev.sameAsClientContact ? loginData.email : prev.propertyContactEmail,
     }))
     // Close the mini form
     setShowExistingClientForm(false)
@@ -196,6 +275,11 @@ export default function RequestAppraisalPage() {
       clientOrganization: newClientData.companyName,
       clientPhone: newClientData.phone,
       clientEmail: newClientData.email,
+      // Also update property contact fields if "Same as Client Contact" is checked
+      propertyContactFirstName: prev.sameAsClientContact ? firstName : prev.propertyContactFirstName,
+      propertyContactLastName: prev.sameAsClientContact ? lastName : prev.propertyContactLastName,
+      propertyContactEmail: prev.sameAsClientContact ? newClientData.email : prev.propertyContactEmail,
+      propertyContactPhone: prev.sameAsClientContact ? newClientData.phone : prev.propertyContactPhone,
     }))
     // Close the mini form
     setShowNewClientForm(false)
@@ -207,23 +291,23 @@ export default function RequestAppraisalPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     // Add files to form data
     const submissionData = { ...formData, files: uploadedFiles }
-    
+
     const result = await submitForm(submissionData)
-    
+
     if (result.success) {
-      // Show success message and redirect
-      alert("Appraisal request submitted successfully! You'll receive confirmation via email.")
-      // Reset form or redirect
-      setTimeout(() => {
-        router.push("/")
-      }, 2000)
+      // Success modal will show automatically via isSubmitted state
+      // No need to redirect - let user close modal manually
     } else {
       // Error handling is managed by the hook
       if (result.error) {
-        alert(result.error)
+        toast({
+          title: "Submission Error",
+          description: result.error,
+          variant: "destructive",
+        })
       }
     }
   }
@@ -503,7 +587,9 @@ export default function RequestAppraisalPage() {
             {/* Embedded Intake Form */}
             <Card className="border-2 border-blue-200">
               <CardHeader className="bg-blue-50/50">
-                <CardTitle className="text-2xl text-center">Complete Appraisal Request Form</CardTitle>
+                <div className="flex justify-between items-center">
+                  <CardTitle className="text-2xl flex-1 text-center">Complete Appraisal Request Form</CardTitle>
+                </div>
               </CardHeader>
               <CardContent className="pt-8">
                 <form onSubmit={handleSubmit} className="space-y-12">
@@ -657,6 +743,84 @@ export default function RequestAppraisalPage() {
                         </div>
                       </div>
 
+                      {/* Property Contact Information Section */}
+                      <div className="pt-6 border-t border-gray-200">
+                        <div className="space-y-4">
+                          <h4 className="text-lg font-semibold text-slate-900">Property Contact Information</h4>
+                          
+                          {/* Same as Client Contact Checkbox */}
+                          <div className="flex items-center space-x-2">
+                            <Checkbox
+                              id="sameAsClientContact"
+                              checked={formData.sameAsClientContact}
+                              onCheckedChange={handleSameAsClientContactChange}
+                            />
+                            <Label 
+                              htmlFor="sameAsClientContact" 
+                              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >
+                              Same as Client Contact
+                            </Label>
+                          </div>
+
+                          {/* Property Contact Fields */}
+                          <div className="grid gap-6 md:grid-cols-2">
+                            <div className="space-y-2">
+                              <Label htmlFor="propertyContactFirstName">First Name/Department</Label>
+                              <Input
+                                id="propertyContactFirstName"
+                                value={formData.propertyContactFirstName}
+                                onChange={(e) => handleInputChange("propertyContactFirstName", e.target.value)}
+                                placeholder="Marcus / Property Management"
+                                disabled={formData.sameAsClientContact}
+                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
+                              />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="propertyContactLastName">Last Name</Label>
+                              <Input
+                                id="propertyContactLastName"
+                                value={formData.propertyContactLastName}
+                                onChange={(e) => handleInputChange("propertyContactLastName", e.target.value)}
+                                placeholder="Johnson"
+                                disabled={formData.sameAsClientContact}
+                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
+                              />
+                            </div>
+                          </div>
+
+                          <div className="grid gap-6 md:grid-cols-2">
+                            <div className="space-y-2">
+                              <Label htmlFor="propertyContactEmail">Email</Label>
+                              <Input
+                                id="propertyContactEmail"
+                                type="email"
+                                value={formData.propertyContactEmail}
+                                onChange={(e) => handleInputChange("propertyContactEmail", e.target.value)}
+                                placeholder="property.manager@example.com"
+                                disabled={formData.sameAsClientContact}
+                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
+                              />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="propertyContactPhone">Phone</Label>
+                              <Input
+                                id="propertyContactPhone"
+                                type="tel"
+                                value={formData.propertyContactPhone}
+                                onChange={(e) => {
+                                  const formatted = formatPhoneNumber(e.target.value)
+                                  handleInputChange("propertyContactPhone", formatted)
+                                }}
+                                placeholder="(403) 555-0123"
+                                disabled={formData.sameAsClientContact}
+                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                       <div className="grid gap-6 md:grid-cols-2">
                         <div className="space-y-2">
                           <Label htmlFor="propertyType">
@@ -670,15 +834,12 @@ export default function RequestAppraisalPage() {
                               <SelectValue placeholder="Please Select" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="multifamily">Multifamily</SelectItem>
-                              <SelectItem value="self-storage">Self Storage</SelectItem>
-                              <SelectItem value="retail">Retail</SelectItem>
-                              <SelectItem value="industrial">Industrial</SelectItem>
-                              <SelectItem value="land">Land</SelectItem>
-                              <SelectItem value="office">Office</SelectItem>
-                              <SelectItem value="hotel">Hotel</SelectItem>
-                              <SelectItem value="senior">Senior</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
+                              <SelectItem value="Office">Office</SelectItem>
+                              <SelectItem value="Retail">Retail</SelectItem>
+                              <SelectItem value="Industrial">Industrial</SelectItem>
+                              <SelectItem value="Multifamily">Multifamily</SelectItem>
+                              <SelectItem value="Mixed Use">Mixed Use</SelectItem>
+                              <SelectItem value="Land">Land</SelectItem>
                             </SelectContent>
                           </Select>
                           {errors.propertyType && (
@@ -695,56 +856,55 @@ export default function RequestAppraisalPage() {
                               <SelectValue placeholder="Please Select" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="financing">Financing Purposes</SelectItem>
-                              <SelectItem value="internal">Internal Business Decisions</SelectItem>
-                              <SelectItem value="underwriting">Underwriting Decisions</SelectItem>
-                              <SelectItem value="litigation">Litigation Purposes</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
+                              <SelectItem value="Financing/Refinancing">Financing/Refinancing</SelectItem>
+                              <SelectItem value="Acquisition">Acquisition</SelectItem>
+                              <SelectItem value="Disposition">Disposition</SelectItem>
+                              <SelectItem value="Insurance">Insurance</SelectItem>
+                              <SelectItem value="Litigation">Litigation</SelectItem>
+                              <SelectItem value="Estate Planning">Estate Planning</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="valuationPremises">Valuation Premises</Label>
-                        <Select
-                          value={formData.valuationPremises}
-                          onValueChange={(value) => handleInputChange("valuationPremises", value)}
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Please Select" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="market-value-as-is">Market Value As Is</SelectItem>
-                            <SelectItem value="market-value-as-is-stabilized">
-                              Market Value As Is & As Stabilized
-                            </SelectItem>
-                            <SelectItem value="market-value-complete-stabilized">
-                              Market Value As Complete & As Stabilized
-                            </SelectItem>
-                            <SelectItem value="market-value-land-complete-stabilized">
-                              Market Value Land As Is & As Complete & As Stabilized
-                            </SelectItem>
-                            <SelectItem value="market-value-land-as-is">Market Value Land As Is</SelectItem>
-                            <SelectItem value="market-value-land-rezoned">Market Value Land As Is & As Rezoned</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
+                      <div className="grid gap-6 md:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="valuationPremises">Valuation Premises</Label>
+                          <Select
+                            value={formData.valuationPremises}
+                            onValueChange={(value) => handleInputChange("valuationPremises", value)}
+                          >
+                            <SelectTrigger>
+                              <SelectValue placeholder="Please Select" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Market Value">Market Value</SelectItem>
+                              <SelectItem value="Market Rent">Market Rent</SelectItem>
+                              <SelectItem value="Investment Value">Investment Value</SelectItem>
+                              <SelectItem value="Insurable Value">Insurable Value</SelectItem>
+                              <SelectItem value="Liquidation Value">Liquidation Value</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="assetCondition">Asset Current Condition</Label>
-                        <Select
-                          value={formData.assetCondition}
-                          onValueChange={(value) => handleInputChange("assetCondition", value)}
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Please Select" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="New Development">New Development</SelectItem>
-                            <SelectItem value="Existing Property">Existing Property</SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <div className="space-y-2">
+                          <Label htmlFor="assetCondition">Asset Current Condition</Label>
+                          <Select
+                            value={formData.assetCondition}
+                            onValueChange={(value) => handleInputChange("assetCondition", value)}
+                          >
+                            <SelectTrigger>
+                              <SelectValue placeholder="Please Select" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Excellent">Excellent</SelectItem>
+                              <SelectItem value="Very Good">Very Good</SelectItem>
+                              <SelectItem value="Good">Good</SelectItem>
+                              <SelectItem value="Fair">Fair</SelectItem>
+                              <SelectItem value="Poor">Poor</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
                       </div>
 
                       <div className="space-y-2">
@@ -991,6 +1151,43 @@ export default function RequestAppraisalPage() {
           </div>
         </div>
       </section>
+
+      {/* Success Modal */}
+      <Dialog open={isSubmitted} onOpenChange={(open) => {
+        if (!open) {
+          // When modal closes, redirect to home
+          router.push("/")
+        }
+      }}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <CheckCircle className="h-16 w-16 text-green-600" />
+            </div>
+            <DialogTitle className="text-center text-2xl">
+              Thank You for Your Submission!
+            </DialogTitle>
+            <DialogDescription className="text-center text-base pt-4">
+              Your appraisal request has been successfully submitted. Our team will review your information and get back to you within 24 hours.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-4 pt-4">
+            <div className="bg-blue-50 p-4 rounded-lg">
+              <p className="text-sm text-center text-slate-700">
+                <strong>What happens next?</strong>
+                <br />
+                You'll receive a confirmation email shortly. Our team will review your request and contact you within 24 hours to discuss the next steps.
+              </p>
+            </div>
+            <Button
+              onClick={() => router.push("/")}
+              className="w-full"
+            >
+              Return to Home
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

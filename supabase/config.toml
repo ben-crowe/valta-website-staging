@@ -1,0 +1,6 @@
+project_id = "ngovnamnjmexdpjtcnky"
+
+[functions.send-contact-notification]
+enabled = true
+verify_jwt = false
+entrypoint = "./functions/send-contact-notification/index.ts"
