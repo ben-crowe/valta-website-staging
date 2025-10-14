@@ -83,17 +83,21 @@ export default function SiteFooter() {
           </div>
           <div className="space-y-3">
             <h3 className="text-lg font-medium">Company Details</h3>
-            <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground font-semibold">Valta Property Valuations Ltd.</li>
-              <li className="text-sm text-muted-foreground">AACI Designated Professionals</li>
-              <li className="text-sm text-muted-foreground">Serving Western Canada</li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground whitespace-nowrap">
-                <span>clientcare@valta.ca</span>
-                <span className="text-slate-400">|</span>
-                <span>(587) 801-5151</span>
-              </li>
-              <li className="text-sm text-muted-foreground">#300-4838 Richard Road SW<br/>Calgary, AB T3E 6L1</li>
-            </ul>
+            <div className="space-y-3">
+              <div className="space-y-0.5">
+                <p className="text-sm text-muted-foreground font-semibold">Valta Property Valuations Ltd.</p>
+                <p className="text-sm text-muted-foreground">AACI Designated Professionals</p>
+                <p className="text-sm text-muted-foreground">Serving Western Canada</p>
+              </div>
+              <div className="space-y-0.5">
+                <div className="text-sm text-muted-foreground">#300-4838 Richard Road SW<br/>Calgary, AB T3E 6L1</div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground whitespace-nowrap">
+                  <span>clientcare@valta.ca</span>
+                  <span className="text-slate-400">|</span>
+                  <span>(587) 801-5151</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="border-t pt-6 text-center text-sm text-muted-foreground">
