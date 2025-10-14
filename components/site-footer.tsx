@@ -71,12 +71,12 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link href="/services/self-storage" className="text-sm text-muted-foreground hover:text-foreground">
-                  Self Storage Appraisals
+                  Self-Storage Valuations
                 </Link>
               </li>
               <li>
                 <Link href="/services/commercial" className="text-sm text-muted-foreground hover:text-foreground">
-                  Commercial Appraisals
+                  Commercial Property
                 </Link>
               </li>
             </ul>
