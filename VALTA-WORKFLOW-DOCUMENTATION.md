@@ -288,6 +288,33 @@ npx supabase functions deploy send-appraisal-request
 
 ---
 
+## Iframe Embedding (Implemented)
+
+### **Single Source of Truth Architecture**
+
+The appraisal request form supports iframe embedding for use in APR Dashboard:
+
+**URL Parameters:**
+- `?embedded=true` - Hides header/footer for clean iframe display
+- `?test=true` - Adds `[TEST]` prefix to email subject, shows test banner
+
+**Usage Examples:**
+```
+Normal production: /request-appraisal/intake
+Embedded production: /request-appraisal/intake?embedded=true
+Embedded testing: /request-appraisal/intake?embedded=true&test=true
+```
+
+**Benefits:**
+- ✅ Testing form IS the production form
+- ✅ No code drift between testing and production
+- ✅ Same database, validation, and email system
+- ✅ Easy toggle between test/production modes
+
+**Implementation Guide:** See `IFRAME-EMBEDDING-GUIDE.md` for full details
+
+---
+
 ## Future Enhancements (TODO)
 
 ### **Priority 1: DocuSeal Webhook Integration**
