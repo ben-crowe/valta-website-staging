@@ -288,30 +288,20 @@ npx supabase functions deploy send-appraisal-request
 
 ---
 
-## Iframe Embedding (Implemented)
+## Iframe Embedding Support (For APR Dashboard)
 
-### **Single Source of Truth Architecture**
-
-The appraisal request form supports iframe embedding for use in APR Dashboard:
+The appraisal request form supports URL parameters for embedding:
 
 **URL Parameters:**
-- `?embedded=true` - Hides header/footer for clean iframe display
-- `?test=true` - Adds `[TEST]` prefix to email subject, shows test banner
+- `?embedded=true` - Hides header/footer sections
+- `?test=true` - Adds `[TEST]` prefix to email subject
 
-**Usage Examples:**
+**Usage:**
 ```
-Normal production: /request-appraisal/intake
-Embedded production: /request-appraisal/intake?embedded=true
-Embedded testing: /request-appraisal/intake?embedded=true&test=true
+/request-appraisal/intake?embedded=true&test=true
 ```
 
-**Benefits:**
-- ✅ Testing form IS the production form
-- ✅ No code drift between testing and production
-- ✅ Same database, validation, and email system
-- ✅ Easy toggle between test/production modes
-
-**Implementation Guide:** See `IFRAME-EMBEDDING-GUIDE.md` for full details
+**Note:** Dashboard integration guide and implementation details are in the **APR-Dashboard-v3** project, not here. This project only provides the URL parameter support.
 
 ---
 
