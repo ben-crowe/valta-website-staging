@@ -8,7 +8,7 @@ interface ValidationErrors {
 const validateForm = (formData: FormData): ValidationErrors => {
   const errors: ValidationErrors = {};
 
-  // Only 4 critical required fields
+  // Required fields
   if (!formData.clientFirstName?.trim()) errors.clientFirstName = "First name is required";
   if (!formData.clientLastName?.trim()) errors.clientLastName = "Last name is required";
   if (!formData.clientEmail?.trim()) {
@@ -20,6 +20,9 @@ const validateForm = (formData: FormData): ValidationErrors => {
     errors.clientPhone = "Phone number is required";
   } else if (!/^[\d\s()-]+$/.test(formData.clientPhone) || formData.clientPhone.replace(/\D/g, '').length < 10) {
     errors.clientPhone = "Please enter a valid phone number";
+  }
+  if (!formData.propertyAddress?.trim()) {
+    errors.propertyAddress = "Property address is required";
   }
 
   return errors;
@@ -164,10 +167,47 @@ Original form data:
         }
       }
 
+      // Send email notification to team
+      try {
+        const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-appraisal-request', {
+          body: {
+            jobId: jobData.id, // Add the job ID for dashboard link
+            clientFirstName: formData.clientFirstName,
+            clientLastName: formData.clientLastName,
+            clientEmail: formData.clientEmail,
+            clientPhone: formData.clientPhone,
+            clientTitle: formData.clientTitle,
+            clientOrganization: formData.clientOrganization,
+            clientAddress: formData.clientAddress,
+            propertyName: formData.propertyName,
+            propertyAddress: formData.propertyAddress,
+            propertyType: formData.propertyType,
+            intendedUse: formData.intendedUse,
+            valuationPremises: formData.valuationPremises,
+            assetCondition: formData.assetCondition,
+            additionalInfo: formData.additionalInfo,
+            propertyContactFirstName: formData.propertyContactFirstName,
+            propertyContactLastName: formData.propertyContactLastName,
+            propertyContactEmail: formData.propertyContactEmail,
+            propertyContactPhone: formData.propertyContactPhone,
+            sameAsClientContact: formData.sameAsClientContact
+          }
+        });
+
+        if (emailError) {
+          console.warn('Email notification failed (but appraisal request was saved):', emailError);
+        } else {
+          console.log('Email notification sent:', emailResult);
+        }
+
+      } catch (emailError) {
+        console.warn('Email notification error (but appraisal request was saved):', emailError);
+      }
+
       setSubmissionId(jobData.id);
       setIsSubmitted(true);
       setIsSubmitting(false);
-      
+
       return { success: true };
 
     } catch (error) {
