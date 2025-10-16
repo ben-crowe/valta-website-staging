@@ -74,6 +74,12 @@ export default function SiteHeader() {
               News/Blog
             </Link>
             <Link
+              href="/careers"
+              className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
+              Careers
+            </Link>
+            <Link
               href="/contact"
               className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
@@ -137,6 +143,9 @@ export default function SiteHeader() {
                   </Link>
                   <Link href="/news" className="text-sm font-medium transition-colors hover:text-primary">
                     News/Blog
+                  </Link>
+                  <Link href="/careers" className="text-sm font-medium transition-colors hover:text-primary">
+                    Careers
                   </Link>
                   <Link href="/contact" className="text-sm font-medium transition-colors hover:text-primary">
                     Contact

@@ -55,6 +55,11 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
+                <Link href="/careers" className="text-sm text-muted-foreground hover:text-foreground">
+                  Careers
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">
                   Contact
                 </Link>

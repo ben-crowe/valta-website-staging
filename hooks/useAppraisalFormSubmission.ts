@@ -28,7 +28,7 @@ const validateForm = (formData: FormData): ValidationErrors => {
   return errors;
 };
 
-export const useAppraisalFormSubmission = () => {
+export const useAppraisalFormSubmission = (isTestMode: boolean = false) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
@@ -172,6 +172,7 @@ Original form data:
         const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-appraisal-request', {
           body: {
             jobId: jobData.id, // Add the job ID for dashboard link
+            isTestMode: isTestMode, // Add test mode flag to control email recipient
             clientFirstName: formData.clientFirstName,
             clientLastName: formData.clientLastName,
             clientEmail: formData.clientEmail,

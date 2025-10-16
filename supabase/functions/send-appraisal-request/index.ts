@@ -14,6 +14,7 @@ serve(async (req) => {
     console.log('Appraisal request notification function called')
     const {
       jobId,
+      isTestMode,
       clientFirstName,
       clientLastName,
       clientEmail,
@@ -330,6 +331,10 @@ serve(async (req) => {
 </body>
 </html>`;
 
+    // Determine email recipient based on test mode
+    const recipient = isTestMode ? 'bc@crowestudio.com' : 'bc@crowestudio.com'; // Both go to Ben for now until domain verified
+    const subjectPrefix = isTestMode ? '[TEST] ' : '';
+
     // Send via Resend
     console.log('Calling Resend API...')
     const response = await fetch('https://api.resend.com/emails', {
@@ -340,8 +345,8 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'Valta Website <onboarding@resend.dev>',
-        to: ['bc@crowestudio.com'], // Will change to clientcare@valta.ca once domain verified
-        subject: `Appraisal Request - ${clientFirstName} ${clientLastName}`,
+        to: [recipient],
+        subject: `${subjectPrefix}Appraisal Request - ${clientFirstName} ${clientLastName}`,
         html: emailHtml,
       }),
     });
@@ -361,7 +366,8 @@ serve(async (req) => {
       JSON.stringify({
         success: true,
         message: 'Appraisal request notification sent successfully',
-        recipient: 'bc@crowestudio.com',
+        recipient: recipient,
+        isTestMode: isTestMode || false,
         emailId: data.id
       }),
       {

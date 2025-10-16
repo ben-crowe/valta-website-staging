@@ -329,25 +329,39 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-slate-100 to-slate-200">
-        <div className="container px-4 md:px-6">
-          <Card className="max-w-4xl mx-auto bg-white/80 backdrop-blur-md border border-slate-200/50 shadow-2xl rounded-2xl">
-            <CardContent className="p-12 text-center">
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-slate-900">
-                    Ready to Work with Someone Who's Been on Both Sides?
-                  </h2>
-                  <p className="text-xl text-slate-700 max-w-3xl mx-auto">
-                    Experience the difference of working with an appraiser who truly understands commercial real estate challenges
-                    and financing pressures.
-                  </p>
-                </div>
+      <section className="relative w-full py-12 md:py-24 lg:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/01-updated-images/Apartment Lobby.jpg"
+            alt="Modern apartment lobby"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Gradient overlay - darker on the right side for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/70 to-black/80" />
+        </div>
+        
+        <div className="relative z-10 container px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl">
+              <CardContent className="p-12 text-center">
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white">
+                      Ready to Work with Someone Who's<br/>Been on Both Sides?
+                    </h2>
+                    <p className="text-xl text-white/90">
+                      Experience the difference of working with an appraiser who truly understands commercial real estate challenges
+                      and financing pressures.
+                    </p>
+                  </div>
                 <div className="flex flex-col gap-4 min-[400px]:flex-row justify-center">
                   <Button
                     asChild
                     size="lg"
-                    className="bg-slate-900 text-white hover:bg-slate-800 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
+                    className="bg-white text-slate-900 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
                   >
                     <Link href="/request-appraisal">
                       Request Your Appraisal
@@ -358,7 +372,7 @@ export default function AboutPage() {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-slate-900 bg-white/50 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
+                    className="border-white/50 text-white hover:bg-white/10 hover:text-white bg-transparent backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
                   >
                     <Link href="/contact">Schedule a Consultation</Link>
                   </Button>
@@ -366,6 +380,7 @@ export default function AboutPage() {
               </div>
             </CardContent>
           </Card>
+          </div>
         </div>
       </section>
     </div>

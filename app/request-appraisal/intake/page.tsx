@@ -2,8 +2,8 @@
 
 import type React from "react"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useState, useEffect } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import {
   ArrowRight,
   Upload,
@@ -30,7 +30,13 @@ import { type FormData } from "@/lib/supabase"
 
 export default function IntakeFormPage() {
   const router = useRouter()
-  const { submitForm, isSubmitting, isSubmitted, errors, setErrors } = useAppraisalFormSubmission()
+  const searchParams = useSearchParams()
+
+  // Check URL parameters for embedded mode and test mode
+  const isEmbedded = searchParams.get('embedded') === 'true'
+  const isTestMode = searchParams.get('test') === 'true'
+
+  const { submitForm, isSubmitting, isSubmitted, errors, setErrors } = useAppraisalFormSubmission(isTestMode)
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
   const [formData, setFormData] = useState<FormData>({
     // Client Information - mapped to match Supabase fields
@@ -97,7 +103,8 @@ export default function IntakeFormPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Welcome Section */}
+      {/* Welcome Section - Hidden in embedded mode */}
+      {!isEmbedded && (
       <section className="w-full py-12 md:py-16 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
@@ -132,11 +139,21 @@ export default function IntakeFormPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Main Form Section */}
-      <section className="w-full py-12 md:py-16">
+      <section className={`w-full ${isEmbedded ? 'py-6' : 'py-12 md:py-16'}`}>
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
+            {/* Test Mode Indicator */}
+            {isTestMode && (
+              <div className="mb-6 p-3 bg-yellow-50 border-2 border-yellow-400 rounded-lg text-center">
+                <p className="text-sm font-semibold text-yellow-800">
+                  🧪 TEST MODE - Email will be marked with [TEST] prefix
+                </p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-12">
               {/* Section 1: Client Information */}
               <Card>
@@ -506,7 +523,8 @@ export default function IntakeFormPage() {
         </div>
       </section>
 
-      {/* What Happens Next Section */}
+      {/* What Happens Next Section - Hidden in embedded mode */}
+      {!isEmbedded && (
       <section className="w-full py-12 md:py-16 bg-slate-50">
         <div className="container px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
@@ -586,8 +604,10 @@ export default function IntakeFormPage() {
           </div>
         </div>
       </section>
+      )}
 
-      {/* Confirmation Section */}
+      {/* Confirmation Section - Hidden in embedded mode */}
+      {!isEmbedded && (
       <section className="w-full py-12 md:py-16 bg-blue-50">
         <div className="container px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -632,6 +652,7 @@ export default function IntakeFormPage() {
           </div>
         </div>
       </section>
+      )}
     </div>
   )
 }

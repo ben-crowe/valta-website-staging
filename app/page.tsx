@@ -3,6 +3,7 @@ import ServiceCard from "@/components/service-card"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, CheckCircle, Clock, Shield, Users } from "lucide-react"
 
 export default function HomePage() {
@@ -118,61 +119,74 @@ export default function HomePage() {
       </section>
 
       {/* Our Difference Section - Conversational Style */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-slate-900">What Makes Valta Different?</h2>
+      <section className="relative py-16 px-4 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/01-updated-images/Aparment New Developemt Calgary.jpg"
+            alt="Modern apartment development in Calgary"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Gradient overlay - darker on the right side for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/70 to-black/80" />
+        </div>
+        
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">What Makes Valta Different?</h2>
           
-          <div className="prose prose-lg max-w-none text-slate-600">
+          <div className="prose prose-lg max-w-none text-white/90">
             <p className="text-xl leading-relaxed mb-6">
-              <span className="font-semibold text-slate-900">Here's the thing about traditional appraisers:</span> They've 
+              <span className="font-semibold text-white">Here's the thing about traditional appraisers:</span> They've 
               never sweated a rate lock deadline. Never felt the stress during a deal because the valuation took six weeks. 
               Never had to explain to a lender or mortgage broker why the appraisal report doesn't reflect the upside potential of a development or value add play.
             </p>
             
             <p className="text-lg leading-relaxed mb-6">
-              <span className="font-semibold text-slate-900">We're different because we've been you.</span> Active developers 
+              <span className="font-semibold text-white">We're different because we've been you.</span> Active developers 
               and investors who got tired of appraisals that missed the mark. So we became AACI-certified appraisers ourselves—combining 
               20+ years of boots-on-the-ground development and investor experience with professional valuation expertise. The result? 
               Reports that actually reflect current construction costs, land values, rental market dynamics, and what makes a project viable.
             </p>
             
-            <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-2xl my-8 border-l-4 border-blue-500">
+            <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl my-8 border-l-4 border-blue-400">
               <p className="text-lg leading-relaxed mb-4">
-                <span className="font-semibold text-slate-900">When you work with Valta, you get:</span>
+                <span className="font-semibold text-white">When you work with Valta, you get:</span>
               </p>
               <div className="space-y-3 ml-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
-                  <span className="text-slate-700">Someone who speaks fluent "developer and investor"—no translation needed</span>
+                  <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-1" />
+                  <span className="text-white/90">Someone who speaks fluent "developer and investor"—no translation needed</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
-                  <span className="text-slate-700">Deep expertise in multifamily and self-storage—where the action is</span>
+                  <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-1" />
+                  <span className="text-white/90">Deep expertise in multifamily and self-storage—where the action is</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 flex-shrink-0 mt-1" />
-                  <span className="text-slate-700">Coverage across Western Canada—because opportunities don't stop at city limits</span>
+                  <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-1" />
+                  <span className="text-white/90">Coverage across Western Canada—because opportunities don't stop at city limits</span>
                 </div>
               </div>
             </div>
             
             <p className="text-lg leading-relaxed">
-              <span className="font-semibold text-slate-900">Ready to experience the difference?</span> Let's talk about your 
+              <span className="font-semibold text-white">Ready to experience the difference?</span> Let's talk about your 
               deal and how we can help you close faster with confidence.
             </p>
-          </div>
-          
-          <div className="mt-8">
-            <Button
-              asChild
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
-            >
-              <Link href="/about">
-                Learn More About Our Approach
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            
+            <div className="mt-8">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-slate-900 hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
+              >
+                <Link href="/about">
+                  Learn More About Our Approach
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
