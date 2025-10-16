@@ -192,7 +192,7 @@ serve(async (req) => {
 
       ${jobId ? `
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://apr-dashboard-v3.vercel.app/jobs/${jobId}"
+        <a href="https://apr-dashboard-v3.vercel.app/dashboard/job/${jobId}"
            style="display: inline-block; padding: 12px 30px; background: #1a73e8; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
           View in APR Dashboard
         </a>
