@@ -212,8 +212,8 @@ serve(async (req) => {
 
     // Prepare email payload
     const emailPayload: any = {
-      from: 'Valta Careers <noreply@valta.ca>',
-      to: ['bc@crowestudio.com'],
+      from: 'Valta Website <onboarding@resend.dev>',
+      to: ['bc@crowestudio.com'], // Will change to admin@valta.ca once domain verified
       subject: `Career Application - ${firstName} ${lastName}`,
       html: emailHtml,
     }
@@ -255,7 +255,6 @@ serve(async (req) => {
       JSON.stringify({
         success: true,
         message: 'Career application notification sent successfully',
-        from: 'noreply@valta.ca',
         recipient: 'bc@crowestudio.com',
         emailId: data.id,
         hasAttachment: !!resumeBase64
