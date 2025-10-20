@@ -44,7 +44,7 @@ export default function CareersPage() {
     setSubmitError(null)
 
     try {
-      // 1. Convert resume to base64 if provided
+      // Convert resume to base64 if provided
       let resumeBase64 = null
       let resumeFilename = null
 
@@ -65,56 +65,27 @@ export default function CareersPage() {
         })
       }
 
-      // 2. Save to database (optional record-keeping)
-      const { data: submission, error: dbError } = await supabase
-        .from('career_applications')
-        .insert([{
-          first_name: formData.firstName,
-          last_name: formData.lastName,
+      // Send team notification email with resume attached
+      const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-career-application', {
+        body: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
           email: formData.email,
-          phone: formData.phone || null,
-          linkedin: formData.linkedin || null,
-          portfolio: formData.portfolio || null,
-          how_heard: formData.howHeard || null,
-          resume_url: resumeFilename, // Just store filename for reference
-          status: 'submitted',
-          source: 'website-careers-form'
-        }])
-        .select()
-        .single()
-
-      if (dbError) {
-        console.error('Database error:', dbError)
-        throw new Error(`Failed to save application: ${dbError.message}`)
-      }
-
-      console.log('Application saved to database:', submission)
-
-      // 3. Send team notification email with resume attached
-      try {
-        const { data: emailResult, error: emailError } = await supabase.functions.invoke('send-career-application', {
-          body: {
-            firstName: formData.firstName,
-            lastName: formData.lastName,
-            email: formData.email,
-            phone: formData.phone,
-            linkedin: formData.linkedin,
-            portfolio: formData.portfolio,
-            howHeard: formData.howHeard,
-            resumeBase64: resumeBase64,
-            resumeFilename: resumeFilename
-          }
-        })
-
-        if (emailError) {
-          console.warn('Email notification failed (but application was saved):', emailError)
-        } else {
-          console.log('Email notification sent:', emailResult)
+          phone: formData.phone,
+          linkedin: formData.linkedin,
+          portfolio: formData.portfolio,
+          howHeard: formData.howHeard,
+          resumeBase64: resumeBase64,
+          resumeFilename: resumeFilename
         }
+      })
 
-      } catch (emailError) {
-        console.warn('Email notification error (but application was saved):', emailError)
+      if (emailError) {
+        console.error('Email notification error:', emailError)
+        throw new Error('Failed to submit application. Please try again or email us directly.')
       }
+
+      console.log('Career application email sent successfully:', emailResult)
 
       // Success
       setIsSubmitted(true)
@@ -131,7 +102,7 @@ export default function CareersPage() {
 
     } catch (error) {
       console.error('Form submission error:', error)
-      setSubmitError(error instanceof Error ? error.message : 'An unexpected error occurred')
+      setSubmitError(error instanceof Error ? error.message : 'An unexpected error occurred. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
