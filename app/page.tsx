@@ -35,8 +35,8 @@ export default function HomePage() {
               backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&crop=entropy"
             />
             <ServiceCard
-              title="Commercial Property"
-              description="Professional appraisals for office buildings, retail spaces, and industrial properties"
+              title="Commercial Properties"
+              description="Professional appraisals for office buildings, retail buildings, and industrial properties"
               icon="Home"
               backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=entropy"
             />

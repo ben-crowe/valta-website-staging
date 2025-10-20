@@ -59,6 +59,8 @@ npm run lint
 - **Styling**: Tailwind CSS + Shadcn/ui
 - **Database**: Supabase (PostgreSQL)
 - **Email**: Resend API via Supabase Edge Functions
+  - Contact form: `send-contact-notification`
+  - Appraisal form: `send-appraisal-request`
 - **Deployment**: Vercel (auto-deploy from main branch)
 - **Testing**: Two-agent protocol with Playwright MCP
 
@@ -124,10 +126,13 @@ Valta-Website/
 - Email: bc@crowestudio.com (temporary)
 - Documentation: `03-LeadForm-ContactForm/`
 
-### 🚧 Appraisal Form (Planning)
-- URL: `/request-appraisal` (not yet functional)
-- Blueprint: `02-AppraisalForm/APPRAISAL-FORM-BLUEPRINT.md`
-- Status: Planning phase
+### ✅ Appraisal Request Form (Live)
+- URL: `/request-appraisal/intake`
+- Database: Supabase `job_submissions` table
+- Email: Resend API via Edge Function (bc@crowestudio.com)
+- Integration: APR Dashboard v3 for job management
+- Test Mode: Add `?test=true` for [TEST] prefix emails
+- Status: Production (email debugging in progress)
 
 ---
 
@@ -198,8 +203,9 @@ git push
 # Deploy to staging
 ./scripts/deploy-staging.sh
 
-# Deploy edge function
+# Deploy edge functions
 npx supabase functions deploy send-contact-notification
+npx supabase functions deploy send-appraisal-request
 ```
 
 **Production URL:** https://valta.ca
@@ -286,6 +292,9 @@ Project memories stored in:
 **Current Phase:** Active production website with ongoing enhancements
 
 **Recent Updates (October 2025):**
+- ✅ Implemented appraisal request form with email notifications (Oct 17)
+- ✅ Added APR Dashboard integration for job management (Oct 17)
+- ✅ Fixed dashboard deep linking (React Router routing) (Oct 17)
 - ✅ Refactored project structure using master template
 - ✅ Added `.testing/` structure for two-agent workflow
 - ✅ Created `.agent/` context for agents

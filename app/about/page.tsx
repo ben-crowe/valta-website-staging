@@ -303,7 +303,7 @@ export default function AboutPage() {
                   <p className="leading-relaxed">
                     <span className="font-semibold text-slate-900">Sure, we have the AACI designation</span>—that's table stakes. 
                     But designations don't tell the full story. We understand construction draws or why your property will achieve that market rental or cap rate. We do, 
-                    because we've sat on your side of the table. We've sweated the same deadlines, fought the same battles with 
+                    because we've sat on your side of the table. We've sweated the same deadlines, had to negotiate with
                     lenders, and know exactly what keeps developers and investors up at night.
                   </p>
                   

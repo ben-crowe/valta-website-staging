@@ -44,7 +44,7 @@ export default function SelfStoragePage() {
           <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
             <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Self-Storage Facility Valuations
+                Self Storage Appraisals
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Specialized appraisals for the fastest-growing commercial real estate sector. We understand operations, not just the real estate.
@@ -340,9 +340,9 @@ export default function SelfStoragePage() {
                 </Button>
               </Link>
             </div>
-            <div className="text-center text-sm text-muted-foreground mt-4">
+            <div className="text-center text-base text-muted-foreground mt-4">
               <p>
-                Questions? Call our storage specialists at <strong>(587) 801-5151</strong>
+                Questions? Call our storage specialists at <strong className="text-lg">(587) 801-5151</strong>
               </p>
             </div>
           </div>

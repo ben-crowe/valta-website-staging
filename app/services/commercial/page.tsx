@@ -39,7 +39,7 @@ export default function CommercialPage() {
           <div className="flex flex-col items-center justify-center space-y-6 text-center text-white">
             <div className="space-y-4 max-w-4xl">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Commercial Property Appraisals
+                Commercial Appraisals
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
                 Comprehensive valuations for office, industrial, retail, and land. Supporting your business decisions with accurate market insights.
@@ -151,10 +151,6 @@ export default function CommercialPage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="px-8 py-3 text-lg">
-                <Download className="mr-2 h-5 w-5" />
-                Download Commercial Market Report
-              </Button>
             </div>
             <div className="text-center mt-6">
               <p className="text-muted-foreground">

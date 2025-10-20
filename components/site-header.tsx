@@ -6,7 +6,6 @@ import Image from "next/image"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { ModeToggle } from "@/components/mode-toggle"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
@@ -97,7 +96,6 @@ export default function SiteHeader() {
                 Get Valuation
               </Button>
             </Link>
-            <ModeToggle />
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="md:hidden bg-transparent">

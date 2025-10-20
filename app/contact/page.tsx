@@ -352,8 +352,6 @@ export default function ContactPage() {
                     <div className="space-y-3">
                       <div>
                         <h4 className="font-semibold text-slate-900">Valta Property Valuations Ltd.</h4>
-                        <p className="text-slate-600">AACI Designated Professionals</p>
-                        <p className="text-slate-600">Serving Western Canada</p>
                       </div>
                     </div>
                   </div>

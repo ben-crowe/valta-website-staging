@@ -50,13 +50,6 @@ export default function MultifamilyPage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 text-lg bg-transparent"
-              >
-                View Sample Report
-              </Button>
             </div>
           </div>
         </div>
@@ -92,7 +85,7 @@ export default function MultifamilyPage() {
                 <div>
                   <h3 className="text-xl font-bold mb-3">Purpose-Built Rental Properties</h3>
                   <p className="text-muted-foreground">
-                    Expert appraisals for new construction, purpose-built rentals. Our development and ownership background provides unique insight into construction costs and project feasibility.
+                    Expert appraisals for new construction, purpose-built rentals. Our development and ownership background provides unique insight into construction costs, land values and rental rates.
                   </p>
                 </div>
                 <div>

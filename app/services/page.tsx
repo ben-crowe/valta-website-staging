@@ -199,7 +199,7 @@ export default function ServicesPage() {
             </div>
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Self-Storage Valuations</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Self-Storage Appraisals</h2>
                 <p className="text-muted-foreground md:text-lg">
                   Specialized knowledge in the rapidly growing self-storage market. We understand the unique operational aspects of self storage facilities, including occupancy rates, rental rates, and the impact of location and competition on facility performance.
                 </p>
@@ -221,7 +221,7 @@ export default function ServicesPage() {
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="/services/self-storage">
                   <Button>
-                    Learn More About Self-Storage Valuations
+                    Learn More About Self-Storage Appraisals
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -237,7 +237,7 @@ export default function ServicesPage() {
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Commercial Property</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Commercial Appraisals</h2>
                 <p className="text-muted-foreground md:text-lg">
                   Professional appraisals for office, retail, and industrial land. We provide thorough analysis using all three approaches to value, with particular expertise in development-ready land and income-producing commercial properties.
                 </p>
@@ -259,7 +259,7 @@ export default function ServicesPage() {
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <Link href="/services/commercial">
                   <Button>
-                    Learn More About Commercial Property
+                    Learn More About Commercial Appraisals
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
