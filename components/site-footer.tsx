@@ -76,7 +76,7 @@ export default function SiteFooter() {
               </li>
               <li>
                 <Link href="/services/self-storage" className="text-sm text-muted-foreground hover:text-foreground">
-                  Self-Storage Valuations
+                  Self-Storage Appraisals
                 </Link>
               </li>
               <li>
@@ -91,8 +91,6 @@ export default function SiteFooter() {
             <div className="space-y-3">
               <div className="space-y-0.5">
                 <p className="text-sm text-muted-foreground font-semibold">Valta Property Valuations Ltd.</p>
-                <p className="text-sm text-muted-foreground">AACI Designated Professionals</p>
-                <p className="text-sm text-muted-foreground">Serving Western Canada</p>
               </div>
               <div className="space-y-0.5">
                 <div className="text-sm text-muted-foreground">#300-4838 Richard Road SW<br/>Calgary, AB T3E 6L1</div>
