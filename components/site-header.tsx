@@ -53,10 +53,10 @@ export default function SiteHeader() {
                   Multifamily Appraisals
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleServiceClick("/services/self-storage")}>
-                  Self-Storage Valuations
+                  Self-Storage Appraisals
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleServiceClick("/services/commercial")}>
-                  Commercial Property
+                  Commercial Appraisals
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -123,13 +123,13 @@ export default function SiteHeader() {
                         href="/services/self-storage"
                         className="block text-sm text-muted-foreground transition-colors hover:text-primary"
                       >
-                        Self-Storage Valuations
+                        Self-Storage Appraisals
                       </Link>
                       <Link
                         href="/services/commercial"
                         className="block text-sm text-muted-foreground transition-colors hover:text-primary"
                       >
-                        Commercial Property
+                        Commercial Appraisals
                       </Link>
                     </div>
                   </div>
