@@ -329,7 +329,7 @@ export default function SelfStoragePage() {
                 Ready to unlock your facility's true value?
               </h2>
               <p className="max-w-[700px] text-muted-foreground md:text-xl">
-                Get an appraisal that reflects operational performance, not just square footage
+                Get an appraisal that reflects operational performance, not just square footage.
               </p>
             </div>
             <div className="flex flex-col gap-4 min-[400px]:flex-row">
