@@ -1,4 +1,4 @@
-# Valta Property Valuations
+# Valta Property Valuations 
 
 Professional commercial real estate appraisal services across Western Canada.
 
