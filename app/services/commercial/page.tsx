@@ -140,7 +140,7 @@ export default function CommercialPage() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Ready to discuss your commercial property?
               </h2>
-              <p className="max-w-[700px] text-muted-foreground md:text-xl">
+              <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
                 Get expert analysis and market insights for your commercial real estate financing.
               </p>
             </div>
