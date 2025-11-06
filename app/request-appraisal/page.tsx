@@ -769,7 +769,7 @@ export default function RequestAppraisalPage() {
                       <div className="grid gap-6 md:grid-cols-2">
                         <div className="space-y-2">
                           <Label htmlFor="propertyType">
-                            Property Type
+                            Property Type <span className="text-red-500">*</span>
                           </Label>
                           <Select
                             value={formData.propertyType}

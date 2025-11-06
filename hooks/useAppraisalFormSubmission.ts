@@ -24,6 +24,9 @@ const validateForm = (formData: FormData): ValidationErrors => {
   if (!formData.propertyAddress?.trim()) {
     errors.propertyAddress = "Property address is required";
   }
+  if (!formData.propertyType?.trim()) {
+    errors.propertyType = "Property type is required";
+  }
 
   return errors;
 };
