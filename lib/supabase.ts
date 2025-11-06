@@ -17,8 +17,7 @@ export interface FormData {
   clientEmail: string;
   propertyName: string;
   propertyAddress: string;
-  // Property Contact fields
-  sameAsClientContact: boolean;
+  // Property Contact fields (optional - defaults to client contact if empty)
   propertyContactFirstName: string;
   propertyContactLastName: string;
   propertyContactEmail: string;

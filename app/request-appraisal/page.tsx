@@ -56,7 +56,6 @@ export default function RequestAppraisalPage() {
       clientEmail: "john.smith@test.com",
       propertyName: "Riverside Plaza",
       propertyAddress: "456 7th Avenue SW, Calgary, AB",
-      sameAsClientContact: false,
       propertyContactFirstName: "Marcus / Property Management",
       propertyContactLastName: "Johnson",
       propertyContactEmail: "property.manager@test.com",
@@ -130,8 +129,7 @@ export default function RequestAppraisalPage() {
     // Property Information
     propertyName: "",
     propertyAddress: "",
-    // Property Contact fields
-    sameAsClientContact: false,
+    // Property Contact fields (optional - defaults to client contact if empty)
     propertyContactFirstName: "",
     propertyContactLastName: "",
     propertyContactEmail: "",
@@ -197,42 +195,14 @@ export default function RequestAppraisalPage() {
   }
 
   const handleInputChange = (field: keyof FormData, value: string | boolean) => {
-    setFormData((prev) => {
-      const newData = { ...prev, [field]: value }
-      
-      // If "Same as Client Contact" is checked, update property contact fields when client fields change
-      if (prev.sameAsClientContact && typeof value === 'string') {
-        if (field === 'clientFirstName') {
-          newData.propertyContactFirstName = value
-        } else if (field === 'clientLastName') {
-          newData.propertyContactLastName = value
-        } else if (field === 'clientEmail') {
-          newData.propertyContactEmail = value
-        } else if (field === 'clientPhone') {
-          newData.propertyContactPhone = value
-        }
-      }
-      
-      return newData
-    })
-    
+    setFormData((prev) => ({ ...prev, [field]: value }))
+
     // Clear error for this field when user starts typing
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: undefined }))
     }
   }
 
-  // Handle "Same as Client Contact" checkbox change
-  const handleSameAsClientContactChange = (checked: boolean) => {
-    setFormData((prev) => ({
-      ...prev,
-      sameAsClientContact: checked,
-      propertyContactFirstName: checked ? prev.clientFirstName : "",
-      propertyContactLastName: checked ? prev.clientLastName : "",
-      propertyContactEmail: checked ? prev.clientEmail : "",
-      propertyContactPhone: checked ? prev.clientPhone : "",
-    }))
-  }
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || [])
@@ -249,8 +219,6 @@ export default function RequestAppraisalPage() {
     setFormData(prev => ({
       ...prev,
       clientEmail: loginData.email,
-      // Also update property contact email if "Same as Client Contact" is checked
-      propertyContactEmail: prev.sameAsClientContact ? loginData.email : prev.propertyContactEmail,
     }))
     // Close the mini form
     setShowExistingClientForm(false)
@@ -266,7 +234,7 @@ export default function RequestAppraisalPage() {
     const nameParts = newClientData.name.trim().split(' ')
     const firstName = nameParts[0] || ''
     const lastName = nameParts.slice(1).join(' ') || ''
-    
+
     // Populate main form with data from mini-form
     setFormData(prev => ({
       ...prev,
@@ -275,11 +243,6 @@ export default function RequestAppraisalPage() {
       clientOrganization: newClientData.companyName,
       clientPhone: newClientData.phone,
       clientEmail: newClientData.email,
-      // Also update property contact fields if "Same as Client Contact" is checked
-      propertyContactFirstName: prev.sameAsClientContact ? firstName : prev.propertyContactFirstName,
-      propertyContactLastName: prev.sameAsClientContact ? lastName : prev.propertyContactLastName,
-      propertyContactEmail: prev.sameAsClientContact ? newClientData.email : prev.propertyContactEmail,
-      propertyContactPhone: prev.sameAsClientContact ? newClientData.phone : prev.propertyContactPhone,
     }))
     // Close the mini form
     setShowNewClientForm(false)
@@ -746,21 +709,11 @@ export default function RequestAppraisalPage() {
                       {/* Property Contact Information Section */}
                       <div className="pt-6 border-t border-gray-200">
                         <div className="space-y-4">
-                          <h4 className="text-lg font-semibold text-slate-900">Property Contact Information</h4>
-                          
-                          {/* Same as Client Contact Checkbox */}
-                          <div className="flex items-center space-x-2">
-                            <Checkbox
-                              id="sameAsClientContact"
-                              checked={formData.sameAsClientContact}
-                              onCheckedChange={handleSameAsClientContactChange}
-                            />
-                            <Label 
-                              htmlFor="sameAsClientContact" 
-                              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            >
-                              Same as Client Contact
-                            </Label>
+                          <div>
+                            <h4 className="text-lg font-semibold text-slate-900">Optional Property Contact</h4>
+                            <p className="text-sm text-slate-600 mt-1">
+                              Leave blank if same as client contact above
+                            </p>
                           </div>
 
                           {/* Property Contact Fields */}
@@ -772,8 +725,6 @@ export default function RequestAppraisalPage() {
                                 value={formData.propertyContactFirstName}
                                 onChange={(e) => handleInputChange("propertyContactFirstName", e.target.value)}
                                 placeholder="Marcus / Property Management"
-                                disabled={formData.sameAsClientContact}
-                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
                               />
                             </div>
                             <div className="space-y-2">
@@ -783,8 +734,6 @@ export default function RequestAppraisalPage() {
                                 value={formData.propertyContactLastName}
                                 onChange={(e) => handleInputChange("propertyContactLastName", e.target.value)}
                                 placeholder="Johnson"
-                                disabled={formData.sameAsClientContact}
-                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
                               />
                             </div>
                           </div>
@@ -798,8 +747,6 @@ export default function RequestAppraisalPage() {
                                 value={formData.propertyContactEmail}
                                 onChange={(e) => handleInputChange("propertyContactEmail", e.target.value)}
                                 placeholder="property.manager@example.com"
-                                disabled={formData.sameAsClientContact}
-                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
                               />
                             </div>
                             <div className="space-y-2">
@@ -813,8 +760,6 @@ export default function RequestAppraisalPage() {
                                   handleInputChange("propertyContactPhone", formatted)
                                 }}
                                 placeholder="(403) 555-0123"
-                                disabled={formData.sameAsClientContact}
-                                className={formData.sameAsClientContact ? "bg-gray-50" : ""}
                               />
                             </div>
                           </div>
