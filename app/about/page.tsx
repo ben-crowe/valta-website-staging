@@ -307,9 +307,9 @@ export default function AboutPage() {
                   </p>
                   
                   <p className="leading-relaxed mt-6">
-                    <span className="font-semibold text-slate-900">Think of us as your inside advantage.</span> While traditional 
-                    appraisers see numbers on a spreadsheet, we see the story behind your project—the vision, the challenges, the 
-                    opportunity. That perspective transforms a routine valuation into strategic intelligence that actually helps 
+                    <span className="font-semibold text-slate-900">We're your inside advantage.</span> While traditional
+                    appraisers see numbers on a spreadsheet, we see the story behind your project—the vision, the challenges, the
+                    opportunity. That perspective transforms a routine valuation into strategic intelligence that actually helps
                     you close more deals with confidence.
                   </p>
                 </div>
