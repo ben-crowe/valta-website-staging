@@ -12,7 +12,7 @@ This is the proven workflow for implementing and verifying website changes. Foll
 
 ### 1. **Receive Change Request**
 - Client provides marked-up document (Google Doc, Word, etc.)
-- Create a dated checklist file: `YY-MM-DD-Edit-Review.md`
+- Create a dated checklist file: `YYYY-MM-DD-Edit-Review.md`
 - Extract ALL changes into organized checklist by page
 
 **Template:**
@@ -155,9 +155,9 @@ mcp__playwright__browser_take_screenshot({ filename: "verification.png" })
 ```
 Change Requests/
 ├── README.md (this file - SOP)
-├── YY-MM-DD-Edit-Review.md (dated checklists)
-├── YY-MM-DD-Session.md (implementation notes)
-└── Master Site Copy-YY-MM-DD.md (client source docs)
+├── YYYY-MM-DD-Edit-Review.md (dated checklists)
+├── YYYY-MM-DD-Session.md (implementation notes)
+└── Master Site Copy-YYYY-MM-DD.md (client source docs)
 ```
 
 ---

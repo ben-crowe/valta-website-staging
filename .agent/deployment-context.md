@@ -150,9 +150,7 @@ Located in: `.vercel/project.json`
 There was confusion about deployment target. Old note said:
 > "This deploys to valta-frontend-staging-2025 (WRONG!)"
 
-**Update November 2025:** `valta-frontend-staging-2025` is ❌ **OBSOLETE** - Not connected to any repository, do not use.
-
-### **Current Reality (November 2025)**
+### **Current Reality (October 2025)**
 
 ✅ **Verified**:
 - Local directory: `/Users/bencrowe/Development/Valta-Website/`
