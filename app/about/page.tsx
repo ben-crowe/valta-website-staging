@@ -263,7 +263,7 @@ export default function AboutPage() {
             {/* Bottom Accent */}
             <div className="mt-16 text-center">
               <p className="text-slate-600 text-lg italic">
-                "Where vision meets execution, value is created"
+                "Where vision meets execution"
               </p>
             </div>
           </div>
