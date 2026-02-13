@@ -29,6 +29,8 @@ next-env.d.ts
 # claude and serena folders
 .claude/
 .serena/
+.specstory/
+.specstory~*
 
 # credentials folder - NEVER commit
 .credentials/
