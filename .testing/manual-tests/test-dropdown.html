@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Dropdown Navigation</title>
+    <script>
+        async function testDropdown() {
+            const results = [];
+            const urls = [
+                'https://valta-frontend-staging-2025.vercel.app/services',
+                'https://valta-frontend-staging-2025.vercel.app/services/multifamily',
+                'https://valta-frontend-staging-2025.vercel.app/services/self-storage',
+                'https://valta-frontend-staging-2025.vercel.app/services/commercial'
+            ];
+            
+            for (const url of urls) {
+                try {
+                    const response = await fetch(url, { mode: 'no-cors' });
+                    results.push(`✓ ${url} - accessible`);
+                } catch (error) {
+                    results.push(`✗ ${url} - error`);
+                }
+            }
+            
+            document.getElementById('results').innerHTML = results.join('<br>');
+        }
+    </script>
+</head>
+<body onload="testDropdown()">
+    <h2>Testing Dropdown Links</h2>
+    <div id="results">Testing...</div>
+</body>
+</html>

@@ -1,0 +1,877 @@
+VALTA WEBSITE CONTENT EXTRACTION
+Scraped: January 2, 2025
+Source: https://valta.ca/
+Total Pages: 11
+
+================================================================================
+## PAGE 1: Homepage (/)
+================================================================================
+
+### Section: Hero
+Heading: Professional Commercial Property Appraisals
+Body: Expert valuations for multifamily, self-storage, and commercial properties across Western Canada. Lender-ready reports in 2-3 weeks.
+
+Trust Indicators:
+- AACI Certified
+- 200+ Clients Served
+- 2-3 Week Delivery
+
+CTAs:
+- Request Appraisal
+- Call (587) 801-5151
+
+### Section: Our Appraisal Services
+Heading: Our Appraisal Services
+Body: We provide comprehensive real estate appraisal services for developers and investors for various property types across Western Canada
+
+Service Cards:
+1. Multifamily Properties
+   - In-depth valuations for purpose-built apartment and townhouse properties
+
+2. Self-Storage Facilities
+   - Specialized appraisals for next generation self-storage and mini-storage facilities
+
+3. Commercial Property
+   - Professional appraisals for office buildings, retail spaces, and industrial properties
+
+CTA: View All Services
+
+### Section: Why Choose Valta
+Heading: Why Choose Valta
+Body: Built by developers and investors, for developers and investors. We have been on your side of the table and understand the importance of getting fast, accurate and lender-ready reports to fund a deal.
+
+Features:
+1. Fast Delivery
+   - 2-3 week turnaround vs 4-6 week industry standard
+
+2. AACI Certified
+   - Professional, peer reviewed and lender-approved appraisals for commercial, multifamily, and self-storage properties.
+
+3. Developer & Investor Experience
+   - Real-world development and investor experience and deep market knowledge
+
+4. Lender Ready
+   - Reports accepted by all major financial institutions
+
+### Section: What Makes Valta Different?
+Heading: What Makes Valta Different?
+
+Body: "Here's the thing about traditional appraisers: They've never sweated a rate lock deadline. Never felt the stress during a deal because the valuation took six weeks. Never had to explain to a lender or mortgage broker why the appraisal report doesn't reflect the upside potential of a development or value add play."
+
+We're different because we've been you. Active developers and investors who got tired of appraisals that missed the mark. So we became AACI-certified appraisers ourselves—combining 20+ years of boots-on-the-ground development and investor experience with professional valuation expertise. The result? Reports that actually reflect current construction costs, land values, rental market dynamics, and what makes a project viable.
+
+When you work with Valta, you get:
+- Someone who speaks fluent "developer and investor"—no translation needed
+- Deep expertise in multifamily and self-storage—where the action is
+- Coverage across Western Canada—because opportunities don't stop at city limits
+
+Ready to experience the difference? Let's talk about your deal and how we can help you close faster with confidence.
+
+CTA: Learn More About Our Approach
+
+### Section: CTA
+Heading: Ready to Get Your Property Appraised?
+Body: Contact us today for a professional appraisal. Same-day response guaranteed.
+
+CTAs:
+- Request Appraisal
+- Contact Us Today
+
+Contact Info: Call us at (587) 801-5151 or email clientcare@valta.ca for immediate consultation
+
+---
+
+================================================================================
+## PAGE 2: About (/about)
+================================================================================
+
+### Section: Hero
+Heading: Built by Developers and Investors, for Developers and Investors
+Body: We understand both sides of every transaction because we've been there ourselves.
+
+CTAs:
+- Request Appraisal
+- Contact Us
+
+### Section: Finally, an Appraisal Firm That Speaks Your Language
+Heading: Finally, an Appraisal Firm That Speaks Your Language
+Quote: "We understand the pressures of a putting a deal together the urgency of a financing condition, and the real-world factors that create value."
+
+Features:
+1. Enhanced Understanding
+   - Accurate assessment of market conditions, valuation assumptions and true comparables based on real world experience.
+
+2. Accurate Valuations
+   - Sophisticated ability to project stabilized values critical for development, acquisition and renewal financing.
+
+3. Real Urgency
+   - Understanding of financing conditions and rate lock pressures that drive real estate deal timelines.
+
+### Section: Our North Star
+Heading: Our North Star
+
+Vision:
+- To redefine excellence as the premier commercial real estate valuation provider in Canada
+- CTA: Leading the future
+
+Mission:
+- Fast, high-quality appraisals for multifamily, self-storage, and commercial real estate. We help clients close deals faster, maximize returns, and solve housing challenges.
+- CTA: Delivering today
+
+Quote: "Where vision meets execution, value is created"
+
+### Section: Here's What Actually Sets Us Apart
+Heading: Here's What Actually Sets Us Apart
+
+Body: You know that sinking feeling when your appraisal takes six weeks? Rate locks expire. Sellers get nervous. Deals die. That's why we turned the traditional timeline on its head—delivering comprehensive reports in 2-3 weeks without cutting corners. Because in commercial real estate, time kills deals.
+
+And here's something most appraisers won't tell you: half the reports that cross lenders' desks come back for revisions. More delays. More frustration. We engineered our process differently. Every report is peer reviewed and lender-ready on the first submission—no revisions, no back-and-forth, just clean approvals that keep your project moving.
+
+Sure, we have the AACI designation—that's table stakes. But designations don't tell the full story. We understand construction draws or why your property will achieve that market rental or cap rate. We do, because we've sat on your side of the table. We've sweated the same deadlines, fought the same battles with lenders, and know exactly what keeps developers and investors up at night.
+
+Think of us as your inside advantage. While traditional appraisers see numbers on a spreadsheet, we see the story behind your project—the vision, the challenges, the opportunity. That perspective transforms a routine valuation into strategic intelligence that actually helps you close more deals with confidence.
+
+Bottom line? When your appraiser has actually been a developer and an owner, you get more than a report—you get a partner who genuinely understands what's at stake.
+
+### Section: CTA
+Heading: Ready to Work with Someone Who's Been on Both Sides?
+Body: Experience the difference of working with an appraiser who truly understands commercial real estate challenges and financing pressures.
+
+CTAs:
+- Request Your Appraisal
+- Schedule a Consultation
+
+---
+
+================================================================================
+## PAGE 3: Services Overview (/services)
+================================================================================
+
+### Section: Hero
+Heading: Our Valuation Services
+Body: Professional property appraisal services with specialized expertise across multiple property types.
+
+### Section: Multifamily Appraisals
+Heading: Multifamily Appraisals
+Body: Our primary specialization with deep expertise in purpose-built rental apartments and townhome properties. We understand the complexities of income-producing multifamily properties and provide comprehensive market analysis.
+
+Services:
+- Purpose-Built Apartments
+- Purpose-Built Townhome
+- Mixed Use
+- Build to Rent Single Family
+- Multifamily Land
+- Market Rent Studies
+
+CTA: Learn More About Multifamily Appraisals
+
+### Section: Self-Storage Valuations
+Heading: Self-Storage Valuations
+Body: Specialized knowledge in the rapidly growing self-storage market. We understand the unique operational aspects of self storage facilities, including occupancy rates, rental rates, and the impact of location and competition on facility performance.
+
+Services:
+- New Generation Self Storage
+- Mini Storage
+- Land Valuation
+
+CTA: Learn More About Self-Storage Valuations
+
+### Section: Commercial Property
+Heading: Commercial Property
+Body: Professional appraisals for office, retail, and industrial land. We provide thorough analysis using all three approaches to value, with particular expertise in development-ready land and income-producing commercial properties.
+
+Services:
+- Office buildings and campus
+- Industrial and warehouse facilities
+- Retail and shopping centres
+
+CTA: Learn More About Commercial Property
+
+### Section: CTA
+Heading: Ready to Get Started?
+Body: Contact us today to discuss your property valuation needs and how we can help with your project.
+
+CTAs:
+- Request Appraisal
+- Contact Us
+
+---
+
+================================================================================
+## PAGE 4: Services - Multifamily (/services/multifamily)
+================================================================================
+
+### Section: Hero
+Heading: Multifamily Appraisals
+Body: Expert valuations for purpose-built rental apartments and townhome properties. Lender-ready reports in 2-3 weeks.
+
+CTAs:
+- Request Appraisal
+- View Sample Report
+
+### Section: Valta's Deep Multifamily Market Knowledge
+Heading: Valta's Deep Multifamily Market Knowledge
+Body: Our specialized expertise in multifamily properties ensures accurate valuations that reflect current market conditions.
+
+Service Types:
+1. Existing & Value Add Properties
+   - Expert appraisals for stabilized and major renovation projects. Comprehensive analysis and valuation for existing and value add rental properties. We understand the nuances of below market rents and capital expenditures on values.
+
+2. Purpose-Built Rental Properties
+   - Expert appraisals for new construction, purpose-built rentals. Our development and ownership background provides unique insight into construction costs and project feasibility.
+
+3. Portfolio Valuations
+   - Efficient multiple property valuations for real estate investors, institutional clients and financial reporting. Coordinated timing and consistent methodology across your entire portfolio.
+
+### Section: Valta's Multifamily Appraisal Process
+Heading: Valta's Multifamily Appraisal Process
+Body: A systematic approach that ensures thorough analysis and timely delivery of your appraisal report.
+
+Process Steps:
+1. Property Analysis
+   - Timely inspection and detailed physical and financial review to understand the property's physical characteristics and income potential.
+
+2. Market Research
+   - Extensive comparable sales and rental analysis to establish current market conditions and trends affecting property values.
+
+3. Income Approach
+   - Detailed NOI calculations and cap rate analysis using market-extracted rates to determine the property's investment value.
+
+4. Report Delivery
+   - Peer reviewed and CUSPAP compliant report delivered within 2-3 weeks, ready for lender submission and financing approval.
+
+### Section: CTA
+Heading: Ready to Get Your Multifamily Property Appraised?
+Body: Fast, accurate appraisals from experts who understand the investment perspective
+
+CTA: Start Your Appraisal
+
+Contact Info: Or call us at (587) 801-5151 or email at clientcare@valta.ca for immediate consultation
+
+---
+
+================================================================================
+## PAGE 5: Services - Self-Storage (/services/self-storage)
+================================================================================
+
+### Section: Hero
+Heading: Self-Storage Facility Valuations
+Body: Specialized appraisals for the fastest-growing commercial real estate sector. We understand operations, not just the real estate.
+
+CTAs:
+- Request Storage Appraisal
+- Contact Us
+
+### Section: Self-Storage Isn't Just Real Estate—It's a Business
+Heading: Self-Storage Isn't Just Real Estate—It's a Business
+Body: Unlike traditional commercial real estate, self-storage facilities are operating businesses with complex revenue models, customer management systems, and operational efficiencies that directly impact value.
+
+Key Factors:
+- Revenue per square foot calculations - Understanding unit mix optimization and pricing strategies across different unit sizes
+- Occupancy and rental rate analysis - Seasonal trends, move-in/move-out patterns, and market penetration rates
+- Management efficiency factors - Staffing models, operational costs, and automation impact on profitability
+- Technology and security considerations - Modern access systems, surveillance, and customer management platforms
+
+Statement: We've appraised hundreds of self-storage facilities across Western Canada.
+
+### Section: Understanding the Self-Storage Market
+Heading: Understanding the Self-Storage Market
+Body: Key market dynamics driving value in the self-storage sector
+
+Market Metrics:
+1. Supply Constraints
+   - Limited new development opportunities due to zoning restrictions and land costs
+   - 2.1% Annual supply growth
+
+2. Demand Drivers
+   - Urbanization and downsizing trends creating consistent demand growth
+   - 4.2% Annual demand growth
+
+3. Technology Integration
+   - Automated facilities and online booking improving operational efficiency
+   - 78% Online rentals
+
+4. Investment Appeal
+   - Recession-resistant asset class with stable cash flows
+
+### Section: Our Self-Storage Valuation Methodology
+Heading: Our Self-Storage Valuation Methodology
+Body: A specialized approach that captures the unique operational aspects of self-storage facilities
+
+Analysis Components:
+1. Operational Analysis
+   - Revenue stream breakdown by unit type and size
+   - Operating expense ratios and management efficiency
+   - Ancillary revenue opportunities assessment
+
+2. Market Positioning
+   - Competition analysis within 3-5 mile radius
+   - Pricing studies and rate optimization potential
+   - Demographic trends and demand drivers
+   - Market penetration and growth opportunities
+
+3. Financial Modeling
+   - Income approach with storage-specific metrics
+   - Stabilized NOI projections and lease-up analysis
+   - Cap rate extraction from comparable sales
+   - Sensitivity analysis for key performance metrics
+
+### Section: Self-Storage Facility Types We Appraise
+Heading: Self-Storage Facility Types We Appraise
+
+Types:
+1. Multi-Storey
+   - Urban facilities with multiple floors, elevators, and climate-controlled options. Higher construction costs but premium rental rates in dense markets.
+
+2. Drive-Up
+   - Single-story facilities with direct vehicle access. Lower operational costs and preferred by commercial tenants and RV/boat storage customers.
+
+### Section: CTA
+Heading: Ready to unlock your facility's true value?
+Body: Get an appraisal that reflects operational performance, not just square footage
+
+CTA: Request Storage Valuation
+
+Contact Info: Questions? Call our storage specialists at (587) 801-5151
+
+---
+
+================================================================================
+## PAGE 6: Services - Commercial (/services/commercial)
+================================================================================
+
+### Section: Hero
+Heading: Commercial Property Appraisals
+Body: Comprehensive valuations for office, industrial, retail, and land. Supporting your business decisions with accurate market insights.
+
+CTAs:
+- Request Commercial Appraisal
+- Contact Us
+
+### Section: Commercial Properties We Appraise
+Heading: Commercial Properties We Appraise
+Body: Expert valuations across all commercial property sectors.
+
+Property Types:
+1. Land & Development
+   - Commercial sites, development sites, land assemblies, and highest-best-use analysis
+
+2. Office Buildings
+   - Class A, B, C properties and professional buildings across all market segments
+
+3. Industrial Properties
+   - Warehouses, manufacturing facilities, distribution centers, and flex space
+
+4. Retail Properties
+   - Shopping centers, standalone retail, mixed-use developments, and specialty retail
+
+### Section: Western Canada Market Knowledge
+Heading: Western Canada Market Knowledge
+Body: Deep local expertise across major Western Canadian commercial markets.
+
+Expertise Areas:
+1. Market Analysis
+   - Current trends and comparable sales data across Western Canadian markets
+
+2. Investment Insights
+   - Cap rates and return projections for informed investment decisions
+
+3. Development Potential
+   - Highest and best use analysis for maximum property value
+
+### Section: CTA
+Heading: Ready to Get Started?
+Body: Contact us today to discuss your property valuation needs and how we can help with your project.
+
+CTAs:
+- Request Commercial Appraisal
+- Download Commercial Market Report
+
+Body: Serving investors, lenders, and developers across Western Canada.
+
+Contact Info: Questions? Call us at (587) 801-5151
+
+---
+
+================================================================================
+## PAGE 7: Contact (/contact)
+================================================================================
+
+### Section: Hero
+Heading: Contact Valta Property Valuations
+Body: Ready to discuss your commercial property appraisal needs? Get in touch with our team of certified professionals.
+
+### Section: Send Us a Message
+Heading: Send Us a Message
+Body: Fill out the form below and we'll get back to you within 24 hours.
+
+Form Fields:
+- Your Name * (placeholder: John Smith)
+- Email Address * (placeholder: john@company.com)
+- Phone Number (placeholder: (587) 801-5151)
+- Company Name (placeholder: ABC Properties Inc.)
+- Request Type (dropdown: Select request type)
+- Property Type (dropdown: Select property type)
+- Timeline (dropdown: Select timeline)
+- Message * (placeholder: Please describe your property and appraisal requirements...)
+
+CTA: Send Message
+
+### Section: Company Details
+Heading: Company Details
+Name: Valta Property Valuations Ltd.
+Designation: AACI Designated Professionals
+Service Area: Serving Western Canada
+
+### Section: Contact Methods
+Heading: Contact Methods
+
+Methods:
+1. Phone
+   - (587) 801-5151
+
+2. Email
+   - clientcare@valta.ca
+
+3. Office Hours
+   - Monday - Friday, 8:00 AM - 5:00 PM MST
+
+### Section: Our Service Area
+Heading: Our Service Area
+Body: Serving commercial property owners, developers, and lenders across Western Canada
+
+### Section: Why Choose Valta
+Heading: Why Choose Valta
+
+Features:
+1. AACI Designated Professionals
+   - Recognized credentials and industry expertise
+
+2. 2-3 Week Standard Delivery
+   - Faster turnaround than industry average
+
+3. Lender-Ready Reports
+   - Accepted by all major financial institutions
+
+4. 20+ Years Combined Experience
+   - Deep market knowledge and proven track record
+
+### Section: Prefer a Different Approach?
+Heading: Prefer a Different Approach?
+
+Options:
+1. For Existing Clients
+   - Access your client portal for new requests and order tracking
+   - CTA: Client Portal Login
+
+2. For Urgent Requests
+   - Call us directly for same-day response
+   - CTA: Call Now
+
+3. For General Questions
+   - Email us anytime - we respond within 24 hours
+   - CTA: Send Email
+
+---
+
+================================================================================
+## PAGE 8: News/Blog (/news)
+================================================================================
+
+### Section: Hero
+Heading: Industry Insights & Updates
+Body: Expert analysis on commercial real estate trends and market developments
+
+### Section: Coming Soon
+Heading: News & Blog Section
+Subheading: Coming Soon
+Body: Industry insights and market analysis launching soon.
+
+CTAs:
+- Notify Me
+- Return Home
+
+### Section: Blog Preview Content (visible but marked as coming soon)
+Filter: Filter by year
+
+Articles Listed (6 total):
+1. Western Canada Commercial Real Estate Market Outlook 2025
+   - Category: Market Analysis
+   - Date: January 15, 2025
+   - Author: Chris Chornohos, AACI
+   - Preview: As we enter 2025, the Western Canadian commercial real estate market shows signs of stabilization after a volatile period. Interest rate adjustments and shifting investment patterns are creating new opportunities.
+   - CTA: Read More
+
+2. Understanding Cap Rate Trends in Calgary's Multifamily Sector
+   - Category: Investment Analysis
+   - Date: January 8, 2025
+   - Author: Valta Team
+   - Preview: Calgary's multifamily market has experienced significant cap rate compression over the past 18 months, with institutional investors driving demand for quality assets.
+   - CTA: Read More
+
+3. Self-Storage Investment Opportunities Across Alberta
+   - Category: Industry Update
+   - Date: December 28, 2024
+   - Author: Chris Chornohos, AACI
+   - Preview: The self-storage sector continues to outperform traditional commercial real estate asset classes, with Alberta leading Western Canada in new development activity.
+   - CTA: Read More
+
+4. Industrial Real Estate: The New Frontier for Institutional Capital
+   - Category: Market Analysis
+   - Date: December 20, 2024
+   - Author: Valta Team
+   - Preview: Industrial properties have emerged as the darling of institutional investors, driven by e-commerce growth and supply chain optimization.
+   - CTA: Read More
+
+5. Land Development Valuations in a Changing Regulatory Environment
+   - Category: Regulatory Update
+   - Date: December 12, 2024
+   - Author: Chris Chornohos, AACI
+   - Preview: Municipal policy changes and evolving zoning regulations are reshaping land development valuations across Western Canada.
+   - CTA: Read More
+
+6. Office Market Recovery: Lessons from Calgary's Downtown Core
+   - Category: Market Analysis
+   - Date: November 30, 2024
+   - Author: Valta Team
+   - Preview: Calgary's downtown office market is showing early signs of recovery as companies adapt to hybrid work models.
+   - CTA: Read More
+
+Newsletter Signup:
+- Heading: Stay Informed
+- Body: Get the latest commercial real estate insights delivered to your inbox.
+- Form: Email input (disabled) + Subscribe button (disabled)
+
+---
+
+================================================================================
+## PAGE 9: Request Appraisal (/request-appraisal)
+================================================================================
+
+### Section: Hero
+Heading: Get Your Commercial Appraisal Started
+Body: Professional peer reviewed property appraisals delivered in 2-3 weeks, not 4-6. Get started with a quick consultation.
+
+Trust Badge: Trusted by 200+ property investors and lenders across Western Canada
+
+### Section: Choose Your Path
+Heading: Choose Your Path
+
+Path 1: Welcome Back (Existing Clients)
+- Body: Access your client portal to place new appraisals, track order status, and view completed reports
+- Features:
+  - Track appraisal progress
+  - Download reports
+  - Place rush orders
+- CTA: Access Your Account
+
+Path 2: Start Your First Appraisal (New Clients)
+- Body: Tell us about your property and we'll get you started with our streamlined process
+- Features:
+  - Same day response guarantee
+  - Personalized consultation
+  - Client portal access
+- CTA: Get Started
+- Note: We'll create your client account during this process
+
+### Section: Or Submit Your Appraisal Request Directly
+Heading: Or Submit Your Appraisal Request Directly
+Body: Skip the account setup and submit your property details immediately. We'll create your account automatically and send you access details via email.
+
+Form Section: Complete Appraisal Request Form
+
+Client Information:
+- First Name * (placeholder: John)
+- Last Name * (placeholder: Smith)
+- Client Title (placeholder: Development Manager)
+- Client Organization (placeholder: ABC Development Corp)
+- Client Organization Address (placeholder: 123 Main Street, Calgary, AB T2P 1A1)
+- Phone * (placeholder: (587) 801-5151)
+- Email * (placeholder: john@abcdevelopment.com)
+
+Property & Job Information:
+- Property Name * (placeholder: Riverside Apartments)
+- Property Address (placeholder: 456 River Road, Calgary, AB T2P 2B2)
+
+Property Contact Information:
+- Checkbox: Same as Client Contact
+- First Name/Department (placeholder: Marcus / Property Management)
+- Last Name (placeholder: Johnson)
+- Email (placeholder: property.manager@example.com)
+- Phone (placeholder: (403) 555-0123)
+
+Property Details:
+- Property Type (dropdown: Please Select)
+- Intended Use (dropdown: Please Select)
+- Valuation Premises (dropdown: Please Select)
+- Asset Current Condition (dropdown: Please Select)
+- Additional Information (textarea: Please provide any additional details about the property, special circumstances, timeline requirements, or other relevant information...)
+
+Required Documents:
+Heading: Please upload the following documents:
+- Full Property Details or Prior Appraisal
+- Proforma
+- Unit Mix (MF/SS) or Rent Roll (Retail/Office/Industrial)
+- Operating Expenses (1-3 Years Historical and Budget)
+- Drawings/Plans (New Developments only)
+- Contact for property tour (Existing Buildings only)
+
+Upload Area: Drop files here or click to upload
+Supported formats: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG (Max 10MB per file)
+CTA: Choose File
+
+CTA: Submit Appraisal Request
+
+Trust Badges:
+- Secure Submission
+- AACI Certified
+- 2-3 Week Guarantee
+
+### Section: Four Simple Steps to Your Appraisal
+Heading: Four Simple Steps to Your Appraisal
+Body: No games. No surprises. No six-week waits. Just a straightforward process that respects your time and gets deals done.
+
+Steps:
+Step One: Submit Your Request
+- Fill out our intake form with your property details. Upload documents, photos, and any relevant materials. Takes about 10 minutes—no phone tag required.
+- Badge: Same day acknowledgment
+
+Step Two: Get Your Quote
+- Within 24 hours, receive a detailed scope confirmation, transparent fee quote, and firm delivery date. No surprises, no hidden fees, no "it depends."
+- Badge: Guaranteed pricing
+
+Step Three: Professional Inspection
+- Our AACI appraiser conducts a thorough site inspection. We document everything, ask the right questions, and gather all necessary data for an accurate valuation.
+- Badge: Comprehensive assessment
+
+Step Four: Receive Your Report
+- Your peer reviewed, lender-ready report arrives on schedule. Access it anytime through your client portal, along with all supporting documentation. Need another copy? It's always there.
+- Badge: Bank-approved format
+
+Statement: Start to finish in 2-3 weeks. That's our promise.
+CTA: Start Your Appraisal Now
+
+### Section: CTA
+Heading: Prefer to discuss your project first?
+Contact Info:
+- (587) 801-5151
+- clientcare@valta.ca
+- Call or email for immediate consultation
+
+Note: Current clients can also call for priority support
+
+---
+
+================================================================================
+## PAGE 10: Request Appraisal - Intake (/request-appraisal/intake)
+================================================================================
+
+### Section: Hero
+Heading: Complete Your Appraisal Request
+Body: Welcome! Let's gather your property details to get started.
+
+Progress Indicator:
+- Step 1: ✓ Account Setup (completed)
+- Step 2: Property Details (current)
+- Progress: Step 2 of 2
+
+### Section: Form
+Client Information:
+- First Name * (placeholder: John)
+- Last Name * (placeholder: Smith)
+- Client Title (placeholder: Development Manager)
+- Client Organization (placeholder: ABC Development Corp)
+- Client Organization Address (placeholder: 123 Main Street, Calgary, AB T2P 1A1)
+- Phone * (placeholder: (587) 801-5151)
+- Email * (placeholder: john@abcdevelopment.com)
+
+Property & Job Information:
+- Property Name * (placeholder: Riverside Apartments)
+- Property Address (placeholder: 456 River Road, Calgary, AB T2P 2B2)
+- Property Type * (dropdown: Please Select)
+- Intended Use (dropdown: Please Select)
+- Valuation Premises (dropdown: Please Select)
+- Asset Current Condition (dropdown: Please Select)
+- Additional Information (textarea: Please provide any additional details about the property, special circumstances, timeline requirements, or other relevant information...)
+
+Required Documents:
+Heading: Please upload the following documents:
+- Full Property Details or Prior Appraisal
+- Proforma
+- Unit Mix (MF/SS) or Rent Roll (Retail/Office/Industrial)
+- Operating Expenses (1-3 Years Historical and Budget)
+- Drawings/Plans (New Developments only)
+- Contact for property tour (Existing Buildings only)
+
+Upload Area: Drop files here or click to upload
+Supported formats: PDF, DOC, DOCX, XLS, XLSX, JPG, PNG (Max 10MB per file)
+CTA: Choose File
+
+CTA: Submit Appraisal Request
+
+### Section: What Happens After You Submit
+Heading: What Happens After You Submit
+
+Timeline:
+1. Immediate Confirmation
+   - You'll receive email confirmation and account details
+   - Timing: Within 5 minutes
+
+2. 24-Hour Review
+   - We'll contact you to confirm scope and provide fee quote
+   - Timing: Next business day
+
+3. Site Inspection
+   - Professional property assessment and documentation
+   - Timing: Week 1
+
+4. Report Delivery
+   - Lender-ready appraisal within 2-3 weeks
+   - Timing: Week 2-3
+
+Trust Badges:
+- Secure Submission
+- AACI Certified
+- 2-3 Week Guarantee
+
+Questions Section:
+- Call us at (587) 801-5151
+- clientcare@valta.ca
+
+Note: New clients: You'll receive portal access details via email within 5 minutes of submission.
+
+---
+
+================================================================================
+## PAGE 11: Footer Showcase (/footer-showcase)
+================================================================================
+
+### Section: Introduction
+Heading: Footer Design Options
+Body: Scroll down to view different footer designs. Each one removes the logo to avoid duplication with the header.
+
+### Section: Option 1: Compact 4-Column Grid
+
+About Valta:
+Professional commercial real estate appraisal services across Western Canada. Fast response, AACI designated appraisers specializing in multifamily, self-storage, and commercial properties.
+
+Quick Links:
+- Home
+- About
+- Services
+- Contact
+
+Services:
+- Multifamily Appraisals
+- Self Storage Appraisals
+- Commercial Appraisals
+
+Contact Info:
+- Calgary, AB
+- clientcare@valta.ca
+- (587) 801-5151
+
+Social Media Links:
+- Facebook: https://facebook.com/valtavaluations
+- Instagram: https://instagram.com/valtavaluations
+- Twitter: #
+- LinkedIn: https://linkedin.com/company/valta-property-valuations
+
+Copyright: © 2025 Valta Property Valuations. All rights reserved.
+
+### Section: Option 2: Centered Contact with Icons
+
+Heading: Valta Property Valuations
+Description: Professional commercial real estate appraisal services across Western Canada. Fast response, AACI designated appraisers specializing in multifamily, self-storage, and commercial properties.
+
+Contact Info with Icons:
+- (587) 801-5151
+- clientcare@valta.ca
+- Calgary, AB
+
+Navigation Links:
+Home | About | Services | Multifamily | Self Storage | Commercial | Contact
+
+Social Media Icons:
+- Facebook
+- Instagram
+- Twitter
+- LinkedIn
+
+Copyright: © 2025 Valta Property Valuations. All rights reserved. | 300, 4838 Richard Road SW, Calgary, AB, T3E 6L1
+
+### Section: Option 3: Minimal with Call-to-Action
+
+CTA Section:
+Heading: Ready to Get Your Property Appraised?
+Body: Fast, accurate appraisals from AACI designated professionals
+CTAs:
+- Request Appraisal
+- Contact Us
+
+Four Columns:
+1. Company
+   - About
+   - Contact
+
+2. Services
+   - Multifamily
+   - Self Storage
+   - Commercial
+
+3. Contact
+   - (587) 801-5151
+   - clientcare@valta.ca
+
+4. Follow Us
+   - Facebook
+   - Instagram
+   - Twitter
+   - LinkedIn
+
+Copyright: © 2025 Valta Property Valuations. All rights reserved.
+Location: Calgary, Alberta, Canada
+
+### Section: Option 4: Two-Row Simple Layout
+
+Row 1:
+- Company Description: AACI designated appraisers serving Western Canada with fast, professional valuations.
+- Navigation: Home | About | Services | Multifamily | Self Storage | Commercial | Contact
+- Contact: (587) 801-5151 | clientcare@valta.ca
+- Social Media Icons
+
+Row 2:
+Copyright: © 2025 Valta Property Valuations Ltd. | 300, 4838 Richard Road SW, Calgary, AB, T3E 6L1 | All rights reserved.
+
+---
+
+================================================================================
+GLOBAL CONTACT INFORMATION
+================================================================================
+Phone: (587) 801-5151
+Email: clientcare@valta.ca
+Location: Calgary, AB
+Full Address: 300, 4838 Richard Road SW, Calgary, AB, T3E 6L1
+
+Social Media:
+- Facebook: https://facebook.com/valtavaluations
+- Instagram: https://instagram.com/valtavaluations
+- Twitter: # (placeholder)
+- LinkedIn: https://linkedin.com/company/valta-property-valuations
+
+================================================================================
+RECURRING TRUST INDICATORS
+================================================================================
+- AACI Certified
+- 200+ Clients Served
+- 2-3 Week Delivery
+- Lender-Ready Reports
+- Same-Day Response Guarantee
+- Peer Reviewed
+- CUSPAP Compliant
+- 20+ Years Combined Experience
+- Accepted by all major financial institutions
+
+================================================================================
+END OF EXTRACTION
+================================================================================
