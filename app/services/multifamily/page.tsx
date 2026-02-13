@@ -182,8 +182,8 @@ export default function MultifamilyPage() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                 Ready to Get Your Multifamily Property Appraised?
               </h2>
-              <p className="max-w-[700px] text-muted-foreground md:text-xl">
-                Fast, accurate appraisals from experts who understand the investment perspective
+              <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl">
+                Fast, accurate appraisals from experts who understand the investment perspective.
               </p>
             </div>
             <div className="flex flex-col gap-4 min-[400px]:flex-row">

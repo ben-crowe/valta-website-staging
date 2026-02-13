@@ -392,6 +392,9 @@ export default function ContactPage() {
                         </div>
                       </div>
                     </div>
+                    <p className="text-slate-600 text-sm mt-4 pt-4 border-t border-slate-200">
+                      Serving commercial property owners, developers, and lenders across Western Canada
+                    </p>
                   </div>
                 </CardContent>
               </Card>
