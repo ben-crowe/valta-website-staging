@@ -96,7 +96,7 @@ export default function AboutPage() {
           <div className="flex flex-col justify-center space-y-6 text-center text-white w-full">
             <div className="space-y-4 max-w-4xl mx-auto">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl drop-shadow-lg">
-                Built by Developers and Investors, for Developers and Investors
+                For Developers and Investors, by Developers and Investors
               </h1>
               <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
                 We understand both sides of every transaction because we've been there ourselves.
@@ -137,7 +137,7 @@ export default function AboutPage() {
               Finally, an Appraisal Firm That Speaks Your Language
             </h2>
             <p className="text-xl text-slate-600 max-w-4xl mt-4">
-              "We understand the pressures of a putting a deal together the urgency of a financing condition, and the real-world factors that create value."
+              "We understand the pressures of putting a deal together, the urgency of a financing condition, and the real-world factors that create value."
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
@@ -291,9 +291,9 @@ export default function AboutPage() {
                   </p>
                   
                   <p className="leading-relaxed mt-6">
-                    <span className="font-semibold text-slate-900">And here's something most appraisers won't tell you:</span> half 
-                    the reports that cross lenders' desks come back for revisions. More delays. More frustration. We engineered our 
-                    process differently. Every report is peer reviewed and lender-ready on the first submission—no revisions, no back-and-forth, 
+                    <span className="font-semibold text-slate-900">Here's something most appraisers won't tell you:</span> half
+                    the reports that cross lenders' desks come back for revisions. More delays. More frustration. We engineered our
+                    process differently. Every report is peer reviewed and lender-ready on the first submission—no revisions, no back-and-forth,
                     just clean approvals that keep your project moving.
                   </p>
                 </div>
@@ -301,9 +301,8 @@ export default function AboutPage() {
                 {/* Right Column */}
                 <div className="prose prose-lg text-slate-600">
                   <p className="leading-relaxed">
-                    <span className="font-semibold text-slate-900">Sure, we have the AACI designation</span>—that's table stakes. 
-                    But designations don't tell the full story. We understand construction draws or why your property will achieve that market rental or cap rate. We do, 
-                    because we've sat on your side of the table. We've sweated the same deadlines, had to negotiate with
+                    <span className="font-semibold text-slate-900">Sure, we have the AACI designation, but there's more to the story.</span> We understand construction draws and why your property will achieve that rental or cap rate,
+                    because we've sat on your side of the table. We've sweated the same deadlines, slogged through negotiations with
                     lenders, and know exactly what keeps developers and investors up at night.
                   </p>
                   
@@ -319,7 +318,7 @@ export default function AboutPage() {
               {/* Bottom Call-out */}
               <div className="mt-12 p-8 bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl border-l-4 border-blue-500">
                 <p className="text-xl text-slate-800 font-medium italic">
-                  Bottom line? When your appraiser has actually been a developer and an owner, you get more than a report—you get a partner 
+                  When your appraiser has actually been a developer and an owner, you get more than a report—you get a partner
                   who genuinely understands what's at stake.
                 </p>
               </div>
